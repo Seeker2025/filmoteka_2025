@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/filmoteka_2025/",
+    "build": "vite build --base=/filmoteka_2025.git/",
     "preview": "vite preview"
   },
   "devDependencies": {
