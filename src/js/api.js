@@ -1,28 +1,26 @@
 import axios from 'axios';
 import {  renderLayout } from './render.js';
-console.log();
+// console.log(renderLayout);
 
 // const APIKey = '3af5fd0b838bf2a259ff06cb75968037';
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 const BASE_URL = 'https://api.themoviedb.org/3/account/16273990';
-// 'https://api.themoviedb.org/3/collection/collection_id/images',
-const BASE_URL02 = 'https://api.themoviedb.org/3/collection/collection_id/images';
+
 export async function getAPIdata(){
-  try{
-    await axios.get('https://api.themoviedb.org/3/collection/10/images', {
-  
-    headers: {
-        'Content-Type': 'application/json',
-        Authorization: bearer,
-                }
+    try{
+        await axios.get('https://api.themoviedb.org/3/trending/movie/day?language=en-US', {
+                          headers: {
+                            'Content-Type': 'application/json',
+                            Authorization: bearer,
+                                    }
  })
- .then(response => {
-    console.log(response.data.backdrops)
-     renderLayout(response.data.backdrops);
-  }
+                  .then(response => {
+                      console.log(response.data.results)
+                      renderLayout(response.data.results);
+                    }
 )
  
-}catch(error){
+    }catch(error){
     console.log(error);
     }
 }

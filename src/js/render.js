@@ -2,10 +2,11 @@ const galleryRef = document.querySelector('.gallery');
 console.log(galleryRef);
 
 export function renderLayout(arr){
-    const ren = arr.map(itm =>{
+    const ren = arr.map(({poster_path}) =>{
     return `
         <li class="box">
-            <img src="https://api.themoviedb.org/3/collection/10/images/${itm.file_path}" alt="">
+            <h2>Text</h2>
+            // <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="200" alt="">
         </li>
     `
 }).join('');
