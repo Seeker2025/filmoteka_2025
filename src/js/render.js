@@ -5,8 +5,8 @@ export function renderLayout(arr){
     const ren = arr.map(({poster_path}) =>{
     return `
         <li class="box">
-            <h2>Text</h2>
-            // <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="200" alt="">
+            <h2></h2>
+           <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="200" alt="">
         </li>
     `
 }).join('');
