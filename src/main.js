@@ -4,3 +4,5 @@ import { renderLayout } from './js/render.js'
 // console.log(renderLayout([1, 2, 3]));
 
 getAPIdata();
+
+

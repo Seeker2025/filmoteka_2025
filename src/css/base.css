@@ -32,7 +32,7 @@ main:has(.back-link) {
   text-align: center;
 }
 
- .box{
+ .card{
         width: 200px;
         height: auto;
         background-color: rgb(90, 0, 0);

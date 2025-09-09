@@ -1,0 +1,36 @@
+.background{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(42, 75, 165);
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    z-index: 200;
+    opacity: 0.70;
+}
+
+.modal{
+    width: 200px;
+    height: 100px;
+    background-color: brown;
+    visibility: visible;
+    /* opacity: 2.0;
+    z-index: 100; */
+    position: absolute;
+    
+}
+
+/* .visible{
+    visibility: visible;
+
+} */
+
+.hidden{
+    visibility: hidden;
+
+}
+
+.cross{
+    cursor: pointer;
+    z-index: 300;
+}
