@@ -20,7 +20,7 @@ export async function getAPIdata(){
  })
                   .then(response => {
                     //   console.log(response.data.results)
-                      console.log(response.data.results[0])
+                      // console.log(response.data.results[0])
                       renderLayout(response.data.results);
                     }
 )
