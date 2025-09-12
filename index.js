@@ -1,15 +1,17 @@
-/* empty css                      */import{a}from"./assets/vendor-CJ4cOYKs.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const c of t.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&i(c)}).observe(document,{childList:!0,subtree:!0});function n(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function i(e){if(e.ep)return;e.ep=!0;const t=n(e);fetch(e.href,t)}})();const s=document.querySelector(".gallery"),l=document.querySelector(".section");function d(o){const r=o.map(({poster_path:n})=>`
+/* empty css                      */import{a as l}from"./assets/vendor-CJ4cOYKs.js";(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const c of t.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&s(c)}).observe(document,{childList:!0,subtree:!0});function o(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=o(e);fetch(e.href,t)}})();const n=document.querySelector(".gallery");document.querySelector(".section");document.querySelector("body");function a(r){const i=r.map(({poster_path:o},s)=>`
         <li class="card">
             <h2></h2>
-           <img src="https://image.tmdb.org/t/p/w500${n}" width="200" alt="">
-        </li>
-    `).join("");s.insertAdjacentHTML("beforeend",r)}s.addEventListener("click",u);function u(o){o.target,m()}function m(o){l.insertAdjacentHTML("beforeend",`
-                                                      <div class="background">   
+           <img src="https://image.tmdb.org/t/p/w500${o}" width="200" alt="">
+       
+ 
+                                                      <div class="backdrop">   
                                                             <div class="modal">
-                                                            <h3 class="cross">X</h3>
-                                                            <h2>Modal</h2>
+                                                                <h3 class="cross">X</h3>
+                                                                <h2>Modal</h2>
+                                                                <h2>${s}</h2>
+           <img src="https://image.tmdb.org/t/p/w500${o}" width="100" alt="">
                                                             </div>
-                                                         
-                                                        </div>
-                                                        `);const n=document.querySelector(".cross");document.querySelector(".background"),document.querySelector(".modal"),n.addEventListener("click",f)}function f(){console.log("Hi!")}const y="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08",g="https://api.themoviedb.org/3/trending/movie/day?language=en-US";async function h(){try{await a.get(g,{headers:{"Content-Type":"application/json",Authorization:y}}).then(o=>{console.log(o.data.results[0]),d(o.data.results)})}catch(o){console.log(o)}}h();
+                                                      </div>
+        </li>                                              
+        `).join("");n.insertAdjacentHTML("beforeend",i)}n.addEventListener("click",d);function d(r){const o=r.target.closest(".card");console.log(o),o.classList.add("border"),o.classList.add("visible");const s=o.querySelector(".cross");console.log(s),s.addEventListener("click",e);function e(){console.log("cross_01"),setTimeout(()=>{o.classList.remove("visible")},2e3),s.removeEventListener("click",e)}}const u="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08",m="https://api.themoviedb.org/3/trending/movie/day?language=en-US";async function f(){try{await l.get(m,{headers:{"Content-Type":"application/json",Authorization:u}}).then(r=>{a(r.data.results)})}catch(r){console.log(r)}}f();
 //# sourceMappingURL=index.js.map
