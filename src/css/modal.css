@@ -21,9 +21,12 @@ body.show-modal .card .backdrop{
 }
 
 .modal{
-    width: 100px;
-    height: 150px;
-    background-color: brown;
+    width: 250px;
+    height: 350px;
+    background-color: rgb(1, 49, 161);
+    position: fixed;
+    top: 00px;
+    left: 00px; 
     /* visibility: visible; */
     /* opacity: 2.0;
      
@@ -52,6 +55,6 @@ li.visible .backdrop{
     
 }
 
-.border{
+/* .border{
     border: 7px dashed rgb(255, 0, 0);
-}
+} */

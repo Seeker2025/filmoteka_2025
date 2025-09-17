@@ -21,6 +21,9 @@ export async function getAPIdata(){
                   .then(response => {
                     //   console.log(response.data.results)
                       // console.log(response.data.results[0])
+                      // console.log(response.data.results[0].id)
+                      // const mess = JSON.stringify(response.data.results);
+                      localStorage.setItem("mess", JSON.stringify(response.data.results));
                       renderLayout(response.data.results);
                     }
 )

@@ -1,3 +1,5 @@
+// import { toShowModalWin } from './madal.js';
+
 const galleryRef = document.querySelector('.gallery');
 const section = document.querySelector('.section');
 const body = document.querySelector('body');
@@ -9,21 +11,12 @@ const body = document.querySelector('body');
 // console.log(cross);
 
 export function renderLayout(arr){
-    const ren = arr.map(({poster_path}, idx) =>{
+    const ren = arr.map(({poster_path, id}, idx) =>{
     return `
-        <li class="card">
-            <h2></h2>
+        <li class="card" id=${id}>
+            <h2>${id}</h2>
            <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="200" alt="">
-       
- 
-                                                      <div class="backdrop">   
-                                                            <div class="modal">
-                                                                <h3 class="cross">X</h3>
-                                                                <h2>Modal</h2>
-                                                                <h2>${idx}</h2>
-           <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="100" alt="">
-                                                            </div>
-                                                      </div>
+           
         </li>                                              
         `
 }).join('');
@@ -33,10 +26,9 @@ export function renderLayout(arr){
 }
 
 galleryRef.addEventListener('click', modalShow);
-let one = null
+// let one = null
 function modalShow(evt){
-    
-    
+  
     // if(one){
     //     console.log('Hi02');
     //     return;
@@ -44,26 +36,27 @@ function modalShow(evt){
     // one = evt.target
    const nestedElem = evt.target;
    const upperLi = nestedElem.closest('.card');
-   console.log(upperLi);
-   upperLi.classList.add('border');
+   console.log(upperLi.getAttribute('id'));
+//    toShowModalWin();
+
+//    const textWithId = upperLi.querySelector('li h2');
    
-   upperLi.classList.add('visible');
+//    console.log( textWithId.textContent);
+ 
+   
+
 //    setTimeout(()=>{
 //         upperLi.classList.remove('visible');
 //    }, 2000)
 //    upperLi.classList.remove('visible');
-  const cross = upperLi.querySelector('.cross');
-    console.log(cross);
+  
 
-    cross.addEventListener('click', toCloseMo);
-
-    function toCloseMo(){
-          console.log('cross_01');
-          setTimeout(()=>{
-        upperLi.classList.remove('visible');
-   }, 2000) 
-          cross.removeEventListener('click', toCloseMo);
-    }
+    
+//           setTimeout(()=>{
+//         upperLi.classList.remove('visible');
+//    }, 2000) 
+         
+    
 
 //   modalRender();
 //   galleryRef.removeEventListener('click', modalShow);
@@ -76,7 +69,7 @@ function modalShow(evt){
         
     //  }
     // galleryRef.removeEventListener('click', modalShow);
- 
+   
 }
 
 
@@ -86,6 +79,5 @@ function modalShow(evt){
     //      console.log('cross01');
     //      upperLi.classList.remove('visible');
     // });
-
 
 

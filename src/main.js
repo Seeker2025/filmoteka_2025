@@ -1,8 +1,10 @@
 import { getAPIdata } from './js/api.js';
-import { renderLayout } from './js/render.js'
+import {  renderLayout } from './js/render.js'
+ import {  oneObj } from './js/madal.js'
 
-// console.log(renderLayout([1, 2, 3]));
+ getAPIdata();
 
-getAPIdata();
+
+console.log(oneObj);
 
 
