@@ -23,7 +23,7 @@ body.show-modal .card .backdrop{
 .modal{
     width: 250px;
     height: 350px;
-    background-color: rgb(1, 49, 161);
+    background-color: rgb(110, 132, 185);
     position: fixed;
     top: 00px;
     left: 00px; 
@@ -52,7 +52,7 @@ li.visible .backdrop{
     top: 00px;
     left: 00px; 
     z-index: 999;
-    
+
 }
 
 /* .border{

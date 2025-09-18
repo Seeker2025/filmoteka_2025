@@ -1,4 +1,4 @@
-// import { toShowModalWin } from './madal.js';
+import { toShowModalWin } from './madal.js';
 
 const galleryRef = document.querySelector('.gallery');
 const section = document.querySelector('.section');
@@ -36,7 +36,18 @@ function modalShow(evt){
     // one = evt.target
    const nestedElem = evt.target;
    const upperLi = nestedElem.closest('.card');
-   console.log(upperLi.getAttribute('id'));
+//    console.log(upperLi.getAttribute('id'));
+   const selectIDbyClick = Number(upperLi.getAttribute('id'));
+   console.log(selectIDbyClick);
+//    const arr = [1088166, 934456, 1007734,];
+//    const one = arr.find(itm => itm === 1088166)
+   toShowModalWin(selectIDbyClick);
+//    toGetOneId(selectIDbyClick);
+//     console.log(typeof(selectIDbyClick));
+//    console.log(one);
+   
+//   mess.find(itm => itm.id === id);
+    // console.log(mess.find(itm => itm.id === id));
 //    toShowModalWin();
 
 //    const textWithId = upperLi.querySelector('li h2');
