@@ -8,16 +8,16 @@ body.show-modal .card .backdrop{
 } */
 
 .backdrop{
-    width: 20vw;
-    height: 30vh;
-    background-color: rgb(42, 75, 165);
+    width: 100vw;
+    height: 50vh;
+    background-color: rgba(42, 75, 165, 0.411);
     position: fixed;
     top: 00px;
     left: 00px; 
-    z-index: 999;
-    opacity: 0.5;
-    visibility: hidden;
-    border: 2px dashed red;
+    /* z-index: 50; */
+    /* opacity: 0.8; */
+    /* visibility: hidden; */
+    /* border: 2px dashed red; */
 }
 
 .modal{
@@ -28,10 +28,10 @@ body.show-modal .card .backdrop{
     top: 00px;
     left: 00px; 
     /* visibility: visible; */
-    /* opacity: 2.0;
+    /* opacity: 1; */
      
     /* position: absolute; */
-    z-index: 100; 
+    z-index: 999; 
     
 }
 

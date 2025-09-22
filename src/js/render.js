@@ -25,7 +25,7 @@ export function renderLayout(arr){
  galleryRef.insertAdjacentHTML('beforeend', ren);
 }
 
-galleryRef.addEventListener('click', modalShow);
+ galleryRef.addEventListener('click', modalShow);
                                                     function modalShow(evt){
                                                         window.addEventListener('keydown', (evt)=>{
                                                             if(evt.code === 'Escape'){

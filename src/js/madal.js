@@ -14,31 +14,42 @@ export function toShowModalWin(id){
     // return oneObj;
 
      const box = `
-        <div class = "modal">
-             <h1>${oneObj.title}</h1>
-             <h2 class="cross">X</h2>
-             <img src="https://image.tmdb.org/t/p/w500${oneObj.poster_path}" width="150" alt="">
-        </div>
+        <div class="backdrop">
+                <div class = "modal">
+                     <h1>${oneObj.title}</h1>
+                     <h2 class="cross">X</h2>
+                     <img src="https://image.tmdb.org/t/p/w500${oneObj.poster_path}" width="150" alt="">
+                </div>
+        </div>   
                 `
         forModal.innerHTML = box;
 
         const cross = document.querySelector('h2.cross');
-        const modalRef = document.querySelector('div.modal');
+        // const modalRef = document.querySelector('div.modal');
         // console.log(cross);
         // console.log(modalRef);
         // console.log(modalRef);
         // modalRef.addEventListener('click', (evt)=>{
                 //  console.log(evt.target);
                 // }
-                document.body.addEventListener('click', (evt)=>{
-                if(evt.target === modalRef){
-                        console.log('Whoa!');
+                // window.addEventListener('click', (evt)=>{
+                // if(evt.target === modalRef){
+                //         console.log('Whoa!');
+                //         toCloseModal();
+                // }
+        // })
+        const backdrop = document.querySelector('.backdrop');
+        backdrop.addEventListener('click', (evt)=>{
+                
+                console.log(evt.target);
+                if(evt.target === backdrop){
+                        console.log('whoa!');
                         toCloseModal();
                 }
-        })
+        });
 
         cross.addEventListener('click', ()=>{
-                toCloseModal();
+                        toCloseModal();
                   cross.removeEventListener('click', ()=>{});
                   window.removeEventListener('keydown', ()=>{});
         })
