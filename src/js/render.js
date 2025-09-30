@@ -51,45 +51,7 @@ export function renderLayout(arr){
 //    const arr = [1088166, 934456, 1007734,];
 //    const one = arr.find(itm => itm === 1088166)
    toShowModalWin(selectIDbyClick);
-//    toGetOneId(selectIDbyClick);
-//     console.log(typeof(selectIDbyClick));
-//    console.log(one);
-   
-//   mess.find(itm => itm.id === id);
-    // console.log(mess.find(itm => itm.id === id));
-//    toShowModalWin();
-
-//    const textWithId = upperLi.querySelector('li h2');
-   
-//    console.log( textWithId.textContent);
- 
-   //    setTimeout(()=>{
-//         upperLi.classList.remove('visible');
-//    }, 2000)
-//    upperLi.classList.remove('visible');
-  
-
- //           setTimeout(()=>{
-//         upperLi.classList.remove('visible');
-//    }, 2000) 
-         
-    
-//   modalRender();
-//   galleryRef.removeEventListener('click', modalShow);
-    // console.log(evt.target.nodeName);
-    // evt.target.classList.add('border');
-    // body.classList.add('show-modal');
-    
-       // if(evt.code === 'Escape'){
-        
-    //  }
-    // galleryRef.removeEventListener('click', modalShow);
 }
 
-    // console.log(cross);
-    // cross.addEventListener('click', ()=>{
-    //      console.log('cross01');
-    //      upperLi.classList.remove('visible');
-    // });
-
+  
 
