@@ -1,5 +1,8 @@
-// export const forma = document.querySelector('.js_form');
+// const form = document.querySelector('.js_form');
+// // console.log(form);
 
-// forma.addEventListener('submit', (evt)=>{
-//     console.log(evt.target);
-// })
+// function toSend(evt){
+//     evt.preventDefault();
+//     const movie = evt.currentTarget.elements.search.value
+//     console.log(evt.currentTarget.elements.search.value);
+// }

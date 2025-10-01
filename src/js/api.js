@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {  renderLayout } from './render.js';
+import {  renderLayout } from './render';
 // console.log(renderLayout);
 
 // const APIKey = '3af5fd0b838bf2a259ff06cb75968037';
@@ -14,8 +14,9 @@ const BASE_mov=`https://api.themoviedb.org/3/search/movie?query=${title}&include
 const BASE_mov02 = 'https://api.themoviedb.org/3/search/movie';
 export const BASE_URL = 'https://api.themoviedb.org/3/';
 export const trending = 'trending/movie/day';
+export const search = 'search/movie'
 
-export async function getAPIdata(main, part){
+export async function getAPIdata(main, part,  whatLookingFor){
     try{
         await axios.get( `${main}${part}`, {
                           headers: {
@@ -23,16 +24,12 @@ export async function getAPIdata(main, part){
                             Authorization: bearer,
                             },
                              params: {
-                             query: title02,
+                             query: whatLookingFor,
                              include_adult: false,
                              page: 1,
                             }
  })
                   .then(response => {
-                    //   console.log(response.data.results)
-                      // console.log(response.data.results[0])
-                      // console.log(response.data.results[0].id)
-                      // const mess = JSON.stringify(response.data.results);
                       localStorage.setItem("mess", JSON.stringify(response.data.results));
                       renderLayout(response.data.results);
                     }
@@ -42,20 +39,3 @@ export async function getAPIdata(main, part){
     console.log(error);
     }
 }
-
-
-// it works
-// export async function getAPIdata(){
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     accept: 'application/json',
-//     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08',
-//   }
-// };
-
-// fetch(BASE_URL, options)
-//   .then(res => res.json())
-//   .then(res => console.log(res))
-//   .catch(err => console.error(err));
-// }

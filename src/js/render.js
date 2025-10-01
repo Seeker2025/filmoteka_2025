@@ -22,7 +22,7 @@ export function renderLayout(arr){
         `
 }).join('');
 
- galleryRef.insertAdjacentHTML('beforeend', ren);
+ galleryRef.innerHTML = ren;
 }
 
  galleryRef.addEventListener('click', modalShow);
@@ -32,24 +32,10 @@ export function renderLayout(arr){
                                                             toCloseModal();
                                                         }
                                                     });
-
-    // if(one){
-    //     console.log('Hi02');
-    //     return;
-    // }
-    // one = evt.target
    const nestedElem = evt.target;
    const upperLi = nestedElem.closest('.card');
    console.log(upperLi);
-        //  if(upperLi !== evt.target){
-        //     toCloseModal(); 
-        //     console.log('Noup!');
-        //  }                                           
-//    console.log(upperLi.getAttribute('id'));
    const selectIDbyClick = Number(upperLi.getAttribute('id'));
-//    console.log(selectIDbyClick);
-//    const arr = [1088166, 934456, 1007734,];
-//    const one = arr.find(itm => itm === 1088166)
    toShowModalWin(selectIDbyClick);
 }
 

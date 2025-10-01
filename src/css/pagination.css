@@ -1,0 +1,100 @@
+.container_pag{
+    margin: 0 auto;
+    border: 3px solid gold;
+    min-height: 40px;
+    width: 600px;
+   
+}
+
+.tui-pagination{
+    border: 2px dashed rgb(255, 34, 0);
+    width: 350px;
+    display: flex;
+}
+
+.button_orange{
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+  
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 9px 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #ff6b08;
+    border-color: #ff6b08;
+   
+}
+
+.buttons_other{
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+  
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 9px 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #2f313a;
+    border-color: #3a392f;
+   
+}
+
+.arrow{
+   margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+  
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 9px 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #7d94fb;
+    border-color: #2f313a;
+}
+
+.dots{
+   
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+  
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 9px 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #2f313a;
+    border-color: #2f313a;
+}
