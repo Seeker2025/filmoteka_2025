@@ -1,5 +1,23 @@
 .magnifying_glass{
     width: 35px;
     height: 35px;
-    border: 1px solid red;
+    border: 2px dashed red;
+    background-color: black;
+}
+
+.magnifying_glass .icon{
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgb(234, 255, 0);
+    background-color: black;
+}
+
+.input_text{
+    border: none;
+    height: 30px;
+    width: 394px;
+    border-bottom: 2px solid rgb(255, 204, 0);
+    background-color: rgb(85, 84, 84);
+    font-size: 1.1em;
 }

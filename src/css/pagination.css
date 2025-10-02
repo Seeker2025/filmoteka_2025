@@ -1,15 +1,11 @@
-.container_pag{
-    margin: 0 auto;
-    border: 3px solid gold;
-    min-height: 40px;
-    width: 600px;
-   
-}
 
-.tui-pagination{
-    border: 2px dashed rgb(255, 34, 0);
-    width: 350px;
+#tui-pagination-container{
+    border: 2px dashed rgb(255, 247, 0);
+    width: auto;
     display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
 }
 
 .button_orange{
@@ -22,7 +18,7 @@
     border-radius: 5px;
     margin-left: 0;
     padding: 9px 0;
-    font-size: 12px;
+    font-size: 0.9em;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
@@ -44,7 +40,7 @@
     border-radius: 5px;
     margin-left: 0;
     padding: 9px 0;
-    font-size: 12px;
+    font-size: 0.9em;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;

@@ -1,9 +1,12 @@
 /* Styles for Mobile devices */
 .container {
+  padding: 5px;
   min-width: 320px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
-  background-color: rgb(52, 52, 139);
+  /* padding: 0 16px; */
+  background-color: rgb(92, 92, 93);
   border: 2px dashed red;
+  display: flex;
+  justify-content: center;
 }
