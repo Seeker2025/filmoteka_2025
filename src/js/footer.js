@@ -1,10 +1,7 @@
-export const iconJS = document.querySelector('svg.icon_js')
+const iconJS = document.querySelector('svg.icon_js')
 
-
-export function scaleJS(){
-    
-    setInterval(()=>{
-        iconJS.classList.toggle('icon_scale');
-        console.log('Hi!');
-    }, 800);
-}
+                export function footerScaleJS(){
+                setInterval(()=>{
+                iconJS.classList.toggle('icon_scale');
+                }, 800);
+                }

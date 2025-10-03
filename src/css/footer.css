@@ -1,23 +1,27 @@
-.footer {
-  background-color: rgb(123, 123, 123);
-  min-height: 30px;
+footer.footer {
+  height: 49px;
   width: 100%;
+  background-color: rgb(62, 62, 62);
 
 }
-.igor{
-  background-color: rgb(102, 110, 110);
-  line-height: 32px;
+.icon_box{
+  height: 25px;
+  width: 25px;
+  padding: 0;
+  /* border: 3px dashed red; */
+}
+p.copyright{
+  /* background-color: rgb(102, 110, 110); */
+  line-height: 35px;
   font-size: 1.1em;
 }
 
 .icon_js{
   border-radius: 5px;
-  border: 1px dashed orange;
   transform: scale(0.6);
 }
 
 .icon_scale{
-  transform: scale(0.8);
-  border: 1px dashed rgb(255, 0, 0);
+  transform: scale(0.7);
 }
 

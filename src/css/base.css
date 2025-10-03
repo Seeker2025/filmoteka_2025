@@ -32,9 +32,10 @@ main:has(.back-link) {
   text-align: center;
 }
 
- li.card{
-        width: 394px;
-        height: auto;
+li.card{
+        width: 393px;
+        height:634px;
+        margin: 4px;
         background-color: rgb(135, 134, 134);
         border: 2px dashed gold;
       }
@@ -51,4 +52,8 @@ ul.gallery{
   flex-wrap: wrap;
   border: 3px solid maroon;
 }   
+
+a{
+  cursor: pointer;
+}
 

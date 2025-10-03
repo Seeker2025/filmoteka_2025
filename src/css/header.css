@@ -1,8 +1,29 @@
 .header {
   background-color: rgb(89, 4, 59);
-  min-height: 60px;
+  min-height: 215px;
   width: 100%;
-
 }
 
+.container_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.three_containers{
+  border: 3px dashed rgb(162, 255, 23);
+  min-height: 50px;
+  width: 30%;
+}
+
+.logo_box{
+  border: 1px dashed gold;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.three_containers a.home{
+  border-bottom: 3px solid #FF001B;
+}

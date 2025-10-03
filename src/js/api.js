@@ -1,18 +1,14 @@
 
-import axios from 'axios';
-import {  renderLayout } from './render';
-import Pagination from  'tui-pagination'; 
-import { options,
-         container
- } from './pagination.js';
-// console.log(container);
+import    axios                 from 'axios';
+import {  renderLayout }        from './render';
+import    Pagination            from  'tui-pagination'; 
+import {  options,
+          container
+ }                              from './pagination.js';
 
-// const APIKey = '3af5fd0b838bf2a259ff06cb75968037';
+
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
-const BASE_URL01 = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US&&page=4';
-const BASE_URL02 = 'https://api.themoviedb.org/3/trending/movie/day';
-// const BASE_URL_people = 'https://api.themoviedb.org/3/trending/person/day?language=en-US';
-// const BASE_URL_collections = 'https://api.themoviedb.org/3/collection/collection_id?language=en-US';
+
 const title = 'Pulp fiction';
 const title02 = 'Batman';
 const BASE_mov=`https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`;
@@ -51,9 +47,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         getAPIdata(main, part,  whatLookingFor, onePage);
     });
     }
-
-                      
-                    }
+        }
 )
  
     }catch(error){
