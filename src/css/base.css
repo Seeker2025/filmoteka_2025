@@ -25,6 +25,15 @@ body {
   /* padding: 15px; */
 }
 
+/* .body_background{
+    background-image: url("../img/sprite.png");
+    background-repeat: repeat;
+    background-position: left, right;
+    background-repeat: repeat-x, repeat-y; 
+   
+} 
+*/
+
 main {
   flex-grow: 1;
 }

@@ -10,8 +10,10 @@
   justify-content: center;
 }
 
+
+
 .three_containers{
-  border: 3px dashed rgb(162, 255, 23);
+  /* border: 3px dashed rgb(162, 255, 23); */
   min-height: 50px;
   width: 30%;
 }
@@ -26,4 +28,11 @@
 
 .three_containers a.home{
   border-bottom: 3px solid #FF001B;
+}
+
+.background{
+    background-image: url("../img/abstract-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
