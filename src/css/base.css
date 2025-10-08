@@ -34,12 +34,12 @@ body {
 } 
 */
 
-main {
+/* main {
   flex-grow: 1;
 }
 main:has(.back-link) {
   text-align: center;
-}
+} */
 
 li.card{
         width: 393px;
@@ -50,7 +50,7 @@ li.card{
       }
 
 ul.gallery{
-  max-width: 1214px;
+  max-width: 1230px;
   height: auto;
   margin: 0 auto;
 

@@ -1,7 +1,7 @@
 footer.footer {
   height: 49px;
   width: 100%;
-  background-color: rgb(62, 62, 62);
+  background-color: rgb(13, 13, 13);
 
 }
 .icon_box{
@@ -14,6 +14,7 @@ p.copyright{
   /* background-color: rgb(102, 110, 110); */
   line-height: 35px;
   font-size: 1.1em;
+  color: rgb(140, 140, 140);
 }
 
 .icon_js{

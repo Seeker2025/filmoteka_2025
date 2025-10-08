@@ -16,9 +16,37 @@ export function toShowModalWin(id){
      const box = `
         <div class="backdrop">
                 <div class = "modal">
-                     <h1>${oneObj.title}</h1>
-                     <h2 class="cross">X</h2>
-                     <img src="https://image.tmdb.org/t/p/w500${oneObj.poster_path}" width="150" alt="">
+                        <h2 class="cross">X</h2>
+
+                        <img src="https://image.tmdb.org/t/p/w500${oneObj.poster_path}" width="" alt="">
+                        <table>
+                                <caption>${oneObj.title}</caption>
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+
+                                </tr>
+
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+
+                                </tr>
+
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+
+                                </tr>
+
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+
+                                </tr>
+                        
+                        </table>
+                     
                 </div>
         </div>   
                 `
