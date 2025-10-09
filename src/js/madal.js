@@ -12,37 +12,73 @@ export function toShowModalWin(id){
     // console.log(mess.find(itm => itm.id === id));
     // mess.find(itm => itm.id === id);
     // return oneObj;
-
+     const{ poster_path, title, popularity, vote_average, vote_count, overview, genre_ids } = oneObj; 
      const box = `
         <div class="backdrop">
                 <div class = "modal">
-                        <h2 class="cross">X</h2>
+                        <div class="cross">
+                        
+                <svg>
+                        <use href="./img/close.svg"></use>
+                </svg>        
+                        
+                        </div>
 
-                        <img src="https://image.tmdb.org/t/p/w500${oneObj.poster_path}" width="" alt="">
+                        <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="" alt="">
+                        
                         <table>
-                                <caption>${oneObj.title}</caption>
+                               <caption>${title}</caption>
                                 <tr>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                        <span>Vote / Votes</span>
+                                        </td>
+                                      
+                                        <td colspan="2">
+                                        ${vote_average} / ${vote_count}
+                                        </td>
 
+                                        
                                 </tr>
 
                                 <tr>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                        <span>Popularity</span>
+                                        </td>
 
+                                        <td>
+                                        ${popularity}
+                                        </td>
                                 </tr>
 
                                 <tr>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                        <span>Original title</span>
+                                        </td>
+
+                                        <td>
+                                        ${title}
+                                        </td>
 
                                 </tr>
 
-                                <tr>
-                                        <td></td>
-                                        <td></td>
+                                    <tr>
+                                        <td>
+                                        <span>Genre</span>
+                                        </td>
 
+                                        <td>
+                                        ${genre_ids[0], genre_ids[1]}
+                                        </td>
+
+                                </tr>
+
+
+                                <tr>
+                                        <td colspan = "2">ABAUT</td>
+                                </tr>
+
+                                <tr>
+                                        <td colspan = "2">${overview}</td>
                                 </tr>
                         
                         </table>
@@ -52,7 +88,7 @@ export function toShowModalWin(id){
                 `
         forModal.innerHTML = box;
 
-        const cross = document.querySelector('h2.cross');
+        const cross = document.querySelector('div.cross');
         // const modalRef = document.querySelector('div.modal');
         // console.log(cross);
         // console.log(modalRef);

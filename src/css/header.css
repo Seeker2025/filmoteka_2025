@@ -36,3 +36,8 @@
     background-size: cover;
     background-position: center;
 }
+
+ .button_right{
+  display: flex;
+  justify-content: end;
+ }
