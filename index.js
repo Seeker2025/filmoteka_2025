@@ -1,16 +1,93 @@
-/* empty css                      */import{a as u}from"./assets/vendor-CJ4cOYKs.js";(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const c of t.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&s(c)}).observe(document,{childList:!0,subtree:!0});function r(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=r(e);fetch(e.href,t)}})();const l=document.querySelector("div.for_modal");function m(o){const n=localStorage.getItem("mess"),s=JSON.parse(n).find(i=>i.id===o),e=`
-        <div class="backdrop">
+import{a as y,P as b}from"./assets/vendor-D0nrVKD2.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const r of e.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function a(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function s(t){if(t.ep)return;t.ep=!0;const e=a(t);fetch(t.href,e)}})();function h({poster_path:n,title:o,popularity:a,vote_average:s,vote_count:t,overview:e,genre_ids:r}){let i=`<img class="img_modal" src="https://image.tmdb.org/t/p/w500${n}" alt="${o}">`;return n||(i='<img src="./img/no_img02.png" >'),`<div class="backdrop">
                 <div class = "modal">
-                     <h1>${s.title}</h1>
-                     <h2 class="cross">X</h2>
-                     <img src="https://image.tmdb.org/t/p/w500${s.poster_path}" width="150" alt="">
+                        <div class="cross">
+                        
+                                <svg>
+                                        <use href="./img/close.svg"></use>
+                                </svg>        
+                        
+                        </div>
+
+                                ${i}
+                        <table>
+                           <caption>${o}</caption>
+                                <tr>
+                                        <td class="vote_box table_cell">
+                                                <span>Vote / Votes</span>
+                                        </td>
+                                      
+                                        <td colspan="2">
+                                                <span class="orange">${s}</span> / ${t}
+                                        </td>
+                                </tr>
+
+                                <tr>
+                                        <td class="table_cell">
+                                                <span>Popularity</span>
+                                        </td>
+
+                                        <td colspan="2">
+                                                ${a}
+                                        </td>
+                                       
+                                </tr>
+
+                                <tr>
+                                        <td class="table_cell">
+                                                <span>Original title</span>
+                                        </td>
+
+                                        <td>
+                                                ${o}
+                                        </td>
+
+                                </tr>
+
+                                <tr>
+                                        <td class="table_cell">
+                                                <span>Genre</span>
+                                        </td>
+
+                                        <td>
+                                                ${r[0],r[1]}
+                                        </td>
+
+                                </tr>
+
+                                <tr>
+                                        <td colspan = "2"></td>
+                                </tr>
+
+                                <tr>
+                                        <td colspan = "2">ABOUT</td>
+                                </tr>
+
+                                <tr>
+        <td colspan = "2">${e||"Unfortunately, this film does not have a description yet."}</td>
+                                </tr>
+
+                                <tr>
+                                        <td colspan = "2"></td>
+                                </tr>
+
+                                <tr class="row__padding">
+                                        <td>
+                        <button type="button" class="arange_button">ADD TO WATCHED</button>
+                                        </td>
+
+                                        <td>
+                        <button type="button" class="white_button">ADD TO QUEUE</button>
+                                        </td>
+                                </tr>
+                        
+                        </table>
+                     
                 </div>
         </div>   
-                `;l.innerHTML=e;const t=document.querySelector("h2.cross"),c=document.querySelector(".backdrop");c.addEventListener("click",i=>{console.log(i.target),i.target===c&&(console.log("whoa!"),a())}),t.addEventListener("click",()=>{a(),t.removeEventListener("click",()=>{}),window.removeEventListener("keydown",()=>{})})}function a(){l.innerHTML=""}const d=document.querySelector(".gallery");document.querySelector(".section");document.querySelector("body");function f(o){const n=o.map(({poster_path:r,id:s},e)=>`
-        <li class="card" id=${s}>
-            <h2>${s}</h2>
-           <img src="https://image.tmdb.org/t/p/w500${r}" width="" alt="">
-           
-        </li>                                              
-        `).join("");d.insertAdjacentHTML("beforeend",n)}d.addEventListener("click",g);function g(o){window.addEventListener("keydown",e=>{e.code==="Escape"&&a()});const r=o.target.closest(".card");console.log(r);const s=Number(r.getAttribute("id"));m(s)}const p="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08",y="Batman",h="https://api.themoviedb.org/3/",I="trending/movie/day";async function b(o,n){try{await u.get(`${o}${n}`,{headers:{"Content-Type":"application/json",Authorization:p},params:{query:y,include_adult:!1,page:1}}).then(r=>{localStorage.setItem("mess",JSON.stringify(r.data.results)),f(r.data.results)})}catch(r){console.log(r)}}b(h,I);const L=document.querySelector(".js_form");L.addEventListener("submit",o=>{o.preventDefault(),o.currentTarget.elements.search.value,console.log(o.currentTarget.elements.search.value)});
+                `}const p=document.querySelector("div.for_modal");function v(n){const o=localStorage.getItem("mess"),s=JSON.parse(o).find(c=>c.id===n);console.log(s),p.innerHTML=h(s);const t=document.querySelector("button.arange_button"),e=document.querySelector("button.white_button");t.addEventListener("click",c=>{console.log("orange!"),c.stopPropagation()}),e.addEventListener("click",c=>{console.log("white"),c.stopPropagation()});const r=document.querySelector("div.cross"),i=document.querySelector(".backdrop");i.addEventListener("click",c=>{console.log(c.target),c.target===i&&(console.log("whoa!"),d())}),r.addEventListener("click",()=>{d(),r.removeEventListener("click",()=>{}),window.removeEventListener("keydown",()=>{}),t.removeEventListener("click",()=>{}),e.removeEventListener("click",()=>{})})}function d(){p.innerHTML=""}const m=document.querySelector(".gallery");document.querySelector(".section");document.querySelector("body");function _(n){const o=n.map(({poster_path:a,id:s,title:t},e)=>{let r=`<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${a}" width="" alt="${t}">`;return a||(r='<img class="img_of_card" src="./img/no_img02.png" width="" alt="No image">'),`
+                                                        <li class="card" id=${s}>
+                                                            ${r}
+                                                            <h1 class="card_title">${t}</h1>
+                                                        </li>                                              
+                                                        `}).join("");m.innerHTML=o}m.addEventListener("click",I);function I(n){window.addEventListener("keydown",t=>{t.code==="Escape"&&d()});const a=n.target.closest(".card");console.log(a);const s=Number(a.getAttribute("id"));v(s)}const w=document.querySelector(".tui-pagination"),l={totalItems:20,itemsPerPage:10,visiblePages:5,page:1,centerAlign:!1,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child",template:{page:'<a href="#" class="buttons_other tui-page-btn">{{page}}</a>',currentPage:'<strong class="button_orange tui-page-btn tui-is-selected">{{page}}</strong>',moveButton:'<a href="#" class="arrow tui-page-btn tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></a>',disabledMoveButton:'<span class="arrow tui-page-btn tui-is-disabled tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></span>',moreButton:'<a href="#" class="dots tui-page-btn tui-{{type}}-is-ellip"><span class="tui-ico-ellip">. . .</span></a>'}},L="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08",g="https://api.themoviedb.org/3/",S="trending/movie/day",E="search/movie";async function u(n,o,a,s=1){try{await y.get(`${n}${o}`,{headers:{"Content-Type":"application/json",Authorization:L},params:{query:a,include_adult:!1,page:s}}).then(t=>{localStorage.setItem("mess",JSON.stringify(t.data.results)),_(t.data.results);const{results:e,total_results:r,total_pages:i}=t.data;let c=i;s<c&&(l.totalItems=c,l.page=s,new b(w,l).on("afterMove",function(f){s=f.page,u(n,o,a,s)}))})}catch(t){console.log(t)}}const N=document.querySelector("svg.icon_js");function O(){setInterval(()=>{N.classList.toggle("icon_scale")},800)}u(g,S);O();const A=document.querySelector(".js_form");A.addEventListener("submit",n=>{n.preventDefault();const o=n.currentTarget.elements.search.value;u(g,E,o)});
 //# sourceMappingURL=index.js.map
