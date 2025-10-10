@@ -8,13 +8,17 @@ const section = document.querySelector('.section');
 const body = document.querySelector('body');
 
 export function renderLayout(arr){
-    const ren = arr.map(({poster_path, id}, idx) =>{
-    return `
-        <li class="card" id=${id}>
-            <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="" alt="">
-            <h2>${id}</h2>
-        </li>                                              
-        `
+    const ren = arr.map(({poster_path, id, title}, idx) =>{
+    let img_main_path = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" width="" alt="${title}">`    
+    if(!poster_path){
+        img_main_path = `<img class="img_of_card" src="./img/no_img02.png" width="" alt="No image">`
+    }
+                                                    return `
+                                                        <li class="card" id=${id}>
+                                                            ${img_main_path}
+                                                            <h1 class="card_title">${title}</h1>
+                                                        </li>                                              
+                                                        `
 }).join('');
 
  galleryRef.innerHTML = ren;
