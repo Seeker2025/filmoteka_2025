@@ -16,6 +16,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+a{
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -42,11 +46,22 @@ main:has(.back-link) {
 } */
 
 li.card{
-        width: 393px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 394px;
         height:634px;
         margin: 4px;
-        background-color: rgb(135, 134, 134);
-        border: 2px dashed gold;
+        background-color: rgb(254, 254, 254);
+        /* border: 2px dashed gold; */
+      }
+
+      img.img_of_card{
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 393px;
+        height: 574px;
+        border: 2px solid yellow;
+        
       }
 
 ul.gallery{
@@ -62,13 +77,17 @@ ul.gallery{
   border: 3px solid maroon;
 }   
 
-a{
-  cursor: pointer;
-}
 
-/* .iconclose{
-  width: 225px;
-  height: 225px;
-  border: 2px dashed red;
-} */
+
+h1.card_title{
+ 
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+/* or 120% */
+text-transform: uppercase;
+color: #000000;
+}
 

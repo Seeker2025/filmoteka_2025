@@ -1,3 +1,19 @@
+// import { modal_markup } from './js/modal_markup';
+// const isObj = {
+//     poster_path:1,
+//     title:1,
+//     popularity:1,
+//     vote_average:1,
+//     vote_count:1,
+//     overview:1,
+//     genre_ids:1,
+// };
+// console.log(modal_markup(isObj));
+
+
+
+
+
 import { 
             getAPIdata,
             trending,

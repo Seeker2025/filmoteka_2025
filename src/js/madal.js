@@ -1,3 +1,7 @@
+import { modal_markup } from './modal_markup.js'
+// export modal_markup;
+// console.log(modal_markup);
+
 const forModal = document.querySelector('div.for_modal');
 
 export function toShowModalWin(id){
@@ -7,86 +11,120 @@ export function toShowModalWin(id){
 //     console.log(id);
 
     const oneObj = mess.find((itm) => itm.id === id);
-//     console.log(oneObj);
+    console.log(oneObj);
     
     // console.log(mess.find(itm => itm.id === id));
     // mess.find(itm => itm.id === id);
     // return oneObj;
-     const{ poster_path, title, popularity, vote_average, vote_count, overview, genre_ids } = oneObj; 
-     const box = `
-        <div class="backdrop">
-                <div class = "modal">
-                        <div class="cross">
+//      const{ poster_path, title, popularity, vote_average, vote_count, overview, genre_ids } = oneObj; 
+//      const box = `
+//         <div class="backdrop">
+//                 <div class = "modal">
+//                         <div class="cross">
                         
-                <svg>
-                        <use href="./img/close.svg"></use>
-                </svg>        
+//                 <svg>
+//                         <use href="./img/close.svg"></use>
+//                 </svg>        
                         
-                        </div>
+//                         </div>
 
-                        <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="" alt="">
+//                         <img src="https://image.tmdb.org/t/p/w500${poster_path}" width="" alt="">
                         
-                        <table>
-                               <caption>${title}</caption>
-                                <tr>
-                                        <td>
-                                        <span>Vote / Votes</span>
-                                        </td>
+//                         <table>
+//                                <caption>${title}</caption>
+//                                 <tr>
+//                                         <td class="vote_box table_cell">
+//                                         <span>Vote / Votes</span>
+//                                         </td>
                                       
-                                        <td colspan="2">
-                                        ${vote_average} / ${vote_count}
-                                        </td>
+//                                         <td colspan="2">
+//                                         <span class="orange">${vote_average}</span> / ${vote_count}
+//                                         </td>
+
+                                       
 
                                         
-                                </tr>
+//                                 </tr>
 
-                                <tr>
-                                        <td>
-                                        <span>Popularity</span>
-                                        </td>
+//                                 <tr>
+//                                         <td class="table_cell">
+//                                         <span>Popularity</span>
+//                                         </td>
 
-                                        <td>
-                                        ${popularity}
-                                        </td>
-                                </tr>
+//                                         <td colspan="2">
+//                                         ${popularity}
+//                                         </td>
+                                       
+//                                 </tr>
 
-                                <tr>
-                                        <td>
-                                        <span>Original title</span>
-                                        </td>
+//                                 <tr>
+//                                         <td class="table_cell">
+//                                         <span>Original title</span>
+//                                         </td>
 
-                                        <td>
-                                        ${title}
-                                        </td>
+//                                         <td>
+//                                         ${title}
+//                                         </td>
 
-                                </tr>
+//                                 </tr>
 
-                                    <tr>
-                                        <td>
-                                        <span>Genre</span>
-                                        </td>
+//                                     <tr>
+//                                         <td class="table_cell">
+//                                         <span>Genre</span>
+//                                         </td>
 
-                                        <td>
-                                        ${genre_ids[0], genre_ids[1]}
-                                        </td>
+//                                         <td>
+//                                         ${genre_ids[0], genre_ids[1]}
+//                                         </td>
 
-                                </tr>
+//                                 </tr>
+
+//                                 <tr>
+//                                         <td colspan = "2"></td>
+//                                 </tr>
 
 
-                                <tr>
-                                        <td colspan = "2">ABAUT</td>
-                                </tr>
+//                                 <tr>
+//                                         <td colspan = "2">ABOUT</td>
+//                                 </tr>
 
-                                <tr>
-                                        <td colspan = "2">${overview}</td>
-                                </tr>
+//                                 <tr>
+//                                         <td colspan = "2">${overview}</td>
+//                                 </tr>
+
+//                                 <tr>
+//                                         <td colspan = "2"></td>
+//                                 </tr>
+
+//                                  <tr class="row__padding">
+//                                         <td>
+//                                         <button type="button" class="arange_button">ADD TO WATCHED</button>
+//                                         </td>
+//                                         <td>
+//                                         <button type="button" class="white_button">ADD TO QUEUE</button>
+//                                         </td>
+//                                 </tr>
                         
-                        </table>
+//                         </table>
                      
-                </div>
-        </div>   
-                `
-        forModal.innerHTML = box;
+//                 </div>
+//         </div>   
+//                 `
+        forModal.innerHTML = modal_markup(oneObj);
+
+        const orangeBtnAddToWatch = document.querySelector('button.arange_button');
+        const whiteBtnAddToQueue = document.querySelector('button.white_button');
+        // console.log(orangeBtnAddToWatch);
+        orangeBtnAddToWatch.addEventListener('click', (evt)=>{
+                console.log('orange!');
+                evt.stopPropagation();
+        })
+
+        whiteBtnAddToQueue.addEventListener('click', (evt)=>{
+                console.log('white');
+                evt.stopPropagation();
+        })
+
 
         const cross = document.querySelector('div.cross');
         // const modalRef = document.querySelector('div.modal');
@@ -116,6 +154,8 @@ export function toShowModalWin(id){
                         toCloseModal();
                   cross.removeEventListener('click', ()=>{});
                   window.removeEventListener('keydown', ()=>{});
+                  orangeBtnAddToWatch.removeEventListener('click', ()=>{});
+                  whiteBtnAddToQueue.removeEventListener('click', ()=>{});
         })
 }
 // const oneObj = mess.find(itm => itm.id === id);
