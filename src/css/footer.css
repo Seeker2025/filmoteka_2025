@@ -2,12 +2,21 @@ footer.footer {
   height: 49px;
   width: 100%;
   background-color: rgb(13, 13, 13);
+  
+}
 
+.position{
+  position: absolute;
+ 
 }
 .icon_box{
+  
   height: 25px;
   width: 25px;
   padding: 0;
+  position: relative;
+  top: 5px;
+  left: 5px;
   /* border: 3px dashed red; */
 }
 p.copyright{
@@ -19,7 +28,7 @@ p.copyright{
 
 .icon_js{
   border-radius: 5px;
-  transform: scale(0.6);
+  transform: scale(0.9);
 }
 
 .icon_scale{

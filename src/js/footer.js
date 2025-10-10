@@ -1,4 +1,4 @@
-const iconJS = document.querySelector('svg.icon_js')
+const iconJS = document.querySelector('.icon_js')
 
                 export function footerScaleJS(){
                 setInterval(()=>{
