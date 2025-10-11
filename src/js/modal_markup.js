@@ -1,3 +1,6 @@
+import closeIcon from '../img/close.png';
+// import noImg from '../img/no_img02.png';
+
 export function modal_markup({ 
                                         poster_path,
                                         title,
@@ -19,7 +22,7 @@ export function modal_markup({
                         <div class="cross">
                         
                                 
-                                        <img src="../img/close.png" title="close">
+                                        <img src=${closeIcon} title="close">
                                         
                         
                         </div>
