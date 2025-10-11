@@ -2,9 +2,9 @@ import{a as y,P as b}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
                 <div class = "modal">
                         <div class="cross">
                         
-                                <svg>
-                                        <use href="./img/close.svg"></use>
-                                </svg>        
+                                
+                                        <img src="./img/close.png" title="close">
+                                        
                         
                         </div>
 
