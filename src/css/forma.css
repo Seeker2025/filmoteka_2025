@@ -1,6 +1,6 @@
 button.magnifying_glass{
-    width: 35px;
-    height: 35px;
+    width: auto;
+    height: auto;
     border: 2px dashed red;
     
     background-color: rgba(165, 60, 60, 0);
@@ -11,9 +11,9 @@ button.magnifying_glass{
 
 .magnifying_glass .icon{
     margin-top: 5px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid rgb(234, 255, 0);
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgb(136, 137, 123);
     
        
 }
