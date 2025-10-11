@@ -18,9 +18,9 @@ export function modal_markup({
                 <div class = "modal">
                         <div class="cross">
                         
-                                <svg>
-                                        <use href="./img/close.svg"></use>
-                                </svg>        
+                                
+                                        <img src="./img/close.png" title="close">
+                                        
                         
                         </div>
 
