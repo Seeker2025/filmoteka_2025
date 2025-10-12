@@ -1,5 +1,5 @@
 import closeIcon from '../img/close.png';
-// import noImg from '../img/no_img02.png';
+import noImg from '../img/no_img02.png';
 
 export function modal_markup({ 
                                         poster_path,
@@ -11,9 +11,9 @@ export function modal_markup({
                                         genre_ids
  }) {
 
- let img_another_path = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
+ let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                                         if(!poster_path){
-                                                img_another_path = '<img src="../img/no_img02.png" >';
+                                                imgAnotherPath = `<img src=${noImg} >`;
                                                 
                                         }  
 
@@ -27,7 +27,7 @@ export function modal_markup({
                         
                         </div>
 
-                                ${img_another_path}
+                                ${imgAnotherPath}
                         <table>
                            <caption>${title}</caption>
                                 <tr>
