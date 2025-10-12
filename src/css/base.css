@@ -50,22 +50,33 @@ li.card{
         border-radius: 5px;
         width: 394px;
         height:634px;
-        margin: 4px;
+        margin: 12px;
         background-color: rgb(254, 254, 254);
         /* border: 2px dashed gold; */
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .06), 1px 4px 6px rgba(0, 0, 0, .16);
+        transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
       }
+      li.card:hover{
+        box-sizing: border-box;
+        /* border: 2px dashed gold; */
+        /* box-shadow: 0px 1px 1px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .06), 1px 4px 6px rgba(0, 0, 0, .16); */
+        transform: scale(1.01);
+      }
+
+
+
 
       img.img_of_card{
         box-sizing: border-box;
         border-radius: 5px;
-        width: 394px;
+        width: 395px;
         height: 574px;
       
         
       }
 
 ul.gallery{
-  max-width: 1230px;
+  max-width: 1260px;
   height: auto;
   margin: 0 auto;
 

@@ -1,5 +1,5 @@
-import closeIcon from '../img/close.png';
-import noImg from '../img/no_img02.png';
+import closeIcon        from '../img/close.png';
+import noImg            from '../img/no_img02.png';
 
 export function modal_markup({ 
                                         poster_path,
