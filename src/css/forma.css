@@ -1,31 +1,37 @@
 button.magnifying_glass{
     width: auto;
     height: auto;
-    border: 2px dashed red;
+    border: 0;
     
-    background-color: rgba(165, 60, 60, 0);
+    background-color: rgba(255, 255, 255, 0);
     position: relative;
-    top: -5px;
-    left: 282px;
+    top: -2px;
+    left: 296px;
 }
 
 .magnifying_glass .icon{
     margin-top: 5px;
     width: 26px;
     height: 26px;
-    border: 1px solid rgb(136, 137, 123);
-    
-       
+    /* border: 1px solid rgb(136, 137, 123); */
+ 
+}
+
+input::placeholder {
+  color: #bebebe; /* Sets the placeholder text color to red */
 }
 
 input.input_text{
+    /* margin-top: 12px; */
     border: none;
     height: 30px;
     width: 320px;
     border-bottom: 2px solid rgb(255, 204, 0);
-    background-color: rgb(85, 84, 84);
+    background-color: rgb(97, 97, 97);
     font-size: 1.1em;
     position: absolute;
+    padding-left: 10px;
+    color: rgb(116, 115, 115);
 }
 input.input_text:focus{
     

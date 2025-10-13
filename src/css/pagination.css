@@ -1,6 +1,6 @@
 
 #tui-pagination-container{
-    border: 2px dashed rgb(255, 247, 0);
+    /* border: 2px dashed rgb(255, 247, 0); */
     width: auto;
     display: flex;
     justify-content: center;
@@ -48,7 +48,8 @@
     display: inline-block;
     text-align: center;
     background: #2f313a;
-    border-color: #3a392f;
+    /* border-color: #ff0303; */
+    border: 1px solid gray;
    
 }
 
@@ -92,5 +93,5 @@
     display: inline-block;
     text-align: center;
     background: #2f313a;
-    border-color: #2f313a;
+    border: 1px solid gray;
 }

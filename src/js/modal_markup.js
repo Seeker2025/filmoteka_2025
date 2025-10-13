@@ -13,7 +13,7 @@ export function modal_markup({
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                                         if(!poster_path){
-                                                imgAnotherPath = `<img src=${noImg} >`;
+                                                imgAnotherPath = `<img src=${noImg} alt="No image">`;
                                                 
                                         }  
 
@@ -22,7 +22,7 @@ export function modal_markup({
                         <div class="cross">
                         
                                 
-                                        <img src=${closeIcon} title="close">
+                                        <img src=${closeIcon} alt="close">
                                         
                         
                         </div>

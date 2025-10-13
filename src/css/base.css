@@ -26,6 +26,14 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+
+  background-image: url('/img/deWater04.jpg');
+  /* background-size: contain; */
+  /* border: 5px dashed red; */
+  background-repeat: repeat;
+
+  
+  /* background-repeat: repeat-x, repeat-y; */
   /* padding: 15px; */
 }
 
@@ -51,16 +59,19 @@ li.card{
         width: 394px;
         height:634px;
         margin: 12px;
-        background-color: rgb(254, 254, 254);
+        background-color: rgb(160, 159, 159);
         /* border: 2px dashed gold; */
         box-shadow: 0px 1px 1px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .06), 1px 4px 6px rgba(0, 0, 0, .16);
         transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        border: 3px solid gray;
       }
       li.card:hover{
         box-sizing: border-box;
+        border: 3px solid gray; 
         /* border: 2px dashed gold; */
         /* box-shadow: 0px 1px 1px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .06), 1px 4px 6px rgba(0, 0, 0, .16); */
         transform: scale(1.01);
+        border: 0;
       }
 
 
@@ -69,7 +80,7 @@ li.card{
       img.img_of_card{
         box-sizing: border-box;
         border-radius: 5px;
-        width: 395px;
+        width: 394px;
         height: 574px;
       
         

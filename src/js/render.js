@@ -10,9 +10,9 @@ const body = document.querySelector('body');
 
 export function renderLayout(arr){
     const ren = arr.map(({poster_path, id, title}, idx) =>{
-    let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" width="" alt="${title}">`    
+    let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`    
     if(!poster_path){
-        imgMainPath = `<img class="img_of_card" src=${noImg} width="" alt="No image">`
+        imgMainPath = `<img class="img_of_card" src=${noImg} alt="No image">`
     }
                                                     return `
                                                         <li class="card" id=${id}>
