@@ -1,7 +1,8 @@
 footer.footer {
-  height: 49px;
+  height: auto;
   width: 100%;
-  background-color: rgb(13, 13, 13);
+  background-color: rgb(0, 0, 0);
+  border-top: 1px solid #fff;
   
 }
 
@@ -35,3 +36,49 @@ p.copyright{
   transform: scale(0.7);
 }
 
+@media only screen and (min-width: 320px) {
+ 
+  p.copyright{
+  /* background-color: rgb(102, 110, 110); */
+  line-height: 23px;
+  font-size: 0.9em;
+  color: rgb(140, 140, 140);
+}
+.icon_box{
+  
+  height: 29px;
+  width: 33px;
+  padding: 0;
+  position: relative;
+  top: 25px;
+  left: -32px;
+  /* border: 3px dashed red; */
+}
+.container_foo{
+  padding:  15px 22px;
+  box-sizing: border-box;
+}
+}
+
+@media only screen and (min-width: 768px) {
+     p.copyright{
+  /* background-color: rgb(102, 110, 110); */
+  line-height: 35px;
+  font-size: 1.1em;
+  /* color: rgb(140, 140, 140); */
+}
+.icon_box{
+  
+  height: 25px;
+  width: 29px;
+  padding: 0;
+  /* position: relative; */
+  top: 3px;
+  left: 8px;
+  /* border: 3px dashed red; */
+}
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1280px) {
+ 
+} 

@@ -1,23 +1,50 @@
 
-#tui-pagination-container{
-    /* border: 2px dashed rgb(255, 247, 0); */
-    width: auto;
+
+@media only screen and (min-width: 320px) {
+    #tui-pagination-container{
+    /* border: 2px dashed rgb(204, 0, 255); */
+    width: 300px;
+    height: 30px;
+   
+   
     display: flex;
     justify-content: center;
     flex-direction: row;
-    
-}
-
-.button_orange{
+ 
+}   
+.buttons_other{
     margin: 5px;
     box-sizing: border-box;
-    width: 36px;
-    height: 36px;
+    width: 27px;
+    height: 27px;
+
     color: #fff;
   
     border-radius: 5px;
     margin-left: 0;
-    padding: 9px 0;
+    padding: 4px 0;
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #2f313a;
+    /* border-color: #ff0303; */
+    border: 1px solid gray;
+
+}
+.button_orange{
+    margin: 5px;
+    box-sizing: border-box;
+    width: 27px;
+    height: 27px;
+    color: #fff;
+  
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 4px 0;
     font-size: 0.9em;
     font-style: normal;
     font-weight: 500;
@@ -29,41 +56,17 @@
     border-color: #ff6b08;
    
 }
-
-.buttons_other{
-    margin: 5px;
-    box-sizing: border-box;
-    width: 36px;
-    height: 36px;
-    color: #fff;
-  
-    border-radius: 5px;
-    margin-left: 0;
-    padding: 9px 0;
-    font-size: 0.9em;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    background: #2f313a;
-    /* border-color: #ff0303; */
-    border: 1px solid gray;
-   
-}
-
 .arrow{
    margin: 5px;
     box-sizing: border-box;
-    width: 36px;
-    height: 36px;
+    width: 27px;
+    height: 27px;
     color: #fff;
   
     border-radius: 5px;
     margin-left: 0;
-    padding: 9px 0;
-    font-size: 12px;
+    padding: 4px 0;
+    font-size: 10px;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
@@ -73,19 +76,18 @@
     background: #777777;
     border-color: #2f313a;
 }
-
 .dots{
    
     margin: 5px;
     box-sizing: border-box;
-    width: 36px;
-    height: 36px;
+    width: 27px;
+    height: 27px;
     color: #fff;
   
     border-radius: 5px;
     margin-left: 0;
-    padding: 9px 0;
-    font-size: 12px;
+    padding: 4px 0;
+    font-size: 0.5em;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
@@ -95,3 +97,73 @@
     background: #2f313a;
     border: 1px solid gray;
 }
+
+}
+@media only screen and (min-width: 768px) {
+  #tui-pagination-container{
+    /* border: 2px dashed rgb(255, 247, 0); */
+    padding: 6px 0;
+
+    width: 600px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+ 
+}   
+
+.button_orange{
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1em;
+    padding: 9px 0;
+}
+.arrow{
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    font-size: 0.9em;
+    padding: 9px 0;
+    
+}
+.dots{
+   
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    font-size: 1em;
+    padding: 9px 0;
+}
+.buttons_other{
+    
+    margin: 5px;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    padding: 9px 0;
+    
+    
+    
+   
+}
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 320px) {
+ 
+}   

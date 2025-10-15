@@ -9,7 +9,7 @@ const section = document.querySelector('.section');
 const body = document.querySelector('body');
 
 export function renderLayout(arr){
-    const ren = arr.map(({poster_path, id, title}, idx) =>{
+    const ren = arr.map(({poster_path, id, title, release_date}, idx) =>{
     let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`    
     if(!poster_path){
         imgMainPath = `<img class="img_of_card" src=${noImg} alt="No image">`
@@ -17,7 +17,10 @@ export function renderLayout(arr){
                                                     return `
                                                         <li class="card" id=${id}>
                                                             ${imgMainPath}
-                                                            <h1 class="card_title">${title}</h1>
+            <div class="card_box">
+                <h1 class="card_title">${title}</h1>
+                <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(release_date)||'No date'}</h2>
+            </div>
                                                         </li>                                              
                                                         `
 }).join('');

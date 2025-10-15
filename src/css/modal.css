@@ -1,22 +1,9 @@
-
-.backdrop{
-    width: 100vw;
-    height: 50vh;
-    background-color: rgba(33, 55, 113, 0.411);
-    position: fixed;
-    top: 00px;
-    left: 00px; 
-    /* z-index: 50; */
-    /* opacity: 0.8; */
-    /* visibility: hidden; */
-    /* border: 2px dashed red; */
-}
-
-div.modal{
+@media only screen and (min-width: 320px) {
+   div.modal{
     box-sizing: border-box;
-    width: 806px;
-    height: 558px;
-    padding: 37px 10px 37px 18px;
+    width: 280px;
+    height: 940px;
+    padding: 40px 10px 37px 16px;
     background-color: rgb(207, 207, 207);
     position: fixed;
     top: 00px;
@@ -24,38 +11,242 @@ div.modal{
     z-index: 999; 
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
 }
 
-/* li.visible .backdrop{
-    visibility: visible;
+.table_cell{
+    /* background-color: rgb(210, 154, 85); */
+    width:32%;
+    /* display: inline-block; */
+}
+.table_two{
+    width: auto;
+    /* background-color: rgb(190, 105, 1); */
+}
 
-} */
+
+
+img.img_modal{
+    width: 240px;
+    height: 357px;
+    border-radius: 5px;
+}
+caption{
+   
+    padding: 15px 0;
+    text-align: left;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+table{
+   
+    width: 250px;
+    height: auto;
+  
+}
+
+button.arange_button{
+    position: relative;
+    width: 110px;
+    height: 44px;
+    left: 0px;
+    top: -1px;
+    background-color: #FF6B01;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+button.white_button{
+    position: relative;
+    width: 110px;
+    height: 44px;
+    left: 7px;
+    top: -9px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
 
 div.cross{
     cursor: pointer;
     position: fixed;
-    top: 6px;
-    left: 771px; 
+    top: 4px;
+    left: 246px; 
     z-index: 999;
-   
-
 }
 
+
+        /*320*/}
+
+@media only screen and (min-width: 768px) {
+    div.modal{
+    width: 704px;
+    height: 552px;
+    flex-direction: row;
+    padding: 30px 57px;
+    }
+
+    img.img_modal{
+   
+    width: 264px;
+    height: 373px;
+    /* border-radius: 5px; */
+}
+
+table{
+   
+    width: 264px;
+    height: 370px;
+    margin-left: 55px;
+  
+}
+caption{
+   
+   padding: 0  0 14px;
+   
+}
+button.arange_button
+{
+    width: 125px;
+    height: 44px;
+    left: 0px;
+    top: -18px;
+}
+
+button.white_button{
+    width: 125px;
+    height: 44px;
+    left: 12px;
+    top: -18px;
+}
+div.cross{
+    cursor: pointer;
+    position: fixed;
+    top: 6px;
+    left: 668px; 
+    z-index: 999;
+}       
+/* .about{
+    background-color: #01fff2;
+    overflow-y: scroll;
+    height: 15px;
+} */
+ td.two_buttons{
+    position: absolute;
+    
+ }
+
+    /*768*/}
+
+@media only screen and (min-width: 1280px) {
+ div.modal{
+   
+    width: 806px;
+    height: 558px;
+    padding: 37px 10px 37px 18px;
+   
+    position: fixed;
+    top: 00px;
+    left: 00px; 
+    z-index: 999; 
+
+    /* display: flex; */
+    flex-direction: row;
+    
+}
+img.img_modal{
+    height: 478px;
+    width: 342px;
+    /* border-radius: 5px; */
+}
+.table_cell{
+    /* background-color: rgb(210, 154, 85); */
+    width: 150px;
+}
+caption{
+   
+    padding: 0 0 20px 0;
+    text-align: left;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 24px;
+
+    color: #000000;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 table{
     border: 1px solid;
     width: 400px;
     height: 100px;
     margin-left: 17px;
 }
-
-table th,
-table td {
- 
-  border: 1px solid #2a2a2a;
-  padding: 12px;
+button.arange_button{
+    width: 136px;
+    height: 44px;
+    left:-1px;
+    top: -6px;
+   
 }
+
+button.white_button{
+    width: 136px;
+    height: 44px;
+    left:6px;
+    top:-6px;
+}
+
+div.cross{
+    cursor: pointer;
+    position: fixed;
+    top: 6px;
+    left: 769px; 
+    z-index: 999;
+}
+
+        /*1280*/} 
+
+
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(33, 54, 113, 0.649);
+    position: fixed;
+    top: 00px;
+    left: 00px; 
+    /* z-index: 50; */
+    /* opacity: 0.8; */
+    /* visibility: hidden; */
+    /* border: 2px dashed red; */
+
+/*1280*/}
 
 table td{
     padding: 6px 0;
@@ -68,6 +259,7 @@ table td{
     align-items: center;
 
     color: #000000;
+    /* border: 1px solid #2a2a2a; */
 }
 
 table td span{
@@ -82,21 +274,7 @@ table td span{
 
 }
 
-caption{
-   
-    padding: 0 0 20px 0;
-    text-align: left;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 24px;
 
-    color: #000000;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
 
 span.orange{
 display: inline-block; 
@@ -123,60 +301,11 @@ color: #FFFFFF;
 background-color: #FF6B01;
 }
 
-.vote_box{
-    display: inline-block;
-}
 
-.table_cell{
-    /* background-color: rgb(210, 154, 85); */
-    width: 150px;
-}
 
-.arange_button{
-    width: 136px;
-    height: 44px;
-    left: 648px;
-    top: 553px;
-    background-color: #FF6B01;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 4px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    text-transform: uppercase;
-}
 
-.white_button{
-    width: 136px;
-    height: 44px;
-    left: 648px;
-    top: 553px;
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #000000;
-    border-radius: 4px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    text-transform: uppercase;
-}
 
-/* .row__padding{
-    padding-top: 15px;
-    background-color: aqua;
-} */
 
-img.img_modal{
-    height: 478px;
-    width: 342px;
-    border-radius: 5px;
 
-    /* background-image: url("../img/sprite.png"); */
-}
