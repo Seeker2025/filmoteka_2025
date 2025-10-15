@@ -34,7 +34,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         localStorage.setItem("mess", JSON.stringify(response.data.results));
         renderLayout(response.data.results);
 
-                                // console.log(response.data);
+                                console.log(response.data.results);
                                 const { results, total_results, total_pages }=response.data;
                                 // console.log(results, total_results, total_pages);
                                 let totalPages = total_pages;

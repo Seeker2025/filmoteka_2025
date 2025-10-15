@@ -28,16 +28,20 @@ export function modal_markup({
                         </div>
 
                                 ${imgAnotherPath}
-                        <table>
+                <table>
                            <caption>${title}</caption>
                                 <tr>
-                                        <td class="vote_box table_cell">
+                                        <td class="table_cell">
                                                 <span>Vote / Votes</span>
                                         </td>
+                                        
                                       
-                                        <td colspan="2">
+                                        <td class="table_two">
                                                 <span class="orange">${vote_average}</span> / ${vote_count}
                                         </td>
+
+                                        
+                                        
                                 </tr>
 
                                 <tr>
@@ -45,7 +49,7 @@ export function modal_markup({
                                                 <span>Popularity</span>
                                         </td>
 
-                                        <td colspan="2">
+                                        <td class="table_two">
                                                 ${popularity}
                                         </td>
                                        
@@ -56,7 +60,7 @@ export function modal_markup({
                                                 <span>Original title</span>
                                         </td>
 
-                                        <td>
+                                        <td class="table_two">
                                                 ${title}
                                         </td>
 
@@ -67,7 +71,7 @@ export function modal_markup({
                                                 <span>Genre</span>
                                         </td>
 
-                                        <td>
+                                        <td class="table_two">
                                                 ${genre_ids[0], genre_ids[1]}
                                         </td>
 
@@ -82,24 +86,22 @@ export function modal_markup({
                                 </tr>
 
                                 <tr>
-        <td colspan = "2">${overview||'Unfortunately, this film does not have a description yet.'}</td>
+        <td colspan = "2">
+        ${overview||'Unfortunately, this film does not have a description yet.'}
+        </td>
                                 </tr>
-
-                                <tr>
-                                        <td colspan = "2"></td>
-                                </tr>
-
-                                <tr class="row__padding">
-                                        <td>
+                      
+                       <tr>
+                                        <td colspan = "2" class="two_buttons">
                         <button type="button" class="arange_button">ADD TO WATCHED</button>
-                                        </td>
+                                        
 
-                                        <td>
+                                        
                         <button type="button" class="white_button">ADD TO QUEUE</button>
                                         </td>
-                                </tr>
-                        
-                        </table>
+                                </tr>  
+                </table>
+                
                      
                 </div>
         </div>   
