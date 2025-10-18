@@ -5,17 +5,14 @@ import    Pagination            from  'tui-pagination';
 import {  options,
           container
  }                              from './pagination.js';
+import { hideLoader } from './loader.js';
 
 
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 
-const title = 'Pulp fiction';
-const title02 = 'Batman';
-const BASE_mov=`https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`;
-const BASE_mov02 = 'https://api.themoviedb.org/3/search/movie';
 export const BASE_URL = 'https://api.themoviedb.org/3/';
 export const trending = 'trending/movie/day';
-export const search = 'search/movie'
+export const search   = 'search/movie';
 
 export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
     try{
@@ -32,6 +29,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
  })
                   .then(response => {
         localStorage.setItem("mess", JSON.stringify(response.data.results));
+                                if(response.data) hideLoader();
         renderLayout(response.data.results);
 
                                 console.log(response.data.results);

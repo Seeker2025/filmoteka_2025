@@ -4,9 +4,9 @@ import {
  }                              from './madal.js';
 import  noImg                   from '../img/no_img02.png';
 
-const galleryRef = document.querySelector('.gallery');
-const section = document.querySelector('.section');
-const body = document.querySelector('body');
+        const galleryRef = document.querySelector('.gallery');
+        const section = document.querySelector('.section');
+        const body = document.querySelector('body');
 
 export function renderLayout(arr){
     const ren = arr.map(({poster_path, id, title, release_date}, idx) =>{
@@ -17,10 +17,10 @@ export function renderLayout(arr){
                                                     return `
                                                         <li class="card" id=${id}>
                                                             ${imgMainPath}
-            <div class="card_box">
-                <h1 class="card_title">${title}</h1>
-                <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(release_date)||'No date'}</h2>
-            </div>
+    <div class="card_box">
+        <h1 class="card_title">${title}</h1>
+        <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(release_date)||'No date'}</h2>
+    </div>
                                                         </li>                                              
                                                         `
 }).join('');
