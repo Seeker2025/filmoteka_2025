@@ -73,7 +73,7 @@ main:has(.back-link) {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: stretch;
+  /* align-items: stretch; */
   
   flex-wrap: wrap;
   /* border: 3px solid maroon; */
@@ -131,7 +131,7 @@ div.card_box{
   max-width:710px;
   /* border: 3px solid rgb(54, 181, 250); */
   height: auto;
-  align-items: stretch;
+  /* align-items: stretch; */
   }
   li.card{
         box-sizing: border-box;
