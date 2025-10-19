@@ -1,0 +1,1 @@
+{"version":3,"file":"library.js","sources":["../src/js/library.js"],"sourcesContent":["console.log('library');\nimport { footerScaleJS }    from './footer';\n\nfooterScaleJS();"],"names":["footerScaleJS"],"mappings":"gDAAA,QAAQ,IAAI,SAAS,EAGrBA,EAAa"}

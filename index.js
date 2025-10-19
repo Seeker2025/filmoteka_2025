@@ -1,16 +1,16 @@
-import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const r of e.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function n(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function s(t){if(t.ep)return;t.ep=!0;const e=n(t);fetch(t.href,e)}})();const I="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB6SURBVHgB7ZVBCsAgDASXvmR/aH/cp1gPHkqRmjRqEDLgRdcMiBogCIKFnGVQkWfdY5bmMi7I5KzZDKOcj0I9uSY7TC7JDJd/rU2Tt+amwJdoibQl/y09sAmEw1ETDpeLcHhOhMMHQkVBTbaLpUkkGEnQt0WzNAgCMTf64Es4we8RJwAAAABJRU5ErkJggg==",g="/filmoteka_2025/assets/no_img02-C_eq9g-1.png";function w({poster_path:a,title:o,popularity:n,vote_average:s,vote_count:t,overview:e,genre_ids:r}){let i=`<img class="img_modal" src="https://image.tmdb.org/t/p/w500${a}" alt="${o}">`;return a||(i=`<img src=${g} alt="No image">`),`<div class="backdrop">
+import{f as h}from"./assets/footer-CsiMSsro.js";import{a as v,P as I}from"./assets/vendor-D0nrVKD2.js";const w="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB6SURBVHgB7ZVBCsAgDASXvmR/aH/cp1gPHkqRmjRqEDLgRdcMiBogCIKFnGVQkWfdY5bmMi7I5KzZDKOcj0I9uSY7TC7JDJd/rU2Tt+amwJdoibQl/y09sAmEw1ETDpeLcHhOhMMHQkVBTbaLpUkkGEnQt0WzNAgCMTf64Es4we8RJwAAAABJRU5ErkJggg==",g="/filmoteka_2025/assets/no_img02-C_eq9g-1.png";function _({poster_path:e,title:s,popularity:o,vote_average:a,vote_count:t,overview:i,genre_ids:l}){let c=`<img class="img_modal" src="https://image.tmdb.org/t/p/w500${e}" alt="${s}">`;return e||(c=`<img src=${g} alt="No image">`),`<div class="backdrop">
                 <div class = "modal">
                         <div class="cross">
                         
                                 
-                                        <img src=${I} alt="close">
+                                        <img src=${w} alt="close">
                                         
                         
                         </div>
 
-                                ${i}
+                                ${c}
                 <table>
-                           <caption>${o}</caption>
+                           <caption>${s}</caption>
                                 <tr>
                                         <td class="table_cell">
                                                 <span>Vote / Votes</span>
@@ -18,7 +18,7 @@ import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
                                         
                                       
                                         <td class="table_two">
-                                                <span class="orange">${s}</span> / ${t}
+                                                <span class="orange">${a}</span> / ${t}
                                         </td>
 
                                         
@@ -31,7 +31,7 @@ import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
                                         </td>
 
                                         <td class="table_two">
-                                                ${n}
+                                                ${o}
                                         </td>
                                        
                                 </tr>
@@ -42,7 +42,7 @@ import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
                                         </td>
 
                                         <td class="table_two">
-                                                ${o}
+                                                ${s}
                                         </td>
 
                                 </tr>
@@ -53,7 +53,7 @@ import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
                                         </td>
 
                                         <td class="table_two">
-                                                ${r[0],r[1]}
+                                                ${l[0],l[1]}
                                         </td>
 
                                 </tr>
@@ -68,7 +68,7 @@ import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
 
                                 <tr>
         <td colspan = "2">
-        ${e||"Unfortunately, this film does not have a description yet."}
+        ${i||"Unfortunately, this film does not have a description yet."}
         </td>
                                 </tr>
                       
@@ -86,13 +86,13 @@ import{a as h,P as v}from"./assets/vendor-D0nrVKD2.js";(function(){const o=docum
                      
                 </div>
         </div>   
-                `}const p=document.querySelector("div.for_modal");function _(a){const o=localStorage.getItem("mess"),s=JSON.parse(o).find(c=>c.id===a);console.log(s),p.innerHTML=w(s);const t=document.querySelector("button.arange_button"),e=document.querySelector("button.white_button");t.addEventListener("click",c=>{c.stopPropagation()}),e.addEventListener("click",c=>{c.stopPropagation()});const r=document.querySelector("div.cross"),i=document.querySelector(".backdrop");i.addEventListener("click",c=>{console.log(c.target),c.target===i&&(console.log("whoa!"),d())}),r.addEventListener("click",()=>{d(),r.removeEventListener("click",()=>{}),window.removeEventListener("keydown",()=>{}),t.removeEventListener("click",()=>{}),e.removeEventListener("click",()=>{})})}function d(){p.innerHTML=""}const f=document.querySelector(".gallery");document.querySelector(".section");document.querySelector("body");function E(a){const o=a.map(({poster_path:n,id:s,title:t,release_date:e},r)=>{let i=`<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${n}" alt="${t}">`;return n||(i=`<img class="img_of_card" src=${g} alt="No image">`),`
-                                                        <li class="card" id=${s}>
-                                                            ${i}
+                `}const p=document.querySelector("div.for_modal");function E(e){const s=localStorage.getItem("mess"),a=JSON.parse(s).find(n=>n.id===e);console.log(a),p.innerHTML=_(a);const t=document.querySelector("button.arange_button"),i=document.querySelector("button.white_button");t.addEventListener("click",n=>{n.stopPropagation()}),i.addEventListener("click",n=>{n.stopPropagation()});const l=document.querySelector("div.cross"),c=document.querySelector(".backdrop");c.addEventListener("click",n=>{console.log(n.target),n.target===c&&(console.log("whoa!"),d())}),l.addEventListener("click",()=>{d(),l.removeEventListener("click",()=>{}),window.removeEventListener("keydown",()=>{}),t.removeEventListener("click",()=>{}),i.removeEventListener("click",()=>{})})}function d(){p.innerHTML=""}const A=document.querySelector(".gallery");document.querySelector(".section");document.querySelector("body");function S(e){const s=e.map(({poster_path:o,id:a,title:t,release_date:i},l)=>{let c=`<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${o}" alt="${t}">`;return o||(c=`<img class="img_of_card" src=${g} alt="No image">`),`
+                                                        <li class="card" id=${a}>
+                                                            ${c}
     <div class="card_box">
         <h1 class="card_title">${t}</h1>
-        <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(e)||"No date"}</h2>
+        <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(i)||"No date"}</h2>
     </div>
                                                         </li>                                              
-                                                        `}).join("");f.innerHTML=o}f.addEventListener("click",L);function L(a){window.addEventListener("keydown",t=>{t.code==="Escape"&&d()});const n=a.target.closest(".card");console.log(n);const s=Number(n.getAttribute("id"));_(s)}const S=document.querySelector(".tui-pagination"),l={totalItems:20,itemsPerPage:10,visiblePages:5,page:1,centerAlign:!1,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child",template:{page:'<a href="#" class="buttons_other tui-page-btn">{{page}}</a>',currentPage:'<strong class="button_orange tui-page-btn tui-is-selected">{{page}}</strong>',moveButton:'<a href="#" class="arrow tui-page-btn tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></a>',disabledMoveButton:'<span class="arrow tui-page-btn tui-is-disabled tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></span>',moreButton:'<a href="#" class="dots tui-page-btn tui-{{type}}-is-ellip"><span class="tui-ico-ellip">. . .</span></a>'}},A=document.querySelector(".box");function N(){A.style.visibility="visible"}function M(){A.style.visibility="hidden"}const B="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08",b="https://api.themoviedb.org/3/",T="trending/movie/day",O="search/movie";async function u(a,o,n,s=1){try{await h.get(`${a}${o}`,{headers:{"Content-Type":"application/json",Authorization:B},params:{query:n,include_adult:!1,page:s}}).then(t=>{localStorage.setItem("mess",JSON.stringify(t.data.results)),t.data&&M(),E(t.data.results),console.log(t.data.results);const{results:e,total_results:r,total_pages:i}=t.data;let c=i;s<c&&(l.totalItems=c,l.page=s,new v(S,l).on("afterMove",function(y){s=y.page,u(a,o,n,s)}))})}catch(t){console.log(t)}}const $=document.querySelector(".icon_js");function C(){setInterval(()=>{$.classList.toggle("icon_scale")},800)}u(b,T);C();const m=document.querySelector(".js_form");m.addEventListener("submit",a=>{a.preventDefault();const o=a.currentTarget.elements.search.value;N(),u(b,O,o),m.reset()});
+                                                        `}).join("");A.innerHTML=s}A.addEventListener("click",L);function L(e){window.addEventListener("keydown",t=>{t.code==="Escape"&&d()});const o=e.target.closest(".card");console.log(o);const a=Number(o.getAttribute("id"));E(a)}const M=document.querySelector(".tui-pagination"),r={totalItems:20,itemsPerPage:10,visiblePages:5,page:1,centerAlign:!1,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child",template:{page:'<a href="#" class="buttons_other tui-page-btn">{{page}}</a>',currentPage:'<strong class="button_orange tui-page-btn tui-is-selected">{{page}}</strong>',moveButton:'<a href="#" class="arrow tui-page-btn tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></a>',disabledMoveButton:'<span class="arrow tui-page-btn tui-is-disabled tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></span>',moreButton:'<a href="#" class="dots tui-page-btn tui-{{type}}-is-ellip"><span class="tui-ico-ellip">. . .</span></a>'}},b=document.querySelector(".box");function B(){b.style.visibility="visible"}function N(){b.style.visibility="hidden"}const T="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08",y="https://api.themoviedb.org/3/",k="trending/movie/day",$="search/movie";async function u(e,s,o,a=1){try{await v.get(`${e}${s}`,{headers:{"Content-Type":"application/json",Authorization:T},params:{query:o,include_adult:!1,page:a}}).then(t=>{localStorage.setItem("mess",JSON.stringify(t.data.results)),t.data&&N(),S(t.data.results),console.log(t.data.results);const{results:i,total_results:l,total_pages:c}=t.data;let n=c;a<n&&(r.totalItems=n,r.page=a,new I(M,r).on("afterMove",function(f){a=f.page,u(e,s,o,a)}))})}catch(t){console.log(t)}}u(y,k);h();const m=document.querySelector(".js_form");m.addEventListener("submit",e=>{e.preventDefault();const s=e.currentTarget.elements.search.value;B(),u(y,$,s),m.reset()});
 //# sourceMappingURL=index.js.map
