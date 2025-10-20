@@ -1,23 +1,35 @@
 import { modal_markup } from './modal_markup.js'
 
 const forModal = document.querySelector('div.for_modal');
+let watchedArr = [];
 
-export function toShowModalWin(id){
+export function toShowModalWin(id, modalBox = forModal){
     const chaos = localStorage.getItem('mess');
     const mess = JSON.parse(chaos);
 
 
     const oneObj = mess.find((itm) => itm.id === id);
     console.log(oneObj);
+    console.log(oneObj.id);
     
 
-        forModal.innerHTML = modal_markup(oneObj);
+        modalBox.innerHTML = modal_markup(oneObj);
 
         const orangeBtnAddToWatch = document.querySelector('button.arange_button');
         const whiteBtnAddToQueue = document.querySelector('button.white_button');
         // console.log(orangeBtnAddToWatch);
         orangeBtnAddToWatch.addEventListener('click', (evt)=>{
-                // console.log('orange!');
+                console.log('orange!');
+                //  watchedArr.some(itm => itm.id === oneObj.id)
+               
+                if(watchedArr.some(itm => itm.id === oneObj.id)){
+                   watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);
+                        // console.log(arr01);
+                }else{
+                  watchedArr.push(oneObj);
+                     }
+                
+                localStorage.setItem("watched", JSON.stringify(watchedArr));
                 evt.stopPropagation();
         })
 
@@ -34,12 +46,12 @@ export function toShowModalWin(id){
                                 console.log(evt.target);
                                 if(evt.target === backdrop){
                                         console.log('whoa!');
-                                        toCloseModal();
+                                        toCloseModal(modalBox);
                                 }
                         });
 
                                         cross.addEventListener('click', ()=>{
-                                                        toCloseModal();
+                                                        toCloseModal(modalBox);
                                                 cross.removeEventListener('click', ()=>{});
                                                 window.removeEventListener('keydown', ()=>{});
                                                 orangeBtnAddToWatch.removeEventListener('click', ()=>{});
@@ -48,7 +60,7 @@ export function toShowModalWin(id){
 }
 
 
-export function toCloseModal(){
-        forModal.innerHTML ='';
+export function toCloseModal(modalBox){
+        modalBox.innerHTML ='';
 }
 
