@@ -1,4 +1,6 @@
-import { modal_markup } from './modal_markup.js'
+import { modal_markup } from './modal_markup.js';
+import { ulLibrary, forModalLib } from '../library.js';
+import { renderLayout} from './render';
 
 const forModal = document.querySelector('div.for_modal');
 let watchedArr = [];
@@ -25,11 +27,17 @@ export function toShowModalWin(id, modalBox = forModal){
                 if(watchedArr.some(itm => itm.id === oneObj.id)){
                    watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);
                         // console.log(arr01);
+                //    localStorage.setItem("watched", JSON.stringify(watchedArr));
+                //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
+                //    renderLayout(kitWatched, ulLibrary, forModalLib);     
                 }else{
-                  watchedArr.push(oneObj);
+                   watchedArr.push(oneObj);
+                   localStorage.setItem("watched", JSON.stringify(watchedArr));
+                   let kitWatched = JSON.parse(localStorage.getItem("watched"));
+                //    renderLayout(kitWatched, ulLibrary, forModalLib);  
                      }
                 
-                localStorage.setItem("watched", JSON.stringify(watchedArr));
+               
                 evt.stopPropagation();
         })
 
