@@ -12,7 +12,7 @@ export const galleryRef = document.querySelector('.gallery');
         // const section = document.querySelector('.section');
         // const body = document.querySelector('body');
 
-export function renderLayout(arr, ulContainer=galleryRef, modalBox){
+export function renderLayout(arr, ulContainer, modalBox){
     const ren = arr.map(({poster_path, id, title, release_date}, idx) =>{
     let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`    
     if(!poster_path){

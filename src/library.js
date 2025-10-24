@@ -5,8 +5,12 @@ import { renderLayout } from './js/render';
 
 export const ulLibrary = document.querySelector('.ul_library');
 export const forModalLib = document.querySelector('.for_modal_lib');
-// console.log(forModalLib);
-// console.log(ulLibrary);
+console.log(forModalLib);
+console.log(ulLibrary);
+
+////// Class
+import { toRender } from './js/class';
+console.log(toRender);
 
 
 

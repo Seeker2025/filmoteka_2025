@@ -2,10 +2,10 @@ import { modal_markup } from './modal_markup.js';
 import { ulLibrary, forModalLib } from '../library.js';
 import { renderLayout} from './render';
 
-const forModal = document.querySelector('div.for_modal');
+// const forModal = document.querySelector('div.for_modal');
 let watchedArr = [];
 
-export function toShowModalWin(id, modalBox = forModal){
+export function toShowModalWin(id, modalBox){
     const chaos = localStorage.getItem('mess');
     const mess = JSON.parse(chaos);
 
