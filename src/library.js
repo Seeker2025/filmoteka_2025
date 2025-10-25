@@ -9,15 +9,17 @@ console.log(forModalLib);
 console.log(ulLibrary);
 
 ////// Class
-import { toRender } from './js/class';
-console.log(toRender);
+import { ToRender } from './js/class';
+// console.log(ToRender);
 
 
 
 const kitWatched = JSON.parse(localStorage.getItem("watched"));
 
 console.log(kitWatched);
+const toRender = new ToRender({arr: kitWatched,  ulContainer: ulLibrary, modalBox: forModalLib});
+toRender.renderLayout();
 //  renderLayout(kitWatched, ulLibrary, forModalLib);
 
-footerScaleJS();
+// footerScaleJS();
 

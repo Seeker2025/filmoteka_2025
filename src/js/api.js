@@ -1,13 +1,17 @@
 
 import    axios                 from 'axios';
-import {  renderLayout, galleryRef  }        from './render';
+// import {  renderLayout, galleryRef  }        from './render';
 import    Pagination            from  'tui-pagination'; 
 import {  options,
           container
  }                              from './pagination.js';
 import { hideLoader }           from './loader.js';
 
+import { ToRender } from './class.js';
+
+
 const forModal = document.querySelector('.for_modal');
+const galleryRef = document.querySelector('.gallery');
 // console.log(forModal);
 
 
@@ -32,10 +36,16 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
  })
                   .then(response => {
         localStorage.setItem("mess", JSON.stringify(response.data.results));
+        
                                 if(response.data) hideLoader();
-        renderLayout(response.data.results, galleryRef, forModal);
-
                                 console.log(response.data.results);
+        // renderLayout(response.data.results, galleryRef, forModal);
+        const toRenderInIndex = new ToRender({
+                                    arr: response.data.results,
+                                    ulContainer: galleryRef,
+                                    modalBox: forModal
+                                    });
+                                toRenderInIndex.renderLayout();
                                 const { results, total_results, total_pages }=response.data;
                                 // console.log(results, total_results, total_pages);
                                 let totalPages = total_pages;

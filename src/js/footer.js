@@ -1,7 +1,9 @@
-const iconJS = document.querySelector('.icon_js')
-
+const iconYellowJS = document.querySelector('.icon_yellow_js')
+// console.log(iconYellowJS);
                 export function footerScaleJS(){
                 setInterval(()=>{
-                iconJS.classList.toggle('icon_scale');
+                iconYellowJS.classList.toggle('icon_scale');
                 }, 800);
                 }
+
+                footerScaleJS();

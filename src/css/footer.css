@@ -27,13 +27,14 @@ p.copyright{
   color: rgb(140, 140, 140);
 }
 
-.icon_js{
+.icon_yellow_js{
   border-radius: 5px;
   transform: scale(0.9);
 }
 
 .icon_scale{
   transform: scale(0.7);
+  /* border: 2px solid rgb(255, 1, 1); */
 }
 
 @media only screen and (min-width: 320px) {
@@ -79,6 +80,4 @@ p.copyright{
 }
 }
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1280px) {
- 
-} 
+

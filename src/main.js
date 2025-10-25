@@ -13,7 +13,7 @@ import { showLoader }       from './js/loader';
 
 // showLoader();
 getAPIdata( BASE_URL, trending);
-footerScaleJS();
+// footerScaleJS();
 
                             const form = document.querySelector('.js_form');
                             form.addEventListener('submit', (evt)=>{
