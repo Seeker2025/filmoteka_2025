@@ -8,6 +8,8 @@ import {  options,
 import { hideLoader }           from './loader.js';
 
 import { ToRender } from './class.js';
+import  noImg  from '../img/no_img02.png';
+// import { toShowModalWin } from './madal.js';
 
 
 const forModal = document.querySelector('.for_modal');
@@ -32,6 +34,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                              query: whatLookingFor,
                              include_adult: false,
                              page: onePage,
+                            
                             }
  })
                   .then(response => {
@@ -43,9 +46,15 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         const toRenderInIndex = new ToRender({
                                     arr: response.data.results,
                                     ulContainer: galleryRef,
-                                    modalBox: forModal
+                                    modalBox: forModal,
+                                    noImg: noImg,
+                                   
+                                 
+                                   
                                     });
-                                toRenderInIndex.renderLayout();
+                                toRenderInIndex.renderLayout( );
+                                // console.log( toRenderInIndex.modalBox);
+                                
                                 const { results, total_results, total_pages }=response.data;
                                 // console.log(results, total_results, total_pages);
                                 let totalPages = total_pages;

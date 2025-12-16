@@ -17,8 +17,8 @@ import { ToRender } from './js/class';
 const kitWatched = JSON.parse(localStorage.getItem("watched"));
 
 console.log(kitWatched);
-const toRender = new ToRender({arr: kitWatched,  ulContainer: ulLibrary, modalBox: forModalLib});
-toRender.renderLayout();
+//const toRender = new ToRender({arr: kitWatched,  ulContainer: ulLibrary, modalBox: forModalLib});
+//toRender.renderLayout();
 //  renderLayout(kitWatched, ulLibrary, forModalLib);
 
 // footerScaleJS();
