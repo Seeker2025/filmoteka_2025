@@ -1,13 +1,20 @@
-// import { toShowModalWin } from "./madal";
+import { toShowModalWin } from "./madal";
+// import { galleryRef } from "./api";
+// console.log(galleryRef);
+
+const forModal = document.querySelector('.for_modal');
+const ulContainer = document.querySelector('.gallery');
+// const ulContainer = galleryRef;
+const modalBox = forModal;
+// console.log(galleryRef);
+console.log(forModal);
+
 
 export class ToRender{
-    constructor({arr, ulContainer, modalBox, noImg}){
+    constructor({arr, noImg}){
         this.arr = arr;
         this.ulContainer = ulContainer;
-        this.modalBox = modalBox;
         this.noImg = noImg;
-             
-
     }
     // renderLayout(arr, ulContainer, modalBox)
     renderLayout(){
@@ -28,29 +35,24 @@ export class ToRender{
     }).join('');
     
         this.ulContainer.innerHTML = ren;
-    
-        this.ulContainer.addEventListener('click', modalShow);
-                                        function modalShow(evt){
-                                            window.addEventListener('keydown', (evt)=>{
-                                            if(evt.code === 'Escape'){
-                                            toCloseModal(this.modalBox);
-                                            }
-                                        });
-       const nestedElem = evt.target;
-       const upperLi = nestedElem.closest('.card');
-       console.log(upperLi);
-       const selectIDbyClick = Number(upperLi.getAttribute('id'));
-    //    console.log(this.modalBox);
-       
-    //    toShowModalWin(selectIDbyClick, this.modalBox);
-    console.log('a');
-    function toSum(b, c){
-      let a =   b + c;
-      console.log(a);
-      
-
-    }
-    toSum(1, 2);
-    }
     }
 }
+
+//============================================================================
+
+
+        ulContainer.addEventListener('click', modalShow);
+                                         function modalShow(evt){
+                                         window.addEventListener('keydown', (evt)=>{
+                                         if(evt.code === 'Escape'){
+                                         toCloseModal(modalBox);
+                                            }
+                                         });
+        const nestedElem = evt.target;
+        const upperLi = nestedElem.closest('.card');
+        console.log(upperLi);
+        const selectIDbyClick = Number(upperLi.getAttribute('id'));
+    
+        toShowModalWin(selectIDbyClick, modalBox);
+    
+     }
