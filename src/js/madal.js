@@ -1,9 +1,10 @@
 import { modal_markup } from './modal_markup.js';
 import { ulLibrary, forModalLib } from '../library.js';
+import { toWatch, toQueue } from './toFun';
 // import { renderLayout} from './render';
 
 // const forModal = document.querySelector('div.for_modal');
-let watchedArr = [];
+// let watchedArr = [];
 
 export function toShowModalWin(id, modalBox){
     const chaos = localStorage.getItem('mess');
@@ -17,32 +18,33 @@ export function toShowModalWin(id, modalBox){
 
         modalBox.innerHTML = modal_markup(oneObj);
 
-        const orangeBtnAddToWatch = document.querySelector('button.arange_button');
-        const whiteBtnAddToQueue = document.querySelector('button.white_button');
+        const btnAddToWatch = document.querySelector('button.arange_button');
+        const btnAddToQueue = document.querySelector('button.white_button');
         // console.log(orangeBtnAddToWatch);
-        orangeBtnAddToWatch.addEventListener('click', (evt)=>{
-                console.log('orange!');
+        btnAddToWatch.addEventListener('click', (evt)=>{
+                // console.log('orange!');
                 //  watchedArr.some(itm => itm.id === oneObj.id)
+                toWatch(oneObj);
                
-                if(watchedArr.some(itm => itm.id === oneObj.id)){
-                   watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);
+                //if(watchedArr.some(itm => itm.id === oneObj.id)){
+                //   watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);
                         // console.log(arr01);
                 //    localStorage.setItem("watched", JSON.stringify(watchedArr));
                 //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
                 //    renderLayout(kitWatched, ulLibrary, forModalLib);     
-                }else{
-                   watchedArr.push(oneObj);
-                   localStorage.setItem("watched", JSON.stringify(watchedArr));
-                   let kitWatched = JSON.parse(localStorage.getItem("watched"));
+                // }else{
+                //    watchedArr.push(oneObj);
+                //    localStorage.setItem("watched", JSON.stringify(watchedArr));
+                //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
                 //    renderLayout(kitWatched, ulLibrary, forModalLib);  
-                     }
+                //     }
                 
                
                 evt.stopPropagation();
         })
 
-        whiteBtnAddToQueue.addEventListener('click', (evt)=>{
-                // console.log('white');
+        btnAddToQueue.addEventListener('click', (evt)=>{
+                toQueue(oneObj);
                 evt.stopPropagation();
         })
 
@@ -62,8 +64,8 @@ export function toShowModalWin(id, modalBox){
                                                         toCloseModal(modalBox);
                                                 cross.removeEventListener('click', ()=>{});
                                                 window.removeEventListener('keydown', ()=>{});
-                                                orangeBtnAddToWatch.removeEventListener('click', ()=>{});
-                                                whiteBtnAddToQueue.removeEventListener('click', ()=>{});
+                                                btnAddToWatch.removeEventListener('click', ()=>{});
+                                                btnAddToQueue.removeEventListener('click', ()=>{});
                                         })
 }
 

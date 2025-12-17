@@ -1,6 +1,6 @@
 console.log('library');
 import { footerScaleJS }    from './js/footer';
-import { renderLayout } from './js/render';
+// import { renderLayout } from './js/render';
 // console.log(renderLayout);
 
 export const ulLibrary = document.querySelector('.ul_library');
@@ -9,9 +9,8 @@ console.log(forModalLib);
 console.log(ulLibrary);
 
 ////// Class
-import { ToRender } from './js/class';
+// import { ToRender } from './js/class';
 // console.log(ToRender);
-
 
 
 const kitWatched = JSON.parse(localStorage.getItem("watched"));

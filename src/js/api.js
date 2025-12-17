@@ -12,9 +12,9 @@ import  noImg  from '../img/no_img02.png';
 // import { toShowModalWin } from './madal.js';
 
 
-const forModal = document.querySelector('.for_modal');
-const galleryRef = document.querySelector('.gallery');
-// console.log(forModal);
+// const forModal = document.querySelector('.for_modal');
+// const galleryRef = document.querySelector('.gallery');
+// console.log(galleryRef);
 
 
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
@@ -45,18 +45,14 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         // renderLayout(response.data.results, galleryRef, forModal);
         const toRenderInIndex = new ToRender({
                                     arr: response.data.results,
-                                    ulContainer: galleryRef,
-                                    modalBox: forModal,
+                                   
                                     noImg: noImg,
                                    
                                  
                                    
                                     });
                                 toRenderInIndex.renderLayout( );
-                                // console.log( toRenderInIndex.modalBox);
-                                
                                 const { results, total_results, total_pages }=response.data;
-                                // console.log(results, total_results, total_pages);
                                 let totalPages = total_pages;
     if (onePage < totalPages) {
         options.totalItems = totalPages;

@@ -21,9 +21,8 @@
     .box{
         margin: 0 auto;
         padding: 0px;
-        /* border: 1px dashed red; */
         margin: 10px auto;
         width: 35px;
-        height: 35px;
+        height: 1px;
         /* visibility: visible; */
      }
