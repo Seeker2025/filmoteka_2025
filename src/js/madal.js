@@ -20,30 +20,15 @@ export function toShowModalWin(id, modalBox){
 
         const btnAddToWatch = document.querySelector('button.arange_button');
         const btnAddToQueue = document.querySelector('button.white_button');
-        // console.log(orangeBtnAddToWatch);
+      
         btnAddToWatch.addEventListener('click', (evt)=>{
-                // console.log('orange!');
-                //  watchedArr.some(itm => itm.id === oneObj.id)
+               
                 toWatch(oneObj);
-               
-                //if(watchedArr.some(itm => itm.id === oneObj.id)){
-                //   watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);
-                        // console.log(arr01);
-                //    localStorage.setItem("watched", JSON.stringify(watchedArr));
-                //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
-                //    renderLayout(kitWatched, ulLibrary, forModalLib);     
-                // }else{
-                //    watchedArr.push(oneObj);
-                //    localStorage.setItem("watched", JSON.stringify(watchedArr));
-                //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
-                //    renderLayout(kitWatched, ulLibrary, forModalLib);  
-                //     }
-                
-               
                 evt.stopPropagation();
         })
 
         btnAddToQueue.addEventListener('click', (evt)=>{
+
                 toQueue(oneObj);
                 evt.stopPropagation();
         })
@@ -60,13 +45,13 @@ export function toShowModalWin(id, modalBox){
                                 }
                         });
 
-                                        cross.addEventListener('click', ()=>{
-                                                        toCloseModal(modalBox);
-                                                cross.removeEventListener('click', ()=>{});
-                                                window.removeEventListener('keydown', ()=>{});
-                                                btnAddToWatch.removeEventListener('click', ()=>{});
-                                                btnAddToQueue.removeEventListener('click', ()=>{});
-                                        })
+                                cross.addEventListener('click', ()=>{
+                                        toCloseModal(modalBox);
+                                cross.removeEventListener('click', ()=>{});
+                                window.removeEventListener('keydown', ()=>{});
+                                btnAddToWatch.removeEventListener('click', ()=>{});
+                                btnAddToQueue.removeEventListener('click', ()=>{});
+                                })
 }
 
 

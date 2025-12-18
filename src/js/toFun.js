@@ -1,20 +1,20 @@
 let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
+let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
 
 export function toWatch(oneObj){
-     console.log('orange!');
-                    //  watchedArr.some(itm => itm.id === oneObj.id)
+                        //  watchedArr.some(itm => itm.id === oneObj.id)
                    
                    
                     if(watchedArr.some(itm => itm.id === oneObj.id)){
                        watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);
                             // console.log(arr01);
-                    //    localStorage.setItem("watched", JSON.stringify(watchedArr));
+                       localStorage.setItem('watched', JSON.stringify(watchedArr));
                     //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
                     //    renderLayout(kitWatched, ulLibrary, forModalLib);     
                     }else{
                        watchedArr.push(oneObj);
                        localStorage.setItem('watched', JSON.stringify(watchedArr));
-                       let kitWatched = JSON.parse(localStorage.getItem('watched'));
+                    //    let kitWatched = JSON.parse(localStorage.getItem('watched'));
                     //    renderLayout(kitWatched, ulLibrary, forModalLib);  
                          }
                     
@@ -22,5 +22,14 @@ export function toWatch(oneObj){
 }
 
 export function toQueue(oneObj){
-     console.log('white');
+                    
+                     if(queuedArr.some(itm => itm.id === oneObj.id)){
+                           queuedArr = queuedArr.filter(itm=>itm.id!==oneObj.id);
+                           localStorage.setItem('queued', JSON.stringify(queuedArr));
+                     }else{
+                          queuedArr.push(oneObj);
+                          localStorage.setItem('queued', JSON.stringify(queuedArr));
+
+                      }
+                      
 }

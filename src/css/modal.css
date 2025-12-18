@@ -89,6 +89,7 @@ button.white_button:hover,
 button.arange_button:hover{
 
     background-color: #FF6B01;
+    color: #fff;
 }
 
 div.cross{

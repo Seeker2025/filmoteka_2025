@@ -1,20 +1,22 @@
-
+ 
 import    axios                 from 'axios';
-// import {  renderLayout, galleryRef  }        from './render';
+import {  renderLayout  }        from './render';
 import    Pagination            from  'tui-pagination'; 
 import {  options,
           container
  }                              from './pagination.js';
 import { hideLoader }           from './loader.js';
 
-import { ToRender } from './class.js';
+// import { ToRender } from './class.js';
 import  noImg  from '../img/no_img02.png';
-// import { toShowModalWin } from './madal.js';
+ import { toShowModalWin } from './madal.js';
 
 
-// const forModal = document.querySelector('.for_modal');
-// const galleryRef = document.querySelector('.gallery');
-// console.log(galleryRef);
+ const forModal = document.querySelector('.for_modal');
+ const galleryRef = document.querySelector('.gallery');
+ console.log(galleryRef);
+ console.log(forModal);
+ console.log(renderLayout);
 
 
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
@@ -42,16 +44,12 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         
                                 if(response.data) hideLoader();
                                 console.log(response.data.results);
-        // renderLayout(response.data.results, galleryRef, forModal);
-        const toRenderInIndex = new ToRender({
-                                    arr: response.data.results,
-                                   
-                                    noImg: noImg,
-                                   
-                                 
-                                   
-                                    });
-                                toRenderInIndex.renderLayout( );
+        renderLayout(response.data.results, galleryRef, forModal);
+        //const toRenderInIndex = new ToRender({
+        //                            arr: response.data.results,
+         //                             noImg: noImg,
+       //                                    });
+        //                        toRenderInIndex.renderLayout( );
                                 const { results, total_results, total_pages }=response.data;
                                 let totalPages = total_pages;
     if (onePage < totalPages) {

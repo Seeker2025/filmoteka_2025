@@ -10,7 +10,7 @@ const modalBox = forModal;
 console.log(forModal);
 
 
-export class ToRender{
+ class ToRender{
     constructor({arr, noImg}){
         this.arr = arr;
         this.ulContainer = ulContainer;
@@ -40,6 +40,7 @@ export class ToRender{
 
 //============================================================================
 
+export { ToRender }
 
         ulContainer.addEventListener('click', modalShow);
                                          function modalShow(evt){
