@@ -11,8 +11,8 @@ const render02 = renderLayout;
 console.log(render02);
 import  noImg  from './img/no_img02.png';
 
-export const ulLibrary = document.querySelector('.ul_library');
-export const forModalLib = document.querySelector('.for_modal_lib');
+const ulLibrary = document.querySelector('ul.ul_library');
+const forModalLib = document.querySelector('.for_modal_lib');
 console.log(forModalLib);
 console.log(ulLibrary);
 
@@ -65,4 +65,21 @@ function renderLayoutLib(arr, ulContainer, modalBox){
  }
 
 
-//  renderLayoutLib(kitWatched, ulLibrary, forModalLib);
+renderLayoutLib(kitWatched, ulLibrary, forModalLib);
+
+// const arrInLib = kitWatched.map(({id, poster_path, title, release_date})=>{
+//     let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`
+//      return `
+//                                                          <li class="card" id=${id}>
+//                                                              ${imgMainPath}
+//      <div class="card_box">
+//          <h1 class="card_title">${title}</h1>
+//          <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(release_date)||'No date'}</h2>
+//      </div>
+//                                                          </li>                                              
+//                                                          `
+    
+// });
+
+// ulLibrary.innerHTML = arrInLib;
+// ulLibrary.insertAdjacentElement('beforeend', arrInLib);
