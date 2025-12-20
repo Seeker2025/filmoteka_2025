@@ -3,7 +3,7 @@ const iconYellowJS = document.querySelector('.icon_yellow_js')
                 export function footerScaleJS(){
                 setInterval(()=>{
                 iconYellowJS.classList.toggle('icon_scale');
-                }, 800);
+                }, 700);
                 }
 
                 footerScaleJS();

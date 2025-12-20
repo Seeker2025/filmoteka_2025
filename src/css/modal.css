@@ -17,6 +17,12 @@
     
 }
 
+ div.modal img[alt="No image"]{
+    width: 264px;
+    height: 373px;
+    
+ }
+
 .table_cell{
     /* background-color: rgb(210, 154, 85); */
     width:32%;

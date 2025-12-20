@@ -12,10 +12,9 @@ export function modal_markup({
  }) {
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
-                                        if(!poster_path){
-                                                imgAnotherPath = `<img src=${noImg} alt="No image">`;
-                                                
-                                        }  
+                        if(!poster_path){
+                        imgAnotherPath = `<img src=${noImg} alt="No image">`;
+                        }  
 
  return `<div class="backdrop">
                 <div class = "modal">

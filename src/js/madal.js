@@ -7,13 +7,15 @@ import { toWatch, toQueue } from './toFun';
 // let watchedArr = [];
 
 export function toShowModalWin(id, modalBox){
-    const chaos = localStorage.getItem('mess');
-    const mess = JSON.parse(chaos);
-
-
-    const oneObj = mess.find((itm) => itm.id === id);
+        // let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
+    const arrAll = JSON.parse(localStorage.getItem('mess'));
+        console.log(arrAll);
+        console.log(id);
+        
+    const oneObj = arrAll.find(itm => itm.id === id);
+     
     console.log(oneObj);
-    console.log(oneObj.id);
+//     console.log(oneObj.id);
     
 
         modalBox.innerHTML = modal_markup(oneObj);
