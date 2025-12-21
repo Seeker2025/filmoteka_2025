@@ -1,0 +1,25 @@
+{
+  "hash": "2439c926",
+  "configHash": "2578d736",
+  "lockfileHash": "392999e4",
+  "browserHash": "e9befff2",
+  "optimized": {
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "ddd17bbc",
+      "needsInterop": false
+    },
+    "tui-pagination": {
+      "src": "../../node_modules/tui-pagination/dist/tui-pagination.js",
+      "file": "tui-pagination.js",
+      "fileHash": "664cdb59",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-HKJ2B2AA": {
+      "file": "chunk-HKJ2B2AA.js"
+    }
+  }
+}

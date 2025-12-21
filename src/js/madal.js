@@ -8,7 +8,7 @@ import { toWatch, toQueue } from './toFun';
 
 export function toShowModalWin(id, modalBox){
         // let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
-    const arrAll = JSON.parse(localStorage.getItem('mess'));
+    const arrAll = JSON.parse(localStorage.getItem('watched'));
         console.log(arrAll);
         console.log(id);
         

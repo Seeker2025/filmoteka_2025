@@ -120,7 +120,7 @@
    .button_right{
   display: flex;
   justify-content: end;
-  width: 297px;
+  width: 144px;
  }
     .img_padding_left{
       visibility: hidden;
@@ -137,8 +137,8 @@
 
 form.form{
  position: relative;
- top: 74px;
- left: -40px;
+ top: 87px;
+ left: -73px;
 }
 }
 
@@ -155,7 +155,7 @@ form.form{
 }
 form.form{
  
- top: 74px;
+ top: 66px;
  left: -11px;
 }
 }
