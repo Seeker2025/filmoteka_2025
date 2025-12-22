@@ -1,0 +1,236 @@
+
+
+.header {
+  box-sizing: border-box;
+  padding: 0px 0;
+  background-color: rgb(89, 4, 59);
+  min-height: 215px;
+  width: 100%;
+}
+
+.container_head{
+  box-sizing: border-box;
+  height: 120px;
+  padding: 35px 25px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.button_right ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.three_containers_lib{
+  /* border: 3px dashed rgb(162, 255, 23); */
+  min-height: 50px;
+  width: 30%;
+}
+
+
+
+.logo_box{
+  /* border: 1px dashed gold; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.two_href{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  /* display: flex; */
+  /* align-items: center; */
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.three_containers_lib a.home{
+  /* border-bottom: 3px solid #FF001B; */
+  margin-right: 70px;
+}
+
+.three_containers_lib a.home::after{
+  /* border-bottom: 3px solid #FF001B; */
+    /* margin-right: 27px; */
+    position: relative;
+    top: 2px;
+    left: -2px;
+    display: block;
+    content: "";
+    width: 37px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #FF001B;
+}
+
+.three_containers_lib a.library{
+  /* border-bottom: 3px solid #FF001B; */
+    /* margin-right: 27px; */
+   
+   
+    padding: 0 0 0 36px;
+}
+
+.three_containers_lib a.library::after{
+ 
+   position: relative;
+    top: 2px;
+    left: 34px;
+    display: block;
+    content: "";
+    width: 69px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #FF001B;
+    
+}
+
+div.form_lib{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+a.button_lib{
+    box-sizing: border-box;
+    width: 147px;
+    height: 44px;
+    background-color: #ff001900;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    color: #fff;
+    padding: 13px 0;
+    text-align: center;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    transition-duration: 250ms;
+    transition-timing-function:  cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.button_lib:hover{
+    background-color: #FF6B01;
+    color: #fff;
+}
+
+
+
+.background{
+    background-image: url("/img/back05.png");
+    background-repeat: no-repeat;
+    /* background-size: 30%; */
+    /* background-position: cover; */
+
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+ img.img_padding_left{
+  padding-left: 20px;
+ }
+
+ @media only screen and (min-width: 320px) {
+    a.button_lib{
+    width: 129px;
+    height: 44px;
+    }
+
+    
+
+    a.button_lib:last-child{
+        margin-left: 12px;
+    }
+
+  .three_containers_lib{
+    width: 19%;
+  }
+   .button_right{
+  display: flex;
+  justify-content: end;
+  width: 144px;
+ }
+    .img_padding_left{
+      visibility: hidden;
+    }
+    .container_head{
+  box-sizing: border-box;
+  height: 180px;
+  padding: 25px 15px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0);
+}
+
+div.form_lib{
+ position: relative;
+ top: 87px;
+ left: -63px;
+ /* border: 2px solid red; */
+ width: 300px;
+}
+}
+
+@media only screen and (min-width: 768px) {
+
+   a.button_lib{
+    width: 152px;
+    height: 44px;
+    }
+    
+     .img_padding_left{
+      visibility: visible;
+    }
+
+    a.button_lib:last-child{
+        margin-left: 20px;
+    }
+    .container_head{
+  
+  height: 160px;
+  padding: 35px 25px 10px 25px;
+  justify-content: space-between;
+ 
+}
+div.form_lib{
+ 
+ top: 66px;
+ left: -80px;
+}
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1280px) {
+  div.form_lib{
+
+ top: 44px;
+ left: -45px;
+}
+
+
+    .container_head{
+  
+  height: 140px;
+  padding: 35px 25px 10px 25px;
+  justify-content: space-between;
+ 
+}
+} 

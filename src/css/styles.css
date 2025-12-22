@@ -12,9 +12,11 @@
 
 /* Sections style */
 @import url('./header.css');
+@import url('./header_lib.css');
 @import url('./footer.css');
 @import url('./modal.css');
 @import url('./forma.css');
 @import url('./pagination.css');
 @import url('./loader.css');
 @import url('./library.css');
+@import url('./queue.css');

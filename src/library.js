@@ -17,8 +17,28 @@ console.log(forModalLib);
 console.log(ulLibrary);
 
 
+const kitWatched = JSON.parse(localStorage.getItem('watched'));
 
-const kitWatched = JSON.parse(localStorage.getItem("watched"));
+
+ renderLayout(kitWatched, ulLibrary, forModalLib);
+
+ const btnWatchedLib = document.querySelector('.button_watched_js');
+ const btnQueueLib = document.querySelector('.button_queue_js');
+ console.log(btnWatchedLib);
+ console.log(btnQueueLib);
+
+// btnQueueLib.addEventListener('click', pageQueue);
+
+//  function pageQueue(){
+//           renderLayout(kitQueued, ulLibrary, forModalLib);
+//  }
+
+// btnWatchedLib.addEventListener('click', pageWatched);
+
+//  function pageWatched(){
+//           renderLayout(kitWatched, ulLibrary, forModalLib);
+
+//  }
 
 // console.log(kitWatched);
 // const toRender = new ToRender({
@@ -66,4 +86,4 @@ const kitWatched = JSON.parse(localStorage.getItem("watched"));
 
 
 
- renderLayout(kitWatched, ulLibrary, forModalLib);
+

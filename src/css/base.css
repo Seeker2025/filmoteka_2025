@@ -76,6 +76,7 @@ main:has(.back-link) {
   /* align-items: stretch; */
   
   flex-wrap: wrap;
+  margin-top: -18px;
   /* border: 3px solid maroon; */
 }   
   li.card{
@@ -176,6 +177,7 @@ div.card_box{
   max-width: 1270px;
   min-height: 634px;
   height: auto;
+  
   /* border: 3px solid rgb(139, 250, 54); */
   }
   li.card{ 

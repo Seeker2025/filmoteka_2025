@@ -92,11 +92,10 @@ export function modal_markup({
                       
                        <tr>
                                         <td colspan = "2" class="two_buttons">
-                        <button type="button" class="arange_button">ADD TO WATCHED</button>
-                                        
 
-                                        
-                        <button type="button" class="white_button">ADD TO QUEUE</button>
+                <button type="button" class="arange_button">ADD TO WATCHED</button>
+                <button type="button" class="white_button">ADD TO QUEUE</button>
+                
                                         </td>
                                 </tr>  
                 </table>

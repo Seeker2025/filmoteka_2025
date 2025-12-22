@@ -3,22 +3,49 @@ import { modal_markup } from './modal_markup.js';
 import { toWatch, toQueue } from './toFun';
 // import { renderLayout} from './render';
 
-// const forModal = document.querySelector('div.for_modal');
+
 // let watchedArr = [];
+
+const pageIndex = document.getElementById('index');
+const pageLibrary = document.getElementById('library');
+const pageQueue = document.getElementById('queue');
+console.log(pageIndex);
+console.log(pageLibrary);
+console.log(pageQueue);
+const forModal = document.querySelector('div.for_modal');
+const forModalLib = document.querySelector('div.for_modal_lib');
+const forModalQue = document.querySelector('div.for_modal_queue');
+
+
 
 export function toShowModalWin(id, modalBox){
         // let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
-    const arrAll = JSON.parse(localStorage.getItem('watched'));
-        console.log(arrAll);
-        console.log(id);
+        if(pageIndex){
+                const arrAll = JSON.parse(localStorage.getItem('mess'));
+                const oneObj = arrAll.find(itm => itm.id === id);
+                forModal.innerHTML = modal_markup(oneObj);
+        }
+        if(pageLibrary){
+                const arrAll = JSON.parse(localStorage.getItem('watched'));
+                const oneObj = arrAll.find(itm => itm.id === id);
+                forModalLib.innerHTML = modal_markup(oneObj);
+        }
+        if(pageQueue){
+                const arrAll = JSON.parse(localStorage.getItem('queued'));
+                const oneObj = arrAll.find(itm => itm.id === id);
+                forModalQue.innerHTML = modal_markup(oneObj);
+        }
+//     const arrAll = JSON.parse(localStorage.getItem('watched'));
+//         console.log(arrAll);
+//         console.log(id);
         
-    const oneObj = arrAll.find(itm => itm.id === id);
+//     const oneObj = arrAll.find(itm => itm.id === id);
      
-    console.log(oneObj);
+//     console.log(oneObj);
 //     console.log(oneObj.id);
     
 
-        modalBox.innerHTML = modal_markup(oneObj);
+        // modalBox.innerHTML = modal_markup(oneObj);
 
         const btnAddToWatch = document.querySelector('button.arange_button');
         const btnAddToQueue = document.querySelector('button.white_button');
