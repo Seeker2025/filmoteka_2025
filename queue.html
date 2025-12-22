@@ -3,31 +3,23 @@
                               <head>
                               <meta charset="UTF-8" />
                               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- metadata information about this page -->
-<meta property='og:description' content='Filmoteka 2025 Movie Library. An individual project created by Igor Yurovsky
-for the purpose of in-depth study of JS' />
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<!-- For social networks -->
-                              <meta property='og:url' content='https://seeker2025.github.io/filmoteka_2025/' />
-                              <meta property='og:image:width' content='1200' />
-                              <meta property='og:image:height' content='627' />
 
-                    <title>Filmoteka 2025</title>
-                                <script type="module" crossorigin src="/filmoteka_2025/index.js"></script>
+                         
+                <title>Queqe</title>
+                                <script type="module" crossorigin src="/filmoteka_2025/queue.js"></script>
                                 <link rel="modulepreload" crossorigin href="/filmoteka_2025/assets/render-COGeKZ6w.js">
-                                <link rel="modulepreload" crossorigin href="/filmoteka_2025/assets/vendor-BNzshISR.js">
                                 <link rel="stylesheet" crossorigin href="/filmoteka_2025/assets/render-Bn5Ag5ae.css">
                               </head>
 
                               
-<body id="index">
-
-    <header class="header background">
+<body id="queue">
+<header class="header background_lib">
      <div class="container container_head">
-                                <div class="three_containers">
+                                <div class="three_containers_lib">
                                     <a href="./index.html" class="logo_box"> 
                                     
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACRSURBVHgB7ZUBCoAgDEVXdK+6md3UbmA3WCZGy9RKnUH0IJCP+5/PCAFqgYij/hTmI1cvn3lpBA2QVuyJZrjR/HBPHwcrKYiZpQa4WgvMdG4yJBKardug0Wznp21Cs+wN2ANMrZzlRs017y+Zaj5897615P9PvpyttuTZJg+QCfGYqCiwPMJNFrg/nTmokzknC+UryM+qtjHdAAAAAElFTkSuQmCC" alt="film">
@@ -37,57 +29,42 @@ for the purpose of in-depth study of JS' />
                                     </a>
                                 </div>
 
-      <div class="three_containers">
-            
-            <form class="form js_form">
-                    <label>
-                        <input type="text" name="search" class="input_text" placeholder="Search movie...">
-                    </label>
-                        <button class="magnifying_glass" type="submit">
-                            
-                        <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH3SURBVHgBtVXrcYJAEN5bnfjXDjQVxHSAZSTqwFWQdCB2YAdo1KQMKSHpgHTg3zy8y+7x8EAQmInfDMNx3H677ONDwAUEQTC8AXAAccDPSqkPBIgmUr5DA4iyzV0QeALR1UxcbhTRzX903TU0JX+jSDViUEV6Zqx1SJd8kDK6SJ4Q74l4aL0/gBAhaB2nQYgRrR1a9S2CSCg1LnPQTRdJxBmx1nr5o/VCSnmwDUwdul2XCuCbc2wjREDLcWnknGMqWpARA3jTmnwWbYjIK9YAzQvEubXn1xEzqGNWlO9ltqG1VzyDFMHISsfhW6la4hRflDa2MdxCONvtdpAjV3YBqfqyovJlMPXggqc4Hp0cOeEuexKi0XDkkHYSmLwPc+RwRSC11KcVxQjagnv/hNyXI4UeWgcd6uM+NAQPXjJUMexAmZwnS5wc9HudzhwaQiF6cJrWM0EzOf+12o8m8/l1vXbriM0QAWSBUDv7xTOZthDhPidYSi3I86qoGZy2G0QmerK2o4nr3laSG80g4YKWwmUHQ2nxS8lTB70Wkmuc2t1ScJDrc55OEp/xUSkJ8Q+hglOHLG4Tz7uHOEUJG86pFn5p5EWw7iS/uFFyOFKdTjidTnMtt9ts5qkE219wkbwNig5Ygv9t/Cez2cJOkYIr4IX6f5vMyR/Fve0w8aoIvgAAAABJRU5ErkJggg==" alt="magnifying glass">
-                            
-                        </button>
-            </form>
+      <div class="three_containers_lib ">
 
+           
+                    <div class="form_lib">
+        <a href="./library.html" class="button_lib button_watched_js">WATCHED</a>
+        <a href="./queue.html" class="button_lib button_queue_js">QUEUE</a>                   
+                    </div>
+            
+        
       </div>
 
-                                    <div class="three_containers button_right">
-                                        <ul>
-                        <li><a href="./index.html" class="home two_href">HOME</a></li>
-                        <li><a href="./library.html" class="two_href">MY LIBRARY</a></li> 
-                                        </ul>
-                                    </div>
+                                            <div class="three_containers_lib button_right">
+                                                <ul>
+                                <li><a href="./index.html" class="two_href">HOME</a></li>
+                                <li><a href="./library.html" class="two_href library">MY LIBRARY</a></li> 
+                                                </ul>
+                                            </div>
 
    
     </div>
 </header>
 
-     <div class="container">
-        <div class="box">
-             <span class="loader"></span>
-        </div>
- </div>
-
+   
   
                 <main>
-                        <div class="container">
+                        <p>queue</p>
+                        <div class="container container_library">
+                                <ul class="ul_queue"></ul>
 
-                                    <ul class="gallery"></ul>
-
-                                    <div class="for_modal"></div>
-                                        
+                                 
+                                <div class="for_modal_queue"></div>    
                         </div>
                 </main>
                 
-    <section>
-<div class="container ">
-     
-                <div id="tui-pagination-container" class="tui-pagination"></div>
-        
-</div>
-</section>
-    <footer class="footer">
+    
+<footer class="footer">
           <div class="container container_foo">
 <p class="copyright"><b>&#169;2025</b> | All Rights Reserved |
    Developed by <b>Igor Yurovsky</b>  with big love for</p>
@@ -100,7 +77,6 @@ for the purpose of in-depth study of JS' />
                 </div>
           </div>
 </footer>
-
 
 </body>
 </html>
