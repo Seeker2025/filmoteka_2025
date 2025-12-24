@@ -104,3 +104,6 @@ export function modal_markup({
                 </div>
         </div>   
                 `};
+
+const fff = document.querySelector('.arange_button')
+console.log(fff);

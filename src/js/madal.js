@@ -4,8 +4,6 @@ import { toWatch, toQueue } from './toFun';
 // import { renderLayout} from './render';
 
 
-// let watchedArr = [];
-
 const pageIndex = document.getElementById('index');
 const pageLibrary = document.getElementById('library');
 const pageQueue = document.getElementById('queue');
@@ -24,6 +22,27 @@ export function toShowModalWin(id, modalBox){
                 const arrAll = JSON.parse(localStorage.getItem('mess'));
                 const oneObj = arrAll.find(itm => itm.id === id);
                 forModal.innerHTML = modal_markup(oneObj);
+             
+        const btnAddToWatch = document.querySelector('button.arange_button');     
+        const btnAddToQueue = document.querySelector('button.white_button');            
+        console.log(btnAddToQueue);
+        console.log(btnAddToWatch);  
+        
+                        btnAddToWatch.addEventListener('click', (evt)=>{
+                        toWatch(oneObj);
+                        evt.stopPropagation();
+                        });
+
+                        btnAddToQueue.addEventListener('click', (evt)=>{
+                        toQueue(oneObj);
+                        evt.stopPropagation();
+                        })
+        
+
+          interrupt(btnAddToWatch,  btnAddToQueue);
+               
+      
+               
         }
         if(pageLibrary){
                 const arrAll = JSON.parse(localStorage.getItem('watched'));
@@ -47,25 +66,20 @@ export function toShowModalWin(id, modalBox){
 
         // modalBox.innerHTML = modal_markup(oneObj);
 
-        const btnAddToWatch = document.querySelector('button.arange_button');
-        const btnAddToQueue = document.querySelector('button.white_button');
+        
       
-        btnAddToWatch.addEventListener('click', (evt)=>{
-               
-                toWatch(oneObj);
-                evt.stopPropagation();
-        })
+         
 
-        btnAddToQueue.addEventListener('click', (evt)=>{
+        // btnAddToQueue.addEventListener('click', toQueueClick)
+        // function toQueueClick(evt, oneObj){
+        //         toQueue(oneObj);
+        //         evt.stopPropagation();
+        // }
+function  interrupt(btnAddToWatch,  btnAddToQueue){
 
-                toQueue(oneObj);
-                evt.stopPropagation();
-        })
-
-
-        const cross = document.querySelector('div.cross');
-      
+                        const cross = document.querySelector('div.cross');
                         const backdrop = document.querySelector('.backdrop');
+
                         backdrop.addEventListener('click', (evt)=>{
                                 console.log(evt.target);
                                 if(evt.target === backdrop){
@@ -82,7 +96,7 @@ export function toShowModalWin(id, modalBox){
                                 btnAddToQueue.removeEventListener('click', ()=>{});
                                 })
 }
-
+} 
 
 export function toCloseModal(modalBox){
         modalBox.innerHTML ='';
