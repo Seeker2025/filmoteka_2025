@@ -1,2 +1,2 @@
-import{r as o}from"./assets/render-oED7Lnw1.js";console.log("library");console.log(o);const e=document.querySelector("ul.ul_library"),t=document.querySelector(".for_modal_lib");console.log(t);console.log(e);const l=JSON.parse(localStorage.getItem("watched"));o(l,e,t);const c=document.querySelector(".button_watched_js"),r=document.querySelector(".button_queue_js");console.log(c);console.log(r);
+import{r as o}from"./assets/render-Drs29TEL.js";console.log("library");console.log(o);const e=document.querySelector("ul.ul_library"),l=document.querySelector(".for_modal_lib");console.log(l);console.log(e);const r=JSON.parse(localStorage.getItem("watched"));o(r,e,l);
 //# sourceMappingURL=library.js.map
