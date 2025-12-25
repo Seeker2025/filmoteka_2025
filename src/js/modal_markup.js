@@ -1,22 +1,26 @@
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 
-export function modal_markup({ 
-                                        poster_path,
-                                        title,
-                                        popularity,
-                                        vote_average,
-                                        vote_count,
-                                        overview,
-                                        genre_ids
- }) {
+export function modal_markup(id, forModal) {
+
+        const arrAll = JSON.parse(localStorage.getItem('mess'));
+                        const oneObj = arrAll.find(itm => itm.id === id);
+                        // forModal.innerHTML = modal_markup(oneObj);
+        const{          poster_path,
+                title,
+                popularity,
+                vote_average,
+                vote_count,
+                overview,
+                genre_ids
+                } = oneObj;
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
                         imgAnotherPath = `<img src=${noImg} alt="No image">`;
                         }  
 
- return `<div class="backdrop">
+ const raw = `<div class="backdrop">
                 <div class = "modal">
                         <div class="cross">
                         
@@ -103,7 +107,7 @@ export function modal_markup({
                      
                 </div>
         </div>   
-                `};
+                `
+     return forModal.innerHTML = raw;   
+        };
 
-const fff = document.querySelector('.arange_button')
-console.log(fff);

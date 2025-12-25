@@ -6,6 +6,8 @@ import {  options,
           container
  }                              from './pagination.js';
 import { hideLoader }           from './loader.js';
+import { bigModal } from './toShowModalWin.js';
+import { toForFind } from './toForFind.js'
 
 // import { ToRender } from './class.js';
 import  noImg  from '../img/no_img02.png';
@@ -44,7 +46,19 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         
                                 if(response.data) hideLoader();
                                 console.log(response.data.results);
-        renderLayout(response.data.results, galleryRef, forModal);
+        renderLayout(response.data.results, galleryRef);
+        galleryRef.addEventListener('click', (evt)=>{
+            if(evt.target.closest('.card_js')){
+                console.log('Hi!');
+                // const upperLi = evt.target.closest('.card');
+                
+                // const selectIDbyClick = Number(upperLi.getAttribute('id'));
+                const aNumber = toForFind(evt.target);
+                console.log(a);
+
+            }
+        })
+        // bigModal(galleryRef, forModal)
         //const toRenderInIndex = new ToRender({
         //                            arr: response.data.results,
          //                             noImg: noImg,
