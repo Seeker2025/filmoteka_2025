@@ -22,10 +22,10 @@ const kitWatched = JSON.parse(localStorage.getItem('watched'));
 
  renderLayout(kitWatched, ulLibrary, forModalLib);
 
- const btnWatchedLib = document.querySelector('.button_watched_js');
- const btnQueueLib = document.querySelector('.button_queue_js');
- console.log(btnWatchedLib);
- console.log(btnQueueLib);
+//  const btnWatchedLib = document.querySelector('.button_watched_js');
+//  const btnQueueLib = document.querySelector('.button_queue_js');
+//  console.log(btnWatchedLib);
+//  console.log(btnQueueLib);
 
 // btnQueueLib.addEventListener('click', pageQueue);
 

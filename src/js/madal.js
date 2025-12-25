@@ -1,7 +1,9 @@
 import { modal_markup } from './modal_markup.js';
 //import { ulLibrary, forModalLib } from '../library.js';
 import { toWatch, toQueue } from './toFun';
-// import { renderLayout} from './render';
+import { renderLayout} from './render';
+// console.log(renderLayout);
+
 
 
 const pageIndex = document.getElementById('index');
@@ -11,8 +13,11 @@ console.log(pageIndex);
 console.log(pageLibrary);
 console.log(pageQueue);
 const forModal = document.querySelector('div.for_modal');
-const forModalLib = document.querySelector('div.for_modal_lib');
+// const forModalLib = document.querySelector('div.for_modal_lib');
 const forModalQue = document.querySelector('div.for_modal_queue');
+console.log(forModal);
+// console.log(forModalLib);
+
 
 
 
@@ -25,9 +30,8 @@ export function toShowModalWin(id, modalBox){
              
         const btnAddToWatch = document.querySelector('button.arange_button');     
         const btnAddToQueue = document.querySelector('button.white_button');            
-        console.log(btnAddToQueue);
-        console.log(btnAddToWatch);  
-        
+        // console.log(btnAddToQueue);
+        // console.log(btnAddToWatch);  
                         btnAddToWatch.addEventListener('click', (evt)=>{
                         toWatch(oneObj);
                         evt.stopPropagation();
@@ -37,17 +41,39 @@ export function toShowModalWin(id, modalBox){
                         toQueue(oneObj);
                         evt.stopPropagation();
                         })
-        
-
-          interrupt(btnAddToWatch,  btnAddToQueue);
+                interrupt(btnAddToWatch,  btnAddToQueue);
                
       
                
         }
         if(pageLibrary){
+                const ulLibrary = document.querySelector('ul.ul_library');
+                const forModalLib = document.querySelector('.for_modal_lib');
                 const arrAll = JSON.parse(localStorage.getItem('watched'));
                 const oneObj = arrAll.find(itm => itm.id === id);
                 forModalLib.innerHTML = modal_markup(oneObj);
+        const btnAddToWatch = document.querySelector('button.arange_button');     
+        const btnAddToQueue = document.querySelector('button.white_button');
+                        btnAddToWatch.addEventListener('click', (evt)=>{
+                        toWatch(oneObj);
+                        evt.stopPropagation();
+                        });
+
+                        btnAddToQueue.addEventListener('click', (evt)=>{
+                        toQueue(oneObj);
+                        evt.stopPropagation();
+                        })
+                
+                console.log(forModalLib);
+                console.log(ulLibrary);
+                
+                
+                const kitWatched = JSON.parse(localStorage.getItem('watched'));
+                
+                
+                     
+                interrupt(btnAddToWatch,  btnAddToQueue);
+                // renderLayout(kitWatched, ulLibrary, forModalLib);   
         }
         if(pageQueue){
                 const arrAll = JSON.parse(localStorage.getItem('queued'));
