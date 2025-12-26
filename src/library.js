@@ -6,6 +6,9 @@ console.log('library');
 //  console.log(ToRender);
 import { footerScaleJS }    from './js/footer';
 import { renderLayout } from './js/render';
+import { modalMarkup, toForButtonCross } from './js/modal_markup';
+import { toForFind } from './js/toForFind';
+import { toWatch, toQueue } from './js/toFun';
 console.log(renderLayout);
 // const render02 = renderLayout;
 // console.log(render02);
@@ -17,10 +20,44 @@ console.log(forModalLib);
 console.log(ulLibrary);
 
 
-const kitWatched = JSON.parse(localStorage.getItem('watched'));
+const kitWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
 
 
- renderLayout(kitWatched, ulLibrary, forModalLib);
+//  renderLayout(kitWatched, ulLibrary, forModalLib);
+
+ renderLayout(kitWatched, ulLibrary);
+            ulLibrary.addEventListener('click', (evt)=>{
+               evt.preventDefault();
+            if(evt.target.closest('.card_js')){
+               
+                const oneObj = toForFind(evt.target);
+                modalMarkup(oneObj, forModalLib);
+
+                const btnAddToWatch = document.querySelector('button.arange_button');     
+                const btnAddToQueue = document.querySelector('button.white_button'); 
+                        console.log(btnAddToWatch);
+                        console.log(btnAddToQueue);
+                          
+                
+                        btnAddToWatch.addEventListener('click', (evt)=>{
+                                                 toWatch(oneObj);
+                         const kit = JSON.parse(localStorage.getItem('watched')) ?? [];
+                         renderLayout(kit, ulLibrary);                         
+                                                 evt.stopPropagation();
+                                                 });
+                        
+                        btnAddToQueue.addEventListener('click', (evt)=>{
+                                                 toQueue(oneObj);
+                                                 evt.stopPropagation();
+                                                 });
+                                
+                
+                           
+                toForButtonCross(forModalLib);
+               
+
+            }
+        })
 
 //  const btnWatchedLib = document.querySelector('.button_watched_js');
 //  const btnQueueLib = document.querySelector('.button_queue_js');

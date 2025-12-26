@@ -1,4 +1,4 @@
-import { modal_markup } from './modal_markup.js';
+// import { modal_markup } from './modal_markup.js';
 //import { ulLibrary, forModalLib } from '../library.js';
 import { toWatch, toQueue } from './toFun';
 import { renderLayout} from './render';
@@ -101,28 +101,29 @@ export function toShowModalWin(id, modalBox){
         //         toQueue(oneObj);
         //         evt.stopPropagation();
         // }
-function  interrupt(btnAddToWatch,  btnAddToQueue){
-
-                        const cross = document.querySelector('div.cross');
-                        const backdrop = document.querySelector('.backdrop');
-
-                        backdrop.addEventListener('click', (evt)=>{
-                                console.log(evt.target);
-                                if(evt.target === backdrop){
-                                        console.log('whoa!');
-                                        toCloseModal(modalBox);
-                                }
-                        });
-
-                                cross.addEventListener('click', ()=>{
-                                        toCloseModal(modalBox);
-                                cross.removeEventListener('click', ()=>{});
-                                window.removeEventListener('keydown', ()=>{});
-                                btnAddToWatch.removeEventListener('click', ()=>{});
-                                btnAddToQueue.removeEventListener('click', ()=>{});
-                                })
 }
-} 
+//function  interrupt(btnAddToWatch,  btnAddToQueue){
+
+//                         const cross = document.querySelector('div.cross');
+//                         const backdrop = document.querySelector('.backdrop');
+
+//                         backdrop.addEventListener('click', (evt)=>{
+//                                 console.log(evt.target);
+//                                 if(evt.target === backdrop){
+//                                         console.log('whoa!');
+//                                         toCloseModal(modalBox);
+//                                 }
+//                         });
+
+//                                 cross.addEventListener('click', ()=>{
+//                                         toCloseModal(modalBox);
+//                                 cross.removeEventListener('click', ()=>{});
+//                                 window.removeEventListener('keydown', ()=>{});
+//                                 btnAddToWatch.removeEventListener('click', ()=>{});
+//                                 btnAddToQueue.removeEventListener('click', ()=>{});
+//                                 })
+// }
+// } 
 
 export function toCloseModal(modalBox){
         modalBox.innerHTML ='';

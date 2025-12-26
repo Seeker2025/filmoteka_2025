@@ -1,19 +1,22 @@
+import { toWatch, toQueue } from './toFun';
+
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 
-export function modal_markup(id, forModal) {
+export function modalMarkup(oneObj, forModal) {
 
-        const arrAll = JSON.parse(localStorage.getItem('mess'));
-                        const oneObj = arrAll.find(itm => itm.id === id);
+        // const arrAll = JSON.parse(localStorage.getItem('mess'));
+        //                 const oneObj = arrAll.find(itm => itm.id === id);
                         // forModal.innerHTML = modal_markup(oneObj);
-        const{          poster_path,
-                title,
-                popularity,
-                vote_average,
-                vote_count,
-                overview,
-                genre_ids
-                } = oneObj;
+        const{ 
+                        poster_path,
+                        title,
+                        popularity,
+                        vote_average,
+                        vote_count,
+                        overview,
+                        genre_ids
+                                         } = oneObj;
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
@@ -111,3 +114,47 @@ export function modal_markup(id, forModal) {
      return forModal.innerHTML = raw;   
         };
 
+
+ export function toForButtonCross(modalBox){
+        // const btnAddToWatch = document.querySelector('button.arange_button');     
+        // const btnAddToQueue = document.querySelector('button.white_button'); 
+        // console.log(btnAddToWatch);
+        // console.log(btnAddToQueue);
+          
+
+        // btnAddToWatch.addEventListener('click', (evt)=>{
+        //                          toWatch(oneObj);
+        //                          evt.stopPropagation();
+        //                          });
+        
+        // btnAddToQueue.addEventListener('click', (evt)=>{
+        //                          toQueue(oneObj);
+        //                          evt.stopPropagation();
+        //                          });
+
+                        const cross = document.querySelector('div.cross');
+                        const backdrop = document.querySelector('.backdrop');
+
+                        backdrop.addEventListener('click', (evt)=>{
+                                console.log(evt.target);
+                                if(evt.target === backdrop){
+                                        console.log('whoa!');
+                                        toCloseModal(modalBox);
+                                }
+                        });
+
+                                cross.addEventListener('click', ()=>{
+                                        toCloseModal(modalBox);
+                                cross.removeEventListener('click', ()=>{});
+                                window.removeEventListener('keydown', ()=>{});
+                                btnAddToWatch.removeEventListener('click', ()=>{});
+                                btnAddToQueue.removeEventListener('click', ()=>{});
+                                })
+
+                                function toCloseModal(modalBox){
+                                modalBox.innerHTML ='';
+}
+}
+
+
+ 

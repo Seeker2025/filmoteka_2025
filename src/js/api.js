@@ -11,7 +11,10 @@ import { toForFind } from './toForFind.js'
 
 // import { ToRender } from './class.js';
 import  noImg  from '../img/no_img02.png';
- import { toShowModalWin } from './madal.js';
+import { toShowModalWin } from './madal.js';
+import { modalMarkup, toForButtonCross } from './modal_markup.js';
+import { toWatch, toQueue } from './toFun.js';
+
 
 
  const forModal = document.querySelector('.for_modal');
@@ -49,12 +52,25 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         renderLayout(response.data.results, galleryRef);
         galleryRef.addEventListener('click', (evt)=>{
             if(evt.target.closest('.card_js')){
-                console.log('Hi!');
-                // const upperLi = evt.target.closest('.card');
-                
-                // const selectIDbyClick = Number(upperLi.getAttribute('id'));
-                const aNumber = toForFind(evt.target);
-                console.log(a);
+               
+                const oneObj = toForFind(evt.target);
+                modalMarkup(oneObj, forModal);
+        const btnAddToWatch = document.querySelector('button.arange_button');     
+        const btnAddToQueue = document.querySelector('button.white_button'); 
+        console.log(btnAddToWatch);
+        console.log(btnAddToQueue);
+          
+
+        btnAddToWatch.addEventListener('click', (evt)=>{
+                                 toWatch(oneObj);
+                                 evt.stopPropagation();
+                                 });
+        
+        btnAddToQueue.addEventListener('click', (evt)=>{
+                                 toQueue(oneObj);
+                                 evt.stopPropagation();
+                                 });
+                toForButtonCross(forModal);
 
             }
         })

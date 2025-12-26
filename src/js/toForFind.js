@@ -1,11 +1,8 @@
 export function toForFind(elem){
     const upperLi = elem.closest('.card');
-    const selectIDbyClick = Number(upperLi.getAttribute('id'));
-    return selectIDbyClick;
+    const id = Number(upperLi.getAttribute('id'));
+    const arrAll = JSON.parse(localStorage.getItem('mess'));
+    const oneObj = arrAll.find(itm => itm.id === id);
+    return oneObj;
 };
 
-export function toFindOne(id){
-const arrAll = JSON.parse(localStorage.getItem('mess'));
-                const oneObj = arrAll.find(itm => itm.id === id);
-                forModal.innerHTML = modal_markup(oneObj);
-};
