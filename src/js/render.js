@@ -1,8 +1,9 @@
- import { 
-         toShowModalWin,
-         toCloseModal
-  }                              from './madal.js';
+ //import { 
+//        toShowModalWin,
+ //        toCloseModal
+ // }                              from './madal.js';
   import  noImg                   from '../img/no_img02.png';
+  import  noth                    from '../img/noth.png';
 
  
 
@@ -16,52 +17,45 @@
 //         ////// const body = document.querySelector('body');
 
  export function renderLayout(arr, ulContainer){
+    // console.log(arr.length);
+    if(!arr.length){
+          const ren =`
+                             <li class="card card_js">
+                             <img class="img_of_card" src=${noth} alt="No image">
+                             </li>    
+                                     `
+          ulContainer.innerHTML = ren;                          
+
+     }else{
+    
      const ren = arr.map(({poster_path, id, title, release_date}, idx) =>{
      let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`    
+        
+     
+     
      if(!poster_path){
          imgMainPath = `<img class="img_of_card" src=${noImg} alt="No image">`
      }
-                                                     return `
-                                                         <li class="card card_js" id=${id}>
-                                                             ${imgMainPath}
+                            return `
+                            <li class="card card_js" id=${id}>
+                            ${imgMainPath}
      <div class="card_box">
          <h1 class="card_title">${title}</h1>
          <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(release_date)||'No date'}</h2>
      </div>
-                                                         </li>                                              
-                                                         `
+                            </li>                                              
+                                    `
  }).join('');
+ ulContainer.innerHTML = ren;
+}
 
-     ulContainer.innerHTML = ren;
+     
 
-//      ulContainer.addEventListener('click', modalShow);
-//                                      function modalShow(evt){
-//                                          window.addEventListener('keydown', (evt)=>{
-//                                          if(evt.code === 'Escape'){
-//                                          toCloseModal(modalBox);
-//                                          }
-//                                      });
-//     const nestedElem = evt.target;
-//     const upperLi = nestedElem.closest('.card');
-//  //    console.log(upperLi);
-//     const selectIDbyClick = Number(upperLi.getAttribute('id'));
-//     toShowModalWin(selectIDbyClick, modalBox);
-// }
+
  }
 
-//    ulGallery.addEventListener('click', modalShow);
-//                                        function modalShow(evt){
-//                                            window.addEventListener('keydown', (evt)=>{
-//                                            if(evt.code === 'Escape'){
-//                                            toCloseModal(modalBox);
-//                                            }
-//                                        });
-//       const nestedElem = evt.target;
-//       const upperLi = nestedElem.closest('.card');
-//    //    console.log(upperLi);
-//       const selectIDbyClick = Number(upperLi.getAttribute('id'));
-//       toShowModalWin(selectIDbyClick, modalBox);
-//   }
+
+
 
 
 

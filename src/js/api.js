@@ -11,11 +11,11 @@ import { toForFind } from './toForFind.js'
 
 // import { ToRender } from './class.js';
 import  noImg  from '../img/no_img02.png';
-import { toShowModalWin } from './madal.js';
+// import { toShowModalWin } from './madal.js';
 import { modalMarkup, toForButtonCross } from './modal_markup.js';
 import { toWatch, toQueue } from './toFun.js';
 
-
+const key = 'mess';
 
  const forModal = document.querySelector('.for_modal');
  const galleryRef = document.querySelector('.gallery');
@@ -50,10 +50,11 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                                 if(response.data) hideLoader();
                                 console.log(response.data.results);
         renderLayout(response.data.results, galleryRef);
+        // renderLayout(0, galleryRef);
         galleryRef.addEventListener('click', (evt)=>{
             if(evt.target.closest('.card_js')){
                
-                const oneObj = toForFind(evt.target);
+                const oneObj = toForFind(evt.target, key);
                 modalMarkup(oneObj, forModal);
         const btnAddToWatch = document.querySelector('button.arange_button');     
         const btnAddToQueue = document.querySelector('button.white_button'); 
@@ -70,16 +71,11 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                                  toQueue(oneObj);
                                  evt.stopPropagation();
                                  });
-                toForButtonCross(forModal);
+                toForButtonCross(forModal, btnAddToWatch, btnAddToQueue);
 
             }
         })
-        // bigModal(galleryRef, forModal)
-        //const toRenderInIndex = new ToRender({
-        //                            arr: response.data.results,
-         //                             noImg: noImg,
-       //                                    });
-        //                        toRenderInIndex.renderLayout( );
+       
                                 const { results, total_results, total_pages }=response.data;
                                 let totalPages = total_pages;
     if (onePage < totalPages) {

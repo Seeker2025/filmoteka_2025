@@ -1,10 +1,14 @@
-import { toWatch, toQueue } from './toFun';
+//import { toWatch, toQueue } from './toFun';
 
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 
 export function modalMarkup(oneObj, forModal) {
-
+        
+        if(!oneObj){
+                return;
+        }
+        
         // const arrAll = JSON.parse(localStorage.getItem('mess'));
         //                 const oneObj = arrAll.find(itm => itm.id === id);
                         // forModal.innerHTML = modal_markup(oneObj);
@@ -115,7 +119,7 @@ export function modalMarkup(oneObj, forModal) {
         };
 
 
- export function toForButtonCross(modalBox){
+ export function toForButtonCross(modalBox, btnWatch, btnQueue){
         // const btnAddToWatch = document.querySelector('button.arange_button');     
         // const btnAddToQueue = document.querySelector('button.white_button'); 
         // console.log(btnAddToWatch);
@@ -131,6 +135,11 @@ export function modalMarkup(oneObj, forModal) {
         //                          toQueue(oneObj);
         //                          evt.stopPropagation();
         //                          });
+                        window.addEventListener('keyup', (evt)=>{
+                                if(evt.code === 'Escape'){
+                                toCloseModal(modalBox);
+                                }
+                        })
 
                         const cross = document.querySelector('div.cross');
                         const backdrop = document.querySelector('.backdrop');
@@ -146,9 +155,9 @@ export function modalMarkup(oneObj, forModal) {
                                 cross.addEventListener('click', ()=>{
                                         toCloseModal(modalBox);
                                 cross.removeEventListener('click', ()=>{});
-                                window.removeEventListener('keydown', ()=>{});
-                                btnAddToWatch.removeEventListener('click', ()=>{});
-                                btnAddToQueue.removeEventListener('click', ()=>{});
+                                window.removeEventListener('keyup', ()=>{});
+                                btnWatch.removeEventListener('click', ()=>{});
+                                btnQueue.removeEventListener('click', ()=>{});
                                 })
 
                                 function toCloseModal(modalBox){

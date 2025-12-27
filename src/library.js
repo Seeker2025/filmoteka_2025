@@ -9,117 +9,61 @@ import { renderLayout } from './js/render';
 import { modalMarkup, toForButtonCross } from './js/modal_markup';
 import { toForFind } from './js/toForFind';
 import { toWatch, toQueue } from './js/toFun';
-console.log(renderLayout);
-// const render02 = renderLayout;
-// console.log(render02);
-// import  noImg  from './img/no_img02.png';
+// console.log(renderLayout);
 
+            const pageLibrary = document.getElementById('library');
+            if(pageLibrary){
+               const btnWatched = document.querySelector('a.button_watched_js');
+               btnWatched.classList.add('other_color');
+            }
+
+
+const key = 'watched';
 const ulLibrary = document.querySelector('ul.ul_library');
 const forModalLib = document.querySelector('.for_modal_lib');
-console.log(forModalLib);
-console.log(ulLibrary);
-
 
 const kitWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
-
-
-//  renderLayout(kitWatched, ulLibrary, forModalLib);
 
  renderLayout(kitWatched, ulLibrary);
             ulLibrary.addEventListener('click', (evt)=>{
                evt.preventDefault();
             if(evt.target.closest('.card_js')){
                
-                const oneObj = toForFind(evt.target);
+                const oneObj = toForFind(evt.target, key);
+                if(!oneObj) return;
+                
                 modalMarkup(oneObj, forModalLib);
 
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button'); 
-                        console.log(btnAddToWatch);
-                        console.log(btnAddToQueue);
-                          
-                
-                        btnAddToWatch.addEventListener('click', (evt)=>{
+                   
+                     btnAddToWatch.addEventListener('click', (evt)=>{
                                                  toWatch(oneObj);
-                         const kit = JSON.parse(localStorage.getItem('watched')) ?? [];
-                         renderLayout(kit, ulLibrary);                         
+                        const kit = JSON.parse(localStorage.getItem('watched')) ?? [];
+                        renderLayout(kit, ulLibrary);                         
                                                  evt.stopPropagation();
                                                  });
                         
-                        btnAddToQueue.addEventListener('click', (evt)=>{
+                     btnAddToQueue.addEventListener('click', (evt)=>{
                                                  toQueue(oneObj);
                                                  evt.stopPropagation();
                                                  });
                                 
-                
-                           
-                toForButtonCross(forModalLib);
+                toForButtonCross(forModalLib, btnAddToWatch, btnAddToQueue);
                
 
             }
         })
+console.log(kitWatched.length/20);
+const pages = Math.ceil(kitWatched.length/20);
+console.log(pages);
 
-//  const btnWatchedLib = document.querySelector('.button_watched_js');
-//  const btnQueueLib = document.querySelector('.button_queue_js');
-//  console.log(btnWatchedLib);
-//  console.log(btnQueueLib);
 
-// btnQueueLib.addEventListener('click', pageQueue);
 
-//  function pageQueue(){
-//           renderLayout(kitQueued, ulLibrary, forModalLib);
-//  }
 
-// btnWatchedLib.addEventListener('click', pageWatched);
-
-//  function pageWatched(){
-//           renderLayout(kitWatched, ulLibrary, forModalLib);
-
-//  }
-
-// console.log(kitWatched);
-// const toRender = new ToRender({
-//     arr: kitWatched,
-//     noImg: noImg,
-//  });
-
-// toRender.renderLayout();
-  //  render02(kitWatched, ulLibrary, forModalLib);
   
 
-// function renderLayoutLib(arr, ulContainer, modalBox){
-//      const ren = arr.map(({poster_path, id, title, release_date}, idx) =>{
-//      let imgMainPath = `<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`    
-//      if(!poster_path){
-//          imgMainPath = `<img class="img_of_card" src=${noImg} alt="No image">`
-//      }
-//                                                      return `
-//                                                          <li class="card" id=${id}>
-//                                                              ${imgMainPath}
-//      <div class="card_box">
-//          <h1 class="card_title">${title}</h1>
-//          <h2 class="card_jenre">Drama, Comedy | ${Number.parseInt(release_date)||'No date'}</h2>
-//      </div>
-//                                                          </li>                                              
-//                                                          `
-//  }).join('');
 
-//      ulContainer.innerHTML = ren;
-
-//      ulContainer.addEventListener('click', modalShow);
-//                                      function modalShow(evt){
-//                                          window.addEventListener('keydown', (evt)=>{
-//                                          if(evt.code === 'Escape'){
-//                                          toCloseModal(modalBox);
-//                                          }
-//                                      });
-//     const nestedElem = evt.target;
-//     const upperLi = nestedElem.closest('.card');
-//  //    console.log(upperLi);
-//     const selectIDbyClick = Number(upperLi.getAttribute('id'));
-//     toShowModalWin(selectIDbyClick, modalBox);
-//  }
-//  }
 
 
 
