@@ -1,4 +1,8 @@
 console.log('library');
+import    Pagination            from  'tui-pagination'; 
+import {  options,
+          container
+ }                              from './pagination.js';
 
 ////// Class
 //  import { ToRender } from './js/class';
