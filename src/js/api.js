@@ -58,9 +58,6 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                 modalMarkup(oneObj, forModal);
         const btnAddToWatch = document.querySelector('button.arange_button');     
         const btnAddToQueue = document.querySelector('button.white_button'); 
-        console.log(btnAddToWatch);
-        console.log(btnAddToQueue);
-          
 
         btnAddToWatch.addEventListener('click', (evt)=>{
                                  toWatch(oneObj);
@@ -76,8 +73,8 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
             }
         })
        
-                                const { results, total_results, total_pages }=response.data;
-                                let totalPages = total_pages;
+                        const { results, total_results, total_pages }=response.data;
+                        let totalPages = total_pages;
     if (onePage < totalPages) {
         options.totalItems = totalPages;
         options.page = onePage;
