@@ -2,7 +2,7 @@ console.log('library');
 import    Pagination            from  'tui-pagination'; 
 import {  options,
           container
- }                              from './pagination.js';
+ }                              from './js/pagination.js';
 
 ////// Class
 //  import { ToRender } from './js/class';
@@ -28,7 +28,33 @@ const forModalLib = document.querySelector('.for_modal_lib');
 
 const kitWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
 
- renderLayout(kitWatched, ulLibrary);
+function too(  onePage=1){
+   renderLayout(kitWatched, ulLibrary);
+
+   const total_pages = Math.ceil(kitWatched.length/20);
+// console.log(pages);
+
+// let onePage = 1;
+let totalPages = total_pages;
+
+if (onePage < totalPages) {
+        options.totalItems = totalPages;
+        options.page = onePage;
+        const pagination = new Pagination(container, options);
+        pagination.on('afterMove', function (event) {
+        onePage = event.page;
+       too(onePage);
+    });
+    }
+};
+
+too();
+ 
+
+
+
+
+
             ulLibrary.addEventListener('click', (evt)=>{
                evt.preventDefault();
             if(evt.target.closest('.card_js')){
@@ -59,8 +85,21 @@ const kitWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
             }
         })
 console.log(kitWatched.length/20);
-const pages = Math.ceil(kitWatched.length/20);
-console.log(pages);
+// const total_pages = Math.ceil(kitWatched.length/20);
+// console.log(pages);
+
+// let onePage = 1;
+// let totalPages = total_pages;
+
+// if (onePage < totalPages) {
+//         options.totalItems = totalPages;
+//         options.page = onePage;
+//         const pagination = new Pagination(container, options);
+//         pagination.on('afterMove', function (event) {
+//         onePage = event.page;
+//         getAPIdata(main, part,  whatLookingFor, onePage);
+//     });
+//     }
 
 
 
