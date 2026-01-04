@@ -78,24 +78,26 @@
                                         <td colspan = "2">ABOUT</td>
                                 </tr>
 
-                                <tr>
+                                <tr class="description">
         <td colspan = "2">
         ${d||"Unfortunately, this film does not have a description yet."}
         </td>
                                 </tr>
                       
-                       <tr>
-                                        <td colspan = "2" class="two_buttons">
-
+                      
+                                        <tr class="two_buttons">
+                        <td>
                 <button type="button" class="arange_button">ADD TO WATCHED</button>
+                        </td>
+                        <td>
                 <button type="button" class="white_button">ADD TO QUEUE</button>
-                
-                                        </td>
-                                </tr>  
+                        </td>
+                                        </tr>
+                                
                 </table>
                 
                      
                 </div>
         </div>   
                 `;return o.innerHTML=m}function w(s,o,c){window.addEventListener("keyup",r=>{r.code==="Escape"&&e(s)});const a=document.querySelector("div.cross"),t=document.querySelector(".backdrop");t.addEventListener("click",r=>{console.log(r.target),r.target===t&&(console.log("whoa!"),e(s))}),a.addEventListener("click",()=>{e(s),a.removeEventListener("click",()=>{}),window.removeEventListener("keyup",()=>{}),o.removeEventListener("click",()=>{}),c.removeEventListener("click",()=>{})});function e(r){r.innerHTML=""}}function S(s,o){const c=s.closest(".card"),a=Number(c.getAttribute("id"));return JSON.parse(localStorage.getItem(o)).find(r=>r.id===a)}let n=JSON.parse(localStorage.getItem("watched"))??[],l=JSON.parse(localStorage.getItem("queued"))??[];function L(s){n.some(o=>o.id===s.id)?(n=n.filter(o=>o.id!==s.id),localStorage.setItem("watched",JSON.stringify(n))):(n.push(s),localStorage.setItem("watched",JSON.stringify(n)))}function E(s){l.some(o=>o.id===s.id)?(l=l.filter(o=>o.id!==s.id),localStorage.setItem("queued",JSON.stringify(l))):(l.push(s),localStorage.setItem("queued",JSON.stringify(l)))}export{L as a,E as b,w as c,v as m,_ as r,S as t};
-//# sourceMappingURL=toFun-BQ-ik1tT.js.map
+//# sourceMappingURL=toFun-CRhCGtP3.js.map
