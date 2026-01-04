@@ -3,6 +3,7 @@ import    Pagination            from  'tui-pagination';
 import {  options,
           container
  }                              from './js/pagination.js';
+import {  toChangeTxtOnBtn } from './js/toChangeText.js';
 
 ////// Class
 //  import { ToRender } from './js/class';
@@ -22,61 +23,130 @@ import { toWatch, toQueue } from './js/toFun';
             }
 
 
-const key = 'watched';
+const KEY = 'watched';
 const ulLibrary = document.querySelector('ul.ul_library');
 const forModalLib = document.querySelector('.for_modal_lib');
 
 const kitWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
+//------------------------------------------------------------------
+function too(onePage=1){
+   const kitWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
+   const startIndex = (onePage - 1) * 20;
+   const endIndex = startIndex + 20;
+   const itemsForPage = kitWatched.slice(startIndex, endIndex);
+   renderLayout(itemsForPage, ulLibrary);
 
-function too(  onePage=1){
-   renderLayout(kitWatched, ulLibrary);
-
-   const total_pages = Math.ceil(kitWatched.length/20);
-// console.log(pages);
-
-// let onePage = 1;
-let totalPages = total_pages;
-
-if (onePage < totalPages) {
-        options.totalItems = totalPages;
+if (kitWatched.length > 20) {
+        if (container) container.innerHTML = '';
+        options.totalItems = kitWatched.length;
+        options.itemsPerPage = 20;
         options.page = onePage;
         const pagination = new Pagination(container, options);
         pagination.on('afterMove', function (event) {
         onePage = event.page;
-       too(onePage);
+        too(onePage);
     });
     }
 };
+//=====================================================    
 
 too();
  
-
-
-
-
-
             ulLibrary.addEventListener('click', (evt)=>{
                evt.preventDefault();
             if(evt.target.closest('.card_js')){
                
-                const oneObj = toForFind(evt.target, key);
+                const oneObj = toForFind(evt.target, KEY);
                 if(!oneObj) return;
                 
                 modalMarkup(oneObj, forModalLib);
 
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button'); 
+
+                 toChangeTxtOnBtn(
+            btnAddToWatch,
+            oneObj,
+            'watched',
+            'REMOVE FROM WATCHED',
+            'ADD TO WATCHED'
+        ); 
+
+                //  const prstArr = JSON.parse(localStorage.getItem('watched'));
+                //         const present = prstArr.some(itm=>itm.id===oneObj.id);
+                //         if(present){
+                //             btnAddToWatch.textContent = 'REMOVE FROM WATCHED';
+                //         } 
+                //         else{
+                //             btnAddToWatch.textContent = 'ADD TO WATCHED';
+                //         }
+
+
+                         toChangeTxtOnBtn(
+            btnAddToQueue,
+            oneObj,
+            'queued',
+            'REMOVE FROM QUEUE',
+            'ADD TO QUEUE'
+        );      
+                //  const prstQu = JSON.parse(localStorage.getItem('queued'));
+                //     const presentQ = prstQu.some(itm=>itm.id===oneObj.id); 
+                //     if(presentQ){
+                //            btnAddToQueue.textContent = 'REMOVE FROM QUEUE';
+                //         } 
+                //     else{
+                //            btnAddToQueue.textContent = 'ADD TO QUEUE';
+                //         }               
                    
-                     btnAddToWatch.addEventListener('click', (evt)=>{
-                                                 toWatch(oneObj);
-                        const kit = JSON.parse(localStorage.getItem('watched')) ?? [];
-                        renderLayout(kit, ulLibrary);                         
+                    btnAddToWatch.addEventListener('click', (evt)=>{
+                                    toWatch(oneObj);
+    toChangeTxtOnBtn(
+            btnAddToWatch,
+            oneObj,
+            'watched',
+            'REMOVE FROM WATCHED',
+            'ADD TO WATCHED'
+        );                     
+                        // const prstArr = JSON.parse(localStorage.getItem('watched'));
+                        // const present = prstArr.some(itm=>itm.id===oneObj.id);
+                        // if(present){
+                        //     btnAddToWatch.textContent = 'REMOVE FROM WATCHED';
+                        // } 
+                        // else{
+                        //     btnAddToWatch.textContent = 'ADD TO WATCHED';
+                        // }
+                                                  
+                        // const kit = JSON.parse(localStorage.getItem('watched')) ?? [];
+                        too();
+                        // renderLayout(kit, ulLibrary);                         
                                                  evt.stopPropagation();
                                                  });
+
+
+
+
+
+
                         
-                     btnAddToQueue.addEventListener('click', (evt)=>{
+                    btnAddToQueue.addEventListener('click', (evt)=>{
                                                  toQueue(oneObj);
-                                                 evt.stopPropagation();
+
+         toChangeTxtOnBtn(
+            btnAddToQueue,
+            oneObj,
+            'queued',
+            'REMOVE FROM QUEUE',
+            'ADD TO QUEUE'
+        );                                           
+                    // const prstArr = JSON.parse(localStorage.getItem('queued'));
+                    // const present = prstArr.some(itm=>itm.id===oneObj.id); 
+                    // if(present){
+                    //        btnAddToQueue.textContent = 'REMOVE FROM QUEUE';
+                    //     } 
+                    // else{
+                    //        btnAddToQueue.textContent = 'ADD TO QUEUE';
+                    //     }                            
+                    //                              evt.stopPropagation();
                                                  });
                                 
                 toForButtonCross(forModalLib, btnAddToWatch, btnAddToQueue);
@@ -84,30 +154,3 @@ too();
 
             }
         })
-console.log(kitWatched.length/20);
-// const total_pages = Math.ceil(kitWatched.length/20);
-// console.log(pages);
-
-// let onePage = 1;
-// let totalPages = total_pages;
-
-// if (onePage < totalPages) {
-//         options.totalItems = totalPages;
-//         options.page = onePage;
-//         const pagination = new Pagination(container, options);
-//         pagination.on('afterMove', function (event) {
-//         onePage = event.page;
-//         getAPIdata(main, part,  whatLookingFor, onePage);
-//     });
-//     }
-
-
-
-
-  
-
-
-
-
-
-

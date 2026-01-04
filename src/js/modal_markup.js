@@ -95,26 +95,30 @@ export function modalMarkup(oneObj, forModal) {
                                         <td colspan = "2">ABOUT</td>
                                 </tr>
 
-                                <tr>
+                                <tr class="description">
         <td colspan = "2">
         ${overview||'Unfortunately, this film does not have a description yet.'}
         </td>
                                 </tr>
                       
-                       <tr>
-                                        <td colspan = "2" class="two_buttons">
-
+                      
+                                        <tr class="two_buttons">
+                        <td>
                 <button type="button" class="arange_button">ADD TO WATCHED</button>
+                        </td>
+                        <td>
                 <button type="button" class="white_button">ADD TO QUEUE</button>
-                
-                                        </td>
-                                </tr>  
+                        </td>
+                                        </tr>
+                                
                 </table>
                 
                      
                 </div>
         </div>   
                 `
+
+                
      return forModal.innerHTML = raw;   
         };
 
