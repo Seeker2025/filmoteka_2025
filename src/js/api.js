@@ -60,7 +60,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         const btnAddToWatch = document.querySelector('button.arange_button');     
         const btnAddToQueue = document.querySelector('button.white_button'); 
 
-            toChangeTxtOnBtn(
+        toChangeTxtOnBtn(
             btnAddToWatch,
             oneObj,
             'watched',
@@ -68,7 +68,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
             'ADD TO WATCHED'
         ); 
 
-                   toChangeTxtOnBtn(
+        toChangeTxtOnBtn(
             btnAddToQueue,
             oneObj,
             'queued',
@@ -77,8 +77,8 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         );      
 
         btnAddToWatch.addEventListener('click', (evt)=>{
-                                 toWatch(oneObj);
-           toChangeTxtOnBtn(
+                                toWatch(oneObj);
+        toChangeTxtOnBtn(
             btnAddToWatch,
             oneObj,
             'watched',
@@ -90,8 +90,8 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                                  });
         
         btnAddToQueue.addEventListener('click', (evt)=>{
-                                 toQueue(oneObj);
-                           toChangeTxtOnBtn(
+                                toQueue(oneObj);
+        toChangeTxtOnBtn(
             btnAddToQueue,
             oneObj,
             'queued',

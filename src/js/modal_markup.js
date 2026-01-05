@@ -95,9 +95,11 @@ export function modalMarkup(oneObj, forModal) {
                                         <td colspan = "2">ABOUT</td>
                                 </tr>
 
-                                <tr class="description">
+                                <tr>
         <td colspan = "2">
+                        <div class="description">
         ${overview||'Unfortunately, this film does not have a description yet.'}
+                        </div>
         </td>
                                 </tr>
                       

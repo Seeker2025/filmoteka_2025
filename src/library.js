@@ -64,90 +64,56 @@ too();
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button'); 
 
-                 toChangeTxtOnBtn(
-            btnAddToWatch,
-            oneObj,
-            'watched',
-            'REMOVE FROM WATCHED',
-            'ADD TO WATCHED'
-        ); 
+                        toChangeTxtOnBtn(
+                        btnAddToWatch,
+                        oneObj,
+                        'watched',
+                        'REMOVE FROM WATCHED',
+                        'ADD TO WATCHED'
+                                         ); 
 
-                //  const prstArr = JSON.parse(localStorage.getItem('watched'));
-                //         const present = prstArr.some(itm=>itm.id===oneObj.id);
-                //         if(present){
-                //             btnAddToWatch.textContent = 'REMOVE FROM WATCHED';
-                //         } 
-                //         else{
-                //             btnAddToWatch.textContent = 'ADD TO WATCHED';
-                //         }
+               
 
 
-                         toChangeTxtOnBtn(
-            btnAddToQueue,
-            oneObj,
-            'queued',
-            'REMOVE FROM QUEUE',
-            'ADD TO QUEUE'
-        );      
-                //  const prstQu = JSON.parse(localStorage.getItem('queued'));
-                //     const presentQ = prstQu.some(itm=>itm.id===oneObj.id); 
-                //     if(presentQ){
-                //            btnAddToQueue.textContent = 'REMOVE FROM QUEUE';
-                //         } 
-                //     else{
-                //            btnAddToQueue.textContent = 'ADD TO QUEUE';
-                //         }               
+                        toChangeTxtOnBtn(
+                        btnAddToQueue,
+                        oneObj,
+                        'queued',
+                        'REMOVE FROM QUEUE',
+                        'ADD TO QUEUE'
+                                        );      
+                            
                    
                     btnAddToWatch.addEventListener('click', (evt)=>{
                                     toWatch(oneObj);
-    toChangeTxtOnBtn(
-            btnAddToWatch,
-            oneObj,
-            'watched',
-            'REMOVE FROM WATCHED',
-            'ADD TO WATCHED'
-        );                     
-                        // const prstArr = JSON.parse(localStorage.getItem('watched'));
-                        // const present = prstArr.some(itm=>itm.id===oneObj.id);
-                        // if(present){
-                        //     btnAddToWatch.textContent = 'REMOVE FROM WATCHED';
-                        // } 
-                        // else{
-                        //     btnAddToWatch.textContent = 'ADD TO WATCHED';
-                        // }
-                                                  
-                        // const kit = JSON.parse(localStorage.getItem('watched')) ?? [];
-                        too();
-                        // renderLayout(kit, ulLibrary);                         
-                                                 evt.stopPropagation();
-                                                 });
+                        toChangeTxtOnBtn(
+                        btnAddToWatch,
+                        oneObj,
+                        'watched',
+                        'REMOVE FROM WATCHED',
+                        'ADD TO WATCHED'
+                        );                     
+                                    too();
+                                             
+                                                evt.stopPropagation();
+                                                });
 
 
 
 
-
-
-                        
+  
                     btnAddToQueue.addEventListener('click', (evt)=>{
-                                                 toQueue(oneObj);
+                                    toQueue(oneObj);
 
-         toChangeTxtOnBtn(
-            btnAddToQueue,
-            oneObj,
-            'queued',
-            'REMOVE FROM QUEUE',
-            'ADD TO QUEUE'
-        );                                           
-                    // const prstArr = JSON.parse(localStorage.getItem('queued'));
-                    // const present = prstArr.some(itm=>itm.id===oneObj.id); 
-                    // if(present){
-                    //        btnAddToQueue.textContent = 'REMOVE FROM QUEUE';
-                    //     } 
-                    // else{
-                    //        btnAddToQueue.textContent = 'ADD TO QUEUE';
-                    //     }                            
-                    //                              evt.stopPropagation();
-                                                 });
+                        toChangeTxtOnBtn(
+                        btnAddToQueue,
+                        oneObj,
+                        'queued',
+                        'REMOVE FROM QUEUE',
+                        'ADD TO QUEUE'
+                                        );                                           
+                                                evt.stopPropagation();
+                                                });
                                 
                 toForButtonCross(forModalLib, btnAddToWatch, btnAddToQueue);
                
