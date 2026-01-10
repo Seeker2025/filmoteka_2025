@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.container_head{
+/* .container_head{
   box-sizing: border-box;
   height: 120px;
   padding: 35px 25px 10px;
@@ -14,7 +14,7 @@
   flex-direction: row;
   justify-content: center;
   background-color: rgb(0, 0, 0);
-}
+} */
 
 .button_right ul{
   display: flex;
@@ -88,7 +88,7 @@
     width: 69px;
     height: 3px;
     border-radius: 2px;
-    background-color: #FF001B;
+    background-color: #a6ff00;
     
 }
 
@@ -127,7 +127,7 @@
     }
     .container_head{
   box-sizing: border-box;
-  height: 180px;
+  height: 167px;
   padding: 25px 15px 10px;
   display: flex;
   flex-direction: row;
