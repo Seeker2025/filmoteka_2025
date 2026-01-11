@@ -20,14 +20,14 @@ a{
   cursor: pointer;
 }
 
-body {
+body#index {
   display: flex;
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
 
-  background-image: url('/img/deWater04.jpg');
+  /* background-image: url('/img/deWater04.jpg'); */
   /* background-size: contain; */
   /* border: 5px dashed red; */
   background-repeat: repeat;
@@ -36,6 +36,8 @@ body {
   /* background-repeat: repeat-x, repeat-y; */
   /* padding: 15px; */
 }
+
+
 
 /* .body_background{
     background-image: url("../img/sprite.png");
