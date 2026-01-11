@@ -6,6 +6,9 @@ import {
  }                          from './js/api';
 import { footerScaleJS }    from './js/footer';
 import { showLoader }       from './js/loader';
+import { toSwitchToDarkUI } from './js/switch';
+// console.log(toSwitchToDarkUI);
+
 
 // import { galleryRef } from './js/render';
 // console.log(galleryRef);
@@ -22,6 +25,16 @@ getAPIdata( BASE_URL, trending);
                             showLoader();
                             getAPIdata( BASE_URL, search, movie);
                             form.reset();
-                            })
+                            });
+
+
+
+const switchInp = document.querySelector('input.switch');
+    console.log(switchInp); 
+    
+switchInp.addEventListener('change', (evt)=>{
+    toSwitchToDarkUI(evt.target.checked);
+
+})    
 
 
