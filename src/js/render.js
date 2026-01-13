@@ -1,23 +1,13 @@
- //import { 
-//        toShowModalWin,
- //        toCloseModal
- // }                              from './madal.js';
   import  noImg                   from '../img/no_img02.png';
   import  noth                    from '../img/noth.png';
-
- 
 
  export const galleryRef = document.querySelector('.gallery');
  console.log(galleryRef);
  const ulGallery = document.querySelector('ul.gallery');
  console.log(ulGallery);
 
-// ////// const a = galleryRef;
-//         ////// const section = document.querySelector('.section');
-//         ////// const body = document.querySelector('body');
-
  export function renderLayout(arr, ulContainer){
-    // console.log(arr.length);
+    
     if(!arr.length){
           const ren =`
                              <li class="card card_js">

@@ -13,7 +13,8 @@ console.log('switch');
 const bodyIndex = document.querySelector('body#index');
 console.log(bodyIndex);
 const containerHead = document.querySelector('.container_head');
-console.log(containerHead);
+const card = document.querySelector('li.card_js');
+console.log(card);
 
 
  
