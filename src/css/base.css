@@ -20,7 +20,9 @@ a{
   cursor: pointer;
 }
 
-body#index {
+body#index,
+body#library,
+body#queue{
   display: flex;
   flex-direction: column;
   min-width: 100vw;
