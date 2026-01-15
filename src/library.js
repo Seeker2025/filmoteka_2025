@@ -4,6 +4,10 @@ import {  options,
           container
  }                              from './js/pagination.js';
 import {  toChangeTxtOnBtn } from './js/toChangeText.js';
+import { toSwitchToDarkUI } from './js/switch';
+const containerHeadLib = document.querySelector('.container_head_lib');
+
+    
 
 ////// Class
 //  import { ToRender } from './js/class';
@@ -119,4 +123,19 @@ too();
                
 
             }
-        })
+        });
+
+
+
+
+
+   const switchInpLib = document.querySelector('input.switch');
+       console.log(switchInpLib); 
+       
+   switchInpLib.addEventListener('change', (evt)=>{
+       console.log(evt.target.checked);
+       
+        toSwitchToDarkUI(pageLibrary, containerHeadLib);
+    
+   
+   })  

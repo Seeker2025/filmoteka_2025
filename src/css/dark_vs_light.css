@@ -26,3 +26,11 @@ body.light{
   background-color: rgb(142, 142, 142);
 
 }
+
+.input_dark{
+  background-color: rgb(74, 75, 74);
+}
+.input_light{
+  background-color: rgb(253, 253, 253);
+
+}

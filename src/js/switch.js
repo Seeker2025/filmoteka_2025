@@ -10,19 +10,20 @@ console.log('switch');
 
 // })
 
-const bodyIndex = document.querySelector('body#index');
-console.log(bodyIndex);
-const containerHead = document.querySelector('.container_head');
+// const bodyIndex = document.querySelector('body#index');
+// console.log(bodyIndex);
+// const containerHead = document.querySelector('.container_head');
 const card = document.querySelector('li.card_js');
 console.log(card);
 
 
  
 
-export function toSwitchToDarkUI(mening){
+export function toSwitchToDarkUI(body, head, input){
     
-        bodyIndex.classList.toggle('light');
-        containerHead.classList.toggle('con_light');
+        body.classList.toggle('light');
+        head.classList.toggle('con_light');
+        input.classList.toggle('input_light');
 
     
     

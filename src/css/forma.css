@@ -21,7 +21,7 @@ input::placeholder {
     height: 30px;
     width: 280px;
     border-bottom: 2px solid rgb(255, 204, 0);
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(0, 0, 0); */
     font-size: 1.0em;
     position: absolute;
     padding-left: 10px;
@@ -66,7 +66,7 @@ button.magnifying_glass{
     
     
     position: relative;
-    top: -1px;
+    top: 2px;
     left: 225px;
 }
 

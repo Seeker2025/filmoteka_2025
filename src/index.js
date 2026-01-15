@@ -7,11 +7,18 @@ import {
 import { footerScaleJS }    from './js/footer';
 import { showLoader }       from './js/loader';
 import { toSwitchToDarkUI } from './js/switch';
+
 // console.log(toSwitchToDarkUI);
+// console.log(switchInp02);
+
+const bodyIndex = document.querySelector('body#index');
+const containerHead = document.querySelector('.container_head');
+const inputText = document.querySelector('input.input_text');
 
 
-// import { galleryRef } from './js/render';
-// console.log(galleryRef);
+
+
+ console.log(inputText);
 
 
 // showLoader();
@@ -35,7 +42,7 @@ const switchInp = document.querySelector('input.switch');
 switchInp.addEventListener('change', (evt)=>{
     console.log(evt.target.checked);
     
-    toSwitchToDarkUI(evt.target.checked);
+    toSwitchToDarkUI(bodyIndex, containerHead, inputText);
 
 })    
 
