@@ -7,7 +7,7 @@
      </div>
                             </li>                                              
                                     `}).join("");o.innerHTML=c}else{const c=`
-                             <li class="card card_js">
+                             <li class="card card_js ">
                              <img class="img_of_card" src=${f} alt="No image">
                              </li>    
                                      `;o.innerHTML=c}}const h="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB6SURBVHgB7ZVBCsAgDASXvmR/aH/cp1gPHkqRmjRqEDLgRdcMiBogCIKFnGVQkWfdY5bmMi7I5KzZDKOcj0I9uSY7TC7JDJd/rU2Tt+amwJdoibQl/y09sAmEw1ETDpeLcHhOhMMHQkVBTbaLpUkkGEnQt0WzNAgCMTf64Es4we8RJwAAAABJRU5ErkJggg==";function v(s,o){if(!s)return;const{poster_path:c,title:a,popularity:t,vote_average:e,vote_count:r,overview:d,genre_ids:l}=s;let u=`<img class="img_modal" src="https://image.tmdb.org/t/p/w500${c}" alt="${a}">`;c||(u=`<img src=${g} alt="No image">`);const m=`<div class="backdrop">
@@ -102,4 +102,4 @@
                 </div>
         </div>   
                 `;return o.innerHTML=m}function w(s,o,c){window.addEventListener("keyup",r=>{r.code==="Escape"&&e(s)});const a=document.querySelector("div.cross"),t=document.querySelector(".backdrop");t.addEventListener("click",r=>{console.log(r.target),r.target===t&&(console.log("whoa!"),e(s))}),a.addEventListener("click",()=>{e(s),a.removeEventListener("click",()=>{}),window.removeEventListener("keyup",()=>{}),o.removeEventListener("click",()=>{}),c.removeEventListener("click",()=>{})});function e(r){r.innerHTML=""}}function S(s,o){const c=s.closest(".card"),a=Number(c.getAttribute("id"));return JSON.parse(localStorage.getItem(o)).find(r=>r.id===a)}let n=JSON.parse(localStorage.getItem("watched"))??[],i=JSON.parse(localStorage.getItem("queued"))??[];function L(s){n.some(o=>o.id===s.id)?(n=n.filter(o=>o.id!==s.id),localStorage.setItem("watched",JSON.stringify(n))):(n.push(s),localStorage.setItem("watched",JSON.stringify(n)))}function E(s){i.some(o=>o.id===s.id)?(i=i.filter(o=>o.id!==s.id),localStorage.setItem("queued",JSON.stringify(i))):(i.push(s),localStorage.setItem("queued",JSON.stringify(i)))}export{L as a,E as b,w as c,v as m,_ as r,S as t};
-//# sourceMappingURL=toFun-Bqnd7aiI.js.map
+//# sourceMappingURL=toFun-Cr_6jjkn.js.map
