@@ -10,7 +10,7 @@
     
     if(!arr.length){
           const ren =`
-                             <li class="card card_js">
+                             <li class="card card_js ">
                              <img class="img_of_card" src=${noth} alt="No image">
                              </li>    
                                      `

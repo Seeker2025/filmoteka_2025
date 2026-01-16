@@ -13,8 +13,8 @@ console.log('switch');
 // const bodyIndex = document.querySelector('body#index');
 // console.log(bodyIndex);
 // const containerHead = document.querySelector('.container_head');
-const card = document.querySelector('li.card_js');
-console.log(card);
+// const card = document.querySelector('li.card_js');
+// console.log(card);
 
 
  

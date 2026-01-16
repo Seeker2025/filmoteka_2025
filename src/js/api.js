@@ -52,6 +52,8 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                                 console.log(response.data.results);
         renderLayout(response.data.results, galleryRef);
         // renderLayout(0, galleryRef);
+        const card = document.querySelector('li.card_js');
+        console.log(card);
         galleryRef.addEventListener('click', (evt)=>{
             if(evt.target.closest('.card_js')){
                

@@ -23,7 +23,8 @@ const inputText = document.querySelector('input.input_text');
 
 // showLoader();
 getAPIdata( BASE_URL, trending);
-// footerScaleJS();
+
+
 
                             const form = document.querySelector('.js_form');
                             form.addEventListener('submit', (evt)=>{
@@ -33,15 +34,13 @@ getAPIdata( BASE_URL, trending);
                             getAPIdata( BASE_URL, search, movie);
                             form.reset();
                             });
-
-
+////// UI switching
 
 const switchInp = document.querySelector('input.switch');
     console.log(switchInp); 
     
 switchInp.addEventListener('change', (evt)=>{
     console.log(evt.target.checked);
-    
     toSwitchToDarkUI(bodyIndex, containerHead, inputText);
 
 })    

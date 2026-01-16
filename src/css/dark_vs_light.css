@@ -1,20 +1,11 @@
  body.dark {
   
   background-image: url('/img/deWater04.jpg');
-  /* background-size: contain; */
-  /* border: 5px dashed red; */
   background-repeat: repeat;
-  
-
-  
-  /* background-repeat: repeat-x, repeat-y; */
-  /* padding: 15px; */
- }
+  }
  
 body.light{
   background-image: url('/img/deWater05.jpg');
-   /* background-size: contain; */
-  /* border: 5px dashed red; */
   background-repeat: repeat;
   
 } 
@@ -32,5 +23,11 @@ body.light{
 }
 .input_light{
   background-color: rgb(253, 253, 253);
+}
 
+.card_dark{
+  background-color: rgb(74, 75, 74);
+}
+.card_light{
+  background-color: rgb(253, 253, 253);
 }
