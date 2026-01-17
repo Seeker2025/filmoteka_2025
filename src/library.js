@@ -2,9 +2,9 @@ console.log('library');
 import    Pagination            from  'tui-pagination'; 
 import {  options,
           container
- }                              from './js/pagination.js';
-import {  toChangeTxtOnBtn } from './js/toChangeText.js';
-import { toSwitchToDarkUI } from './js/switch';
+                            }   from './js/pagination.js';
+import {  toChangeTxtOnBtn  } from './js/toChangeText.js';
+import { toSwitchToDarkUI   } from './js/switch';
 const containerHeadLib = document.querySelector('.container_head_lib');
 
     
@@ -128,14 +128,11 @@ too();
 
 
 
-
+////// switching UI for library page
    const switchInpLib = document.querySelector('input.switch');
        console.log(switchInpLib); 
        
    switchInpLib.addEventListener('change', (evt)=>{
        console.log(evt.target.checked);
-       
-        toSwitchToDarkUI(pageLibrary, containerHeadLib);
-    
-   
-   })  
+       toSwitchToDarkUI(pageLibrary, containerHeadLib, null);
+       })  

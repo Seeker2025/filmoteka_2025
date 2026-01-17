@@ -6,13 +6,9 @@ import {  options,
           container
  }                              from './pagination.js';
 import { hideLoader }           from './loader.js';
-// import { bigModal } from './toShowModalWin.js';
 import { toForFind } from './toForFind.js'
 import {  toChangeTxtOnBtn } from './toChangeText.js';
-
-// import { ToRender } from './class.js';
-import  noImg  from '../img/no_img02.png';
-// import { toShowModalWin } from './madal.js';
+import { toSwitchUIforLiCard } from './switch.js';
 import { modalMarkup, toForButtonCross } from './modal_markup.js';
 import { toWatch, toQueue } from './toFun.js';
 
@@ -24,14 +20,9 @@ const KEY = 'mess';
  console.log(forModal);
  console.log(renderLayout);
 
-
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 
-export const BASE_URL = 'https://api.themoviedb.org/3/';
-export const trending = 'trending/movie/day';
-export const search   = 'search/movie';
-
-export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
+export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1){
     try{
         await axios.get( `${main}${part}`, {
                           headers: {
@@ -52,8 +43,10 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
                                 console.log(response.data.results);
         renderLayout(response.data.results, galleryRef);
         // renderLayout(0, galleryRef);
-        const card = document.querySelector('li.card_js');
-        console.log(card);
+        const cards = document.querySelectorAll('li.card_js');
+        console.log(sense);
+        toSwitchUIforLiCard(cards, sense);
+
         galleryRef.addEventListener('click', (evt)=>{
             if(evt.target.closest('.card_js')){
                
@@ -107,7 +100,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
             }
         })
        
-                        const { results, total_results, total_pages }=response.data;
+                        const { results, total_results, total_pages } = response.data;
                         let totalPages = total_pages;
     if (onePage < totalPages) {
         options.totalItems = totalPages;
@@ -118,7 +111,7 @@ export async function getAPIdata(main, part,  whatLookingFor, onePage = 1){
         getAPIdata(main, part,  whatLookingFor, onePage);
     });
     }
-        }
+}
 )
  
     }catch(error){

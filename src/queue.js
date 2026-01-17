@@ -5,8 +5,11 @@ import { renderLayout } from './js/render';
 import { modalMarkup, toForButtonCross } from './js/modal_markup';
 import { toForFind } from './js/toForFind';
 import { toWatch, toQueue } from './js/toFun';
+import { toSwitchToDarkUI } from './js/switch';
 
             const pageQueue = document.getElementById('queue');
+            const containerHeadLib = document.querySelector('.container_head_lib');
+
             if(pageQueue){
                const btnQueued = document.querySelector('a.button_queue_js');
                btnQueued.classList.add('other_color');
@@ -16,8 +19,6 @@ import { toWatch, toQueue } from './js/toFun';
 const key = 'queued';
 const ulQueue = document.querySelector('ul.ul_queue');
 const forModalQue = document.querySelector('.for_modal_queue');
-console.log(ulQueue);
-console.log(forModalQue);
 
 const kitQueued = JSON.parse(localStorage.getItem('queued')) ?? [];
 
@@ -52,4 +53,12 @@ renderLayout(kitQueued, ulQueue);
                                
                 
                             }
-                        })
+                        });
+
+////// switching UI for queue page
+const switchInpLib = document.querySelector('input.switch');
+       console.log(switchInpLib); 
+ switchInpLib.addEventListener('change', (evt)=>{
+       console.log(evt.target.checked);
+       toSwitchToDarkUI(pageQueue, containerHeadLib, null);
+       })                                

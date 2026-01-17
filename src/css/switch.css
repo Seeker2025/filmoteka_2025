@@ -1,15 +1,6 @@
-/* .container_switch{
-  margin: 0 auto;
-  height: 25px;
-  background-color: rgb(255, 170, 0);
-  padding: 0;
-
- 
-} */
 
 
 .switch_box{
-  /* background-color: rgb(21, 255, 0); */
   width: 99% ;
   height: 20px;
   
@@ -18,14 +9,6 @@
   justify-content: flex-end;
 
 }
-
-/* .switch{
- 
-   
-    background-color: rgb(255, 55, 0);
-    
-        
-} */
 
 input[type="checkbox"]{
     position: relative;
@@ -54,11 +37,12 @@ input[type="checkbox"]:before{
     transition: .5s;
     transform: scale(1.1);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-    /* border: 1px solid red; */
+   
 }
 
 input:checked[type="checkbox"]:before{
     left: 40px;
+    background: #000000;
 }
 
 
@@ -66,23 +50,18 @@ input:checked[type="checkbox"]:before{
 
 @media only screen and (min-width: 320px) {
   .switch{
-    padding: 1px 0;
-   
- }
+   padding: 1px 0;
+   }
 }
 
 @media only screen and (min-width: 768px) {
   .switch{
-    padding: 1px 0;
-    
-    
-    
- }
+   padding: 1px 0;
+   }
 }
 
 @media only screen and (min-width: 1280px) {
   .switch{
    padding: 1px 0;
-   
- }
+   }
 } 

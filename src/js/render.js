@@ -10,7 +10,7 @@
     
     if(!arr.length){
           const ren =`
-                             <li class="card card_js ">
+                             <li class="card card_js card_dark card_light">
                              <img class="img_of_card" src=${noth} alt="No image">
                              </li>    
                                      `
@@ -27,7 +27,7 @@
          imgMainPath = `<img class="img_of_card" src=${noImg} alt="No image">`
      }
                             return `
-                            <li class="card card_js" id=${id}>
+                            <li class="card card_js card_dark card_light" id=${id}>
                             ${imgMainPath}
      <div class="card_box">
          <h1 class="card_title">${title}</h1>
