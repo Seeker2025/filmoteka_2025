@@ -108,7 +108,7 @@ export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1
         const pagination = new Pagination(container, options);
         pagination.on('afterMove', function (event) {
         onePage = event.page;
-        getAPIdata(main, part,  whatLookingFor, onePage);
+        getAPIdata(main, part,  whatLookingFor, sense, onePage);
     });
     }
 }

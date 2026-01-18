@@ -11,6 +11,7 @@ export function toSwitchUIforLiCard(cards, sense){
        if(sense){
        cards.forEach(el =>{
        el.classList.toggle('card_light');
+       
        }
 )
 }

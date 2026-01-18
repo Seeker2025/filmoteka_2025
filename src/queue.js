@@ -1,11 +1,14 @@
 console.log('queue');
 
-import { footerScaleJS }    from './js/footer';
-import { renderLayout } from './js/render';
-import { modalMarkup, toForButtonCross } from './js/modal_markup';
-import { toForFind } from './js/toForFind';
-import { toWatch, toQueue } from './js/toFun';
-import { toSwitchToDarkUI } from './js/switch';
+import {    footerScaleJS }         from './js/footer';
+import {    renderLayout }          from './js/render';
+import {    modalMarkup,
+            toForButtonCross }      from './js/modal_markup';
+import {    toForFind }             from './js/toForFind';
+import {    toWatch,
+            toQueue }               from './js/toFun';
+import {    toSwitchToDarkUI }      from './js/switch';
+import {    toSwitchUIforLiCard }   from './js/switch.js';
 
             const pageQueue = document.getElementById('queue');
             const containerHeadLib = document.querySelector('.container_head_lib');
@@ -60,5 +63,9 @@ const switchInpLib = document.querySelector('input.switch');
        console.log(switchInpLib); 
  switchInpLib.addEventListener('change', (evt)=>{
        console.log(evt.target.checked);
+       renderLayout(kitQueued, ulQueue);
        toSwitchToDarkUI(pageQueue, containerHeadLib, null);
+       const cards = document.querySelectorAll('li.card_js');
+////// For cards in 'ul'       
+       toSwitchUIforLiCard(cards, evt.target.checked);
        })                                

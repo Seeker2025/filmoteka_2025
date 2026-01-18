@@ -1,5 +1,6 @@
  body.dark {
   background-image: url('/img/deWater04.jpg');
+  transition: background-image 1s ease;
   background-repeat: repeat;
   }
  
@@ -8,37 +9,47 @@ body.light{
   background-repeat: repeat;
   } 
 
+
+
 .con_dark{
   background-color: rgb(0, 0, 0);
+  transition: background-color 1s ease;
   }
 .con_light{
   background-color: rgb(142, 142, 142);
   }
 
+
+
 .input_dark{
   background-color: rgb(74, 75, 74);
+  
   }
 .input_light{
   background-color: rgb(253, 253, 253);
   }
 
+
 .card_dark{
-  background-color: rgb(63, 245, 63);
-  border: 3px solid  rgb(253, 48, 48);
+  background-color: rgb(100, 100, 100);
+  transition: background-color 5s ease;
+  border: 3px solid  rgb(183, 182, 182);
+  
+  
     }
 .card_light{
-  background-color: rgb(194, 108, 23);
-  border: 3px solid  rgb(48, 219, 253);
+  background-color: rgb(212, 211, 211);
+  border: 3px solid  rgb(255, 255, 255);
   }
 
 li.card_dark:hover{
   box-sizing: border-box;
   transform: scale(1.01);
-  border: 3px solid  rgb(255, 0, 0);
+  border: 3px solid  rgb(183, 182, 182);
   }
 
 li.card_light:hover{
   box-sizing: border-box;
   transform: scale(1.01);
-  border: 3px solid rgb(48, 219, 253);
+  border: 3px solid  rgb(255, 255, 255);
   }
