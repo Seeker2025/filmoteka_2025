@@ -37,6 +37,9 @@
                                     `
  }).join('');
  ulContainer.innerHTML = ren;
+
+ console.log(ulContainer);
+ 
 }
 
      

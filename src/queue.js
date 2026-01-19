@@ -34,6 +34,10 @@ renderLayout(kitQueued, ulQueue);
                 const oneObj = toForFind(evt.target, key);
                 if(!oneObj) return;
                 modalMarkup(oneObj, forModalQue);
+                    const modalOpas = document.querySelector('div.modal');
+                    console.log(modalOpas);
+                    setTimeout(() => { modalOpas.classList.add('modal_opas')}, 80);
+
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button');
 

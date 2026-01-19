@@ -43,6 +43,8 @@ export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1
                                 console.log(response.data.results);
         renderLayout(response.data.results, galleryRef);
         // renderLayout(0, galleryRef);
+        // if(JSON.parse(localStorage.getItem('ui'))==='dark'){    }            
+
         const cards = document.querySelectorAll('li.card_js');
         console.log(sense);
         toSwitchUIforLiCard(cards, sense);
@@ -52,6 +54,12 @@ export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1
                
                 const oneObj = toForFind(evt.target, KEY);
                 modalMarkup(oneObj, forModal);
+
+    //////smooth appearance of a modal window            
+                const modalOpas = document.querySelector('div.modal');
+                console.log(modalOpas);
+                setTimeout(() => { modalOpas.classList.add('modal_opas')}, 80);
+                
         const btnAddToWatch = document.querySelector('button.arange_button');     
         const btnAddToQueue = document.querySelector('button.white_button'); 
 

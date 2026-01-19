@@ -9,12 +9,23 @@ import { toSwitchToDarkUI } from './js/switch';
 const bodyIndex = document.querySelector('body#index');
 const containerHead = document.querySelector('.container_head');
 const inputText = document.querySelector('input.input_text');
+const switchInp = document.querySelector('input.switch');
+    console.log(switchInp); 
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const trending = 'trending/movie/day';
 const search   = 'search/movie';
 
 getAPIdata( BASE_URL, trending);
+
+const ui = JSON.parse(localStorage.getItem('ui')) ?? 'light';
+console.log(ui);
+
+if(JSON.parse(localStorage.getItem('ui'))==='dark'){ 
+    bodyIndex.classList.toggle('light');
+    containerHead.classList.toggle('con_light');
+    input.classList.toggle('input_light');
+}
 
                 let movie = null;
 
@@ -28,11 +39,12 @@ getAPIdata( BASE_URL, trending);
                             });
 
 ////// switching UI for the Index page
-const switchInp = document.querySelector('input.switch');
-    console.log(switchInp); 
+
     
 switchInp.addEventListener('change', (evt)=>{
     console.log(evt.target.checked);
+    if(evt.target.checked) localStorage.setItem('ui', JSON.stringify('dark'));
+    else localStorage.setItem('ui', JSON.stringify('light'));  
     toSwitchToDarkUI(bodyIndex, containerHead, inputText);
     let sense = evt.target.checked;
     console.log(sense);

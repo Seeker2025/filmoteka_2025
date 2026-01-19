@@ -23,8 +23,10 @@ table div.description{
     display: flex;
     flex-direction: column;
     border-radius: 3px;
-    
-    
+
+    opacity: 0;
+    transition: opacity 1s ease-out;
+   
 }
 
  div.modal img[alt="No image"]{
@@ -274,8 +276,7 @@ table div.description{
     /* opacity: 0.8; */
     /* visibility: hidden; */
     /* border: 2px dashed red; */
-
-/*1280*/}
+}
 
 table td{
     padding: 6px 0;
@@ -331,9 +332,16 @@ background-color: #FF6B01;
 }
 
 
+ div.modal_opas{
+   opacity: 1;
+ }
 
+ div.dark{
+    background-color: #494949;
+ }
 
+ div.light{
+    background-color: #dcdbdb;
+ }
 
-
-
-
+ 

@@ -63,7 +63,9 @@ if (kitWatched.length > 20) {
                 if(!oneObj) return;
                 
                 modalMarkup(oneObj, forModalLib);
-
+                            const modalOpas = document.querySelector('div.modal');
+                            console.log(modalOpas);
+                            setTimeout(() => { modalOpas.classList.add('modal_opas')}, 80);
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button'); 
 
@@ -132,6 +134,7 @@ if (kitWatched.length > 20) {
        console.log(switchInpLib); 
        
    switchInpLib.addEventListener('change', (evt)=>{
+        
        console.log(evt.target.checked);
        renderLayout(itemsForPage, ulLibrary);
        toSwitchToDarkUI(pageLibrary, containerHeadLib, null);

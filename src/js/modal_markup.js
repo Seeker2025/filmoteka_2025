@@ -3,8 +3,14 @@
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 
+let dark = null;
 export function modalMarkup(oneObj, forModal) {
-        
+        if(JSON.parse(localStorage.getItem('ui'))==='dark'){
+                dark = 'dark';
+        }else{
+                dark = 'light';
+        } 
+
         if(!oneObj){
                 return;
         }
@@ -28,7 +34,7 @@ export function modalMarkup(oneObj, forModal) {
                         }  
 
  const raw = `<div class="backdrop">
-                <div class = "modal">
+                <div class = "modal ${dark}">
                         <div class="cross">
                         
                                 
@@ -123,6 +129,9 @@ export function modalMarkup(oneObj, forModal) {
                 
      return forModal.innerHTML = raw;   
         };
+
+        const modal020 = document.querySelector('div.modal');
+        console.log(modal020);
 
 
  export function toForButtonCross(modalBox, btnWatch, btnQueue){
