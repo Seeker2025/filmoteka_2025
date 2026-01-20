@@ -18,14 +18,16 @@ const search   = 'search/movie';
 
 getAPIdata( BASE_URL, trending);
 
+localStorage.setItem('ui', JSON.stringify('light'));
+
 const ui = JSON.parse(localStorage.getItem('ui')) ?? 'light';
 console.log(ui);
 
-if(JSON.parse(localStorage.getItem('ui'))==='dark'){ 
-    bodyIndex.classList.toggle('light');
-    containerHead.classList.toggle('con_light');
-    input.classList.toggle('input_light');
-}
+// if(ui==='dark'){ 
+//     bodyIndex.classList.toggle('light');
+//     containerHead.classList.toggle('con_light');
+//     inputText.classList.toggle('input_light');
+// }
 
                 let movie = null;
 
