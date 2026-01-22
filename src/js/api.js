@@ -18,8 +18,7 @@ const KEY = 'mess';
  const galleryRef = document.querySelector('.gallery');
  console.log(galleryRef);
  console.log(forModal);
- console.log(renderLayout);
-
+ 
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 
 export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1){
@@ -40,7 +39,7 @@ export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1
         localStorage.setItem(KEY, JSON.stringify(response.data.results));
         
                                 if(response.data) hideLoader();
-                                console.log(response.data.results);
+                                // console.log(response.data.results);
         renderLayout(response.data.results, galleryRef);
         // renderLayout(0, galleryRef);
         // if(JSON.parse(localStorage.getItem('ui'))==='dark'){    }            
@@ -57,7 +56,7 @@ export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1
 
     //////smooth appearance of a modal window            
                 const modalOpas = document.querySelector('div.modal');
-                console.log(modalOpas);
+                // console.log(modalOpas);
                 setTimeout(() => { modalOpas.classList.add('modal_opas')}, 50);
                 
         const btnAddToWatch = document.querySelector('button.arange_button');     

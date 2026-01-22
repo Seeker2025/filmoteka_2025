@@ -2,19 +2,39 @@
 
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
+// import { bodyIndex }    from '../index';
+//  import { pageLibrary    }  from '../library';
+//  import { pageQueue      }  from '../queue';
+const pageLibraryMod = document.getElementById('library');
+const pageQueueMod = document.getElementById('queue');
+const pageIndex = document.querySelector('body#index');
+// console.log('pageIndex', pageIndex);
+// console.log('pageLibrary', pageLibraryMod);
+// console.log('pageQueue', pageQueueMod);
+
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
-        if(JSON.parse(localStorage.getItem('ui'))==='dark'){
-                dark = 'dark';
-        }else{
-                dark = 'light';
-        } 
-
-        if(!oneObj){
-                return;
+        if( pageIndex || pageLibraryMod || pageQueueMod){
+                localStorage.setItem('ui_lib', JSON.stringify('light_lib'));
+                const uiInd = JSON.parse(localStorage.getItem('ui'    ))==='dark';
+                const uiLib = JSON.parse(localStorage.getItem('ui_lib'))==='dark_lib';
+                const uiQue = JSON.parse(localStorage.getItem('ui_que'))==='dark_que';
+                // console.log('uiInd', uiInd);
+                // console.log('uiLib', uiLib);
+                // console.log('uiQue', uiQue);
+                
+                                if(  uiInd||uiLib||uiQue ){
+                                        dark = 'dark';
+                                        console.log('dark');
+                                }else{
+                                        dark = 'light';
+                                        console.log('light');
+                                        
+                                } 
         }
-        
+        if(!oneObj) return;
+                
         // const arrAll = JSON.parse(localStorage.getItem('mess'));
         //                 const oneObj = arrAll.find(itm => itm.id === id);
                         // forModal.innerHTML = modal_markup(oneObj);

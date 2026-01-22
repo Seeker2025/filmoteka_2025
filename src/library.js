@@ -17,6 +17,7 @@ import {    toWatch,
 
 const containerHeadLib = document.querySelector('.container_head_lib');
 const pageLibrary = document.getElementById('library');
+localStorage.setItem('ui_lib', JSON.stringify('light_lib'));
 
             if(pageLibrary){
                const btnWatched = document.querySelector('a.button_watched_js');
@@ -65,7 +66,7 @@ if (kitWatched.length > 20) {
                 modalMarkup(oneObj, forModalLib);
                             const modalOpas = document.querySelector('div.modal');
                             console.log(modalOpas);
-                            setTimeout(() => { modalOpas.classList.add('modal_opas')}, 80);
+                            setTimeout(() => { modalOpas.classList.add('modal_opas')}, 50);
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button'); 
 
@@ -103,9 +104,6 @@ if (kitWatched.length > 20) {
                                                 evt.stopPropagation();
                                                 });
 
-
-
-
   
                     btnAddToQueue.addEventListener('click', (evt)=>{
                                     toQueue(oneObj);
@@ -126,9 +124,6 @@ if (kitWatched.length > 20) {
             }
         });
 
-
-
-
 ////// switching UI for library page
    const switchInpLib = document.querySelector('input.switch');
        console.log(switchInpLib); 
@@ -136,6 +131,8 @@ if (kitWatched.length > 20) {
    switchInpLib.addEventListener('change', (evt)=>{
         
        console.log(evt.target.checked);
+       if(evt.target.checked) localStorage.setItem('ui_lib', JSON.stringify('dark_lib'));
+       else localStorage.setItem('ui_lib', JSON.stringify('light_lib')); 
        renderLayout(itemsForPage, ulLibrary);
        toSwitchToDarkUI(pageLibrary, containerHeadLib, null);
        const cards = document.querySelectorAll('li.card_js');

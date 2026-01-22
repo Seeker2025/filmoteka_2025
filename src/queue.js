@@ -11,6 +11,7 @@ import {    toSwitchToDarkUI }      from './js/switch';
 import {    toSwitchUIforLiCard }   from './js/switch.js';
 
             const pageQueue = document.getElementById('queue');
+            localStorage.setItem('ui_que', JSON.stringify('light_que'));
             const containerHeadLib = document.querySelector('.container_head_lib');
 
             if(pageQueue){
@@ -67,6 +68,8 @@ const switchInpLib = document.querySelector('input.switch');
        console.log(switchInpLib); 
  switchInpLib.addEventListener('change', (evt)=>{
        console.log(evt.target.checked);
+       if(evt.target.checked) localStorage.setItem('ui_que', JSON.stringify('dark_que'));
+       else localStorage.setItem('ui_que', JSON.stringify('light_que')); 
        renderLayout(kitQueued, ulQueue);
        toSwitchToDarkUI(pageQueue, containerHeadLib, null);
        const cards = document.querySelectorAll('li.card_js');

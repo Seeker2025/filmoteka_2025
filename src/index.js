@@ -18,10 +18,12 @@ const search   = 'search/movie';
 
 getAPIdata( BASE_URL, trending);
 
-localStorage.setItem('ui', JSON.stringify('light'));
+// localStorage.setItem('ui', JSON.stringify('light'));
 
-const ui = JSON.parse(localStorage.getItem('ui')) ?? 'light';
-console.log(ui);
+
+
+// const ui = JSON.parse(localStorage.getItem('ui')) ?? 'light';
+// console.log(ui);
 
 // if(ui==='dark'){ 
 //     bodyIndex.classList.toggle('light');
@@ -44,7 +46,8 @@ console.log(ui);
 
     
 switchInp.addEventListener('change', (evt)=>{
-    console.log(evt.target.checked);
+    // console.log(evt.target.checked);
+    console.log(switchInp.checked);
     if(evt.target.checked) localStorage.setItem('ui', JSON.stringify('dark'));
     else localStorage.setItem('ui', JSON.stringify('light'));  
     toSwitchToDarkUI(bodyIndex, containerHead, inputText);
