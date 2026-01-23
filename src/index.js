@@ -20,16 +20,14 @@ getAPIdata( BASE_URL, trending);
 
 // localStorage.setItem('ui', JSON.stringify('light'));
 
+// switchInp.classList.add('input_check');
 
 
-// const ui = JSON.parse(localStorage.getItem('ui')) ?? 'light';
+
 // console.log(ui);
+// // console.log(switchInp.checked);
 
-// if(ui==='dark'){ 
-//     bodyIndex.classList.toggle('light');
-//     containerHead.classList.toggle('con_light');
-//     inputText.classList.toggle('input_light');
-// }
+
 
                 let movie = null;
 
@@ -38,11 +36,18 @@ getAPIdata( BASE_URL, trending);
                             evt.preventDefault();
                             movie = evt.currentTarget.elements.search.value;
                             showLoader();
-                            getAPIdata( BASE_URL, search, movie);
+                            getAPIdata(BASE_URL, search, movie);
                             form.reset();
                             });
 
 ////// switching UI for the Index page
+const ui = JSON.parse(localStorage.getItem('ui'));
+if(ui==='dark'){ 
+    switchInp.checked = true;
+    toSwitchToDarkUI(bodyIndex, containerHead, inputText);
+    const sense = switchInp.checked;
+    getAPIdata(BASE_URL, trending, null, sense);
+    }
 
     
 switchInp.addEventListener('change', (evt)=>{

@@ -21,9 +21,25 @@ input[type="checkbox"]{
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
 }
 
-input[type="checkbox"]:checked{
+/* input.input_check:checked{
+    background: #5aff08! important;
+} 
+
+input.input_check:checked:before{
+    left: 40px;
+    background: #ff0404;
+} */
+
+
+
+ input:checked[type="checkbox"]:before{
+    left: 40px;
+    background: #000000;
+} 
+
+ input[type="checkbox"]:checked{
     background: #FF6B08;
-}
+}  
 
 input[type="checkbox"]:before{
     content: '';
@@ -40,10 +56,7 @@ input[type="checkbox"]:before{
    
 }
 
-input:checked[type="checkbox"]:before{
-    left: 40px;
-    background: #000000;
-}
+
 
 
 

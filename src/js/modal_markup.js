@@ -15,24 +15,13 @@ const pageIndex = document.querySelector('body#index');
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
-        if( pageIndex || pageLibraryMod || pageQueueMod){
-                localStorage.setItem('ui_lib', JSON.stringify('light_lib'));
-                const uiInd = JSON.parse(localStorage.getItem('ui'    ))==='dark';
-                const uiLib = JSON.parse(localStorage.getItem('ui_lib'))==='dark_lib';
-                const uiQue = JSON.parse(localStorage.getItem('ui_que'))==='dark_que';
-                // console.log('uiInd', uiInd);
-                // console.log('uiLib', uiLib);
-                // console.log('uiQue', uiQue);
-                
-                                if(  uiInd||uiLib||uiQue ){
+        if( JSON.parse(localStorage.getItem('ui'))==='dark'){
+               
                                         dark = 'dark';
-                                        console.log('dark');
+                                        
                                 }else{
                                         dark = 'light';
-                                        console.log('light');
-                                        
-                                } 
-        }
+                                }
         if(!oneObj) return;
                 
         // const arrAll = JSON.parse(localStorage.getItem('mess'));

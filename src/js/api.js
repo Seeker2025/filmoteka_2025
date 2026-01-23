@@ -57,7 +57,7 @@ export async function getAPIdata(main, part,  whatLookingFor, sense, onePage = 1
     //////smooth appearance of a modal window            
                 const modalOpas = document.querySelector('div.modal');
                 // console.log(modalOpas);
-                setTimeout(() => { modalOpas.classList.add('modal_opas')}, 50);
+                setTimeout(() => { modalOpas.classList.add('modal_opas')}, 40);
                 
         const btnAddToWatch = document.querySelector('button.arange_button');     
         const btnAddToQueue = document.querySelector('button.white_button'); 

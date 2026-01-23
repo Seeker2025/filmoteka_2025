@@ -66,7 +66,7 @@ if (kitWatched.length > 20) {
                 modalMarkup(oneObj, forModalLib);
                             const modalOpas = document.querySelector('div.modal');
                             console.log(modalOpas);
-                            setTimeout(() => { modalOpas.classList.add('modal_opas')}, 50);
+                            setTimeout(() => { modalOpas.classList.add('modal_opas')}, 40);
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button'); 
 
@@ -123,16 +123,29 @@ if (kitWatched.length > 20) {
 
             }
         });
+    const switchInpLib = document.querySelector('input.switch');
+    console.log(switchInpLib);     
+
+    const ui = JSON.parse(localStorage.getItem('ui'));
+    if(ui==='dark'){ 
+        switchInpLib.checked = true;
+        toSwitchToDarkUI(pageLibrary, containerHeadLib, null);
+        const sense = switchInpLib.checked;
+        renderLayout(itemsForPage, ulLibrary);
+        const cards = document.querySelectorAll('li.card_js');
+        toSwitchUIforLiCard(cards, true);
+     
+        }
+        
 
 ////// switching UI for library page
-   const switchInpLib = document.querySelector('input.switch');
-       console.log(switchInpLib); 
+   
        
    switchInpLib.addEventListener('change', (evt)=>{
         
        console.log(evt.target.checked);
-       if(evt.target.checked) localStorage.setItem('ui_lib', JSON.stringify('dark_lib'));
-       else localStorage.setItem('ui_lib', JSON.stringify('light_lib')); 
+       if(evt.target.checked) localStorage.setItem('ui', JSON.stringify('dark'));
+       else localStorage.setItem('ui', JSON.stringify('light')); 
        renderLayout(itemsForPage, ulLibrary);
        toSwitchToDarkUI(pageLibrary, containerHeadLib, null);
        const cards = document.querySelectorAll('li.card_js');
