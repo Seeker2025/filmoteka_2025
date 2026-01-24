@@ -17,7 +17,7 @@ import {    toWatch,
 
 const containerHeadLib = document.querySelector('.container_head_lib');
 const pageLibrary = document.getElementById('library');
-localStorage.setItem('ui_lib', JSON.stringify('light_lib'));
+
 
             if(pageLibrary){
                const btnWatched = document.querySelector('a.button_watched_js');
@@ -38,8 +38,6 @@ function too(onePage = 1){
    itemsForPage = kitWatched.slice(startIndex, endIndex);
    renderLayout(itemsForPage, ulLibrary);
                 
-                
-
 if (kitWatched.length > 20) {
         if (container) container.innerHTML = '';
         options.totalItems = kitWatched.length;
@@ -126,6 +124,7 @@ if (kitWatched.length > 20) {
     const switchInpLib = document.querySelector('input.switch');
     console.log(switchInpLib);     
 
+ ////// UI for library page      
     const ui = JSON.parse(localStorage.getItem('ui'));
     if(ui==='dark'){ 
         switchInpLib.checked = true;

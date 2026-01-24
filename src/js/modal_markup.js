@@ -5,28 +5,20 @@ import noImg            from '../img/no_img02.png';
 // import { bodyIndex }    from '../index';
 //  import { pageLibrary    }  from '../library';
 //  import { pageQueue      }  from '../queue';
-const pageLibraryMod = document.getElementById('library');
-const pageQueueMod = document.getElementById('queue');
-const pageIndex = document.querySelector('body#index');
-// console.log('pageIndex', pageIndex);
-// console.log('pageLibrary', pageLibraryMod);
-// console.log('pageQueue', pageQueueMod);
-
+// const pageLibraryMod = document.getElementById('library');
+// const pageQueueMod = document.getElementById('queue');
+// const pageIndex = document.querySelector('body#index');
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
-        if( JSON.parse(localStorage.getItem('ui'))==='dark'){
-               
-                                        dark = 'dark';
-                                        
-                                }else{
-                                        dark = 'light';
-                                }
+
+        if(JSON.parse(localStorage.getItem('ui'))==='dark'){
+                        dark = 'dark';
+        }else{
+                        dark = 'light';
+        }
         if(!oneObj) return;
                 
-        // const arrAll = JSON.parse(localStorage.getItem('mess'));
-        //                 const oneObj = arrAll.find(itm => itm.id === id);
-                        // forModal.innerHTML = modal_markup(oneObj);
         const{ 
                         poster_path,
                         title,
@@ -35,7 +27,7 @@ export function modalMarkup(oneObj, forModal) {
                         vote_count,
                         overview,
                         genre_ids
-                                         } = oneObj;
+                } = oneObj;
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
@@ -144,21 +136,7 @@ export function modalMarkup(oneObj, forModal) {
 
 
  export function toForButtonCross(modalBox, btnWatch, btnQueue){
-        // const btnAddToWatch = document.querySelector('button.arange_button');     
-        // const btnAddToQueue = document.querySelector('button.white_button'); 
-        // console.log(btnAddToWatch);
-        // console.log(btnAddToQueue);
-          
-
-        // btnAddToWatch.addEventListener('click', (evt)=>{
-        //                          toWatch(oneObj);
-        //                          evt.stopPropagation();
-        //                          });
         
-        // btnAddToQueue.addEventListener('click', (evt)=>{
-        //                          toQueue(oneObj);
-        //                          evt.stopPropagation();
-        //                          });
                         window.addEventListener('keyup', (evt)=>{
                                 if(evt.code === 'Escape'){
                                 toCloseModal(modalBox);

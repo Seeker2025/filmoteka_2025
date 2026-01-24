@@ -11,7 +11,7 @@ import {    toSwitchToDarkUI }      from './js/switch';
 import {    toSwitchUIforLiCard }   from './js/switch.js';
 
             const pageQueue = document.getElementById('queue');
-            localStorage.setItem('ui_que', JSON.stringify('light_que'));
+           
             const containerHeadLib = document.querySelector('.container_head_lib');
 
             if(pageQueue){
@@ -37,7 +37,7 @@ renderLayout(kitQueued, ulQueue);
                 modalMarkup(oneObj, forModalQue);
                     const modalOpas = document.querySelector('div.modal');
                     console.log(modalOpas);
-                    setTimeout(() => { modalOpas.classList.add('modal_opas')}, 80);
+                    setTimeout(() => { modalOpas.classList.add('modal_opas')}, 40);
 
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button');
@@ -63,13 +63,27 @@ renderLayout(kitQueued, ulQueue);
                             }
                         });
 
+    const switchInpLib = document.querySelector('input.switch');
+    console.log(switchInpLib);     
+
+////// UI for queue page    
+    const ui = JSON.parse(localStorage.getItem('ui'));
+    if(ui==='dark'){ 
+        switchInpLib.checked = true;
+        toSwitchToDarkUI(pageQueue, containerHeadLib, null);
+        const sense = switchInpLib.checked;
+        renderLayout(kitQueued, ulQueue);
+        const cards = document.querySelectorAll('li.card_js');
+        toSwitchUIforLiCard(cards, true);
+     
+        }                        
+
 ////// switching UI for queue page
-const switchInpLib = document.querySelector('input.switch');
-       console.log(switchInpLib); 
+
  switchInpLib.addEventListener('change', (evt)=>{
        console.log(evt.target.checked);
-       if(evt.target.checked) localStorage.setItem('ui_que', JSON.stringify('dark_que'));
-       else localStorage.setItem('ui_que', JSON.stringify('light_que')); 
+       if(evt.target.checked) localStorage.setItem('ui', JSON.stringify('dark'));
+       else localStorage.setItem('ui', JSON.stringify('light')); 
        renderLayout(kitQueued, ulQueue);
        toSwitchToDarkUI(pageQueue, containerHeadLib, null);
        const cards = document.querySelectorAll('li.card_js');

@@ -18,16 +18,6 @@ const search   = 'search/movie';
 
 getAPIdata( BASE_URL, trending);
 
-// localStorage.setItem('ui', JSON.stringify('light'));
-
-// switchInp.classList.add('input_check');
-
-
-
-// console.log(ui);
-// // console.log(switchInp.checked);
-
-
 
                 let movie = null;
 
