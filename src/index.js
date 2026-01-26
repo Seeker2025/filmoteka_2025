@@ -15,6 +15,7 @@ const switchInp = document.querySelector('input.switch');
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const trending = 'trending/movie/day';
 const search   = 'search/movie';
+const fullInformation = '';
 
 getAPIdata( BASE_URL, trending);
 

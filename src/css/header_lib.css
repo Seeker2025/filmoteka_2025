@@ -8,23 +8,12 @@
   width: 100%;
 }
 
-/* .container_head{
-  box-sizing: border-box;
-  height: 120px;
-  padding: 35px 25px 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: rgb(57, 227, 1);
-} */
-
 .button_right ul{
   display: flex;
   flex-direction: row;
 }
 
 .three_containers_lib{
-  /* border: 3px dashed rgb(162, 255, 23); */
   min-height: 50px;
   width: 30%;
 }
@@ -32,8 +21,6 @@
 
 
 .logo_box{
-  /* border: 1px dashed gold; */
-
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -54,13 +41,11 @@
 }
 
 .three_containers_lib a.home{
-  /* border-bottom: 3px solid #FF001B; */
   margin-right: 70px;
 }
 
 .three_containers_lib a.home::after{
-  /* border-bottom: 3px solid #FF001B; */
-    /* margin-right: 27px; */
+ 
     position: relative;
     top: 2px;
     left: -2px;
@@ -73,16 +58,12 @@
 }
 
 .three_containers_lib a.library{
-  /* border-bottom: 3px solid #FF001B; */
-    /* margin-right: 27px; */
-   
-   
     padding: 0 0 0 36px;
 }
 
 .three_containers_lib a.library::after{
  
-   position: relative;
+    position: relative;
     top: 2px;
     left: 34px;
     display: block;
@@ -132,9 +113,7 @@ a.button_lib:hover{
 .background{
     background-image: url("/img/back05.png");
     background-repeat: no-repeat;
-    /* background-size: 30%; */
-    /* background-position: cover; */
-
+    
     margin-left: auto;
     margin-right: auto;
     background-repeat: no-repeat;
@@ -164,9 +143,9 @@ a.button_lib:hover{
     width: 19%;
   }
    .button_right{
-  display: flex;
-  justify-content: end;
-  width: 144px;
+   display: flex;
+   justify-content: end;
+   width: 144px;
  }
     .img_padding_left{
       visibility: hidden;
@@ -185,7 +164,6 @@ div.form_lib{
  position: relative;
  top: 87px;
  left: -63px;
- /* border: 2px solid red; */
  width: 300px;
 }
 }

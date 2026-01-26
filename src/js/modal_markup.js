@@ -1,13 +1,6 @@
-//import { toWatch, toQueue } from './toFun';
 
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
-// import { bodyIndex }    from '../index';
-//  import { pageLibrary    }  from '../library';
-//  import { pageQueue      }  from '../queue';
-// const pageLibraryMod = document.getElementById('library');
-// const pageQueueMod = document.getElementById('queue');
-// const pageIndex = document.querySelector('body#index');
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
@@ -27,7 +20,8 @@ export function modalMarkup(oneObj, forModal) {
                         vote_count,
                         overview,
                         genre_ids
-                } = oneObj;
+
+              } = oneObj;
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
@@ -132,9 +126,7 @@ export function modalMarkup(oneObj, forModal) {
         };
 
         const modal020 = document.querySelector('div.modal');
-        console.log(modal020);
-
-
+       
  export function toForButtonCross(modalBox, btnWatch, btnQueue){
         
                         window.addEventListener('keyup', (evt)=>{
