@@ -1,9 +1,11 @@
 
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
+import { genres } from './genres';
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
+// console.log(oneObj);
 
         if(JSON.parse(localStorage.getItem('ui'))==='dark'){
                         dark = 'dark';
@@ -40,7 +42,7 @@ export function modalMarkup(oneObj, forModal) {
 
                                 ${imgAnotherPath}
                 <table>
-                           <caption>${title}</caption>
+                            <caption>${title}</caption>
                                 <tr>
                                         <td class="table_cell">
                                                 <span>Vote / Votes</span>
@@ -48,7 +50,7 @@ export function modalMarkup(oneObj, forModal) {
                                         
                                       
                                         <td class="table_two">
-                                                <span class="orange">${vote_average}</span> / ${vote_count}
+        <span class="orange">${vote_average}</span> / ${vote_count}
                                         </td>
 
                                         
@@ -57,33 +59,33 @@ export function modalMarkup(oneObj, forModal) {
 
                                 <tr>
                                         <td class="table_cell">
-                                                <span>Popularity</span>
+                                            <span>Popularity</span>
                                         </td>
 
                                         <td class="table_two">
-                                                ${popularity}
+                                            ${popularity||'No popularity'}
                                         </td>
                                        
                                 </tr>
 
                                 <tr>
                                         <td class="table_cell">
-                                                <span>Original title</span>
+                                            <span>Original title</span>
                                         </td>
 
                                         <td class="table_two">
-                                                ${title}
+                                            ${title||'No title'}
                                         </td>
 
                                 </tr>
 
                                 <tr>
                                         <td class="table_cell">
-                                                <span>Genre</span>
+                                            <span>Genre</span>
                                         </td>
 
                                         <td class="table_two">
-                                                ${genre_ids[0], genre_ids[1]}
+                                            ${genres(genre_ids).join(', ')||'No genres yet'}
                                         </td>
 
                                 </tr>
@@ -141,7 +143,6 @@ export function modalMarkup(oneObj, forModal) {
                         backdrop.addEventListener('click', (evt)=>{
                                 console.log(evt.target);
                                 if(evt.target === backdrop){
-                                        console.log('whoa!');
                                         toCloseModal(modalBox);
                                 }
                         });

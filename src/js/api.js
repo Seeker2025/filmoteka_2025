@@ -1,49 +1,70 @@
  
 import    axios                 from 'axios';
-import {  renderLayout  }       from './render';
+import {  renderLayout               } from './render';
 import    Pagination            from  'tui-pagination'; 
 import {  options,
           container
- }                              from './pagination.js';
-import { hideLoader }           from './loader.js';
-import { toForFind } from './toForFind.js'
-import {  toChangeTxtOnBtn } from './toChangeText.js';
-import { toSwitchUIforLiCard } from './switch.js';
-import { modalMarkup, toForButtonCross } from './modal_markup.js';
-import { toWatch, toQueue } from './toFun.js';
+                                     } from './pagination.js';
+import {  hideLoader                 } from './loader.js';
+import {  toForFind                  } from './toForFind.js'
+import {  toChangeTxtOnBtn           } from './toChangeText.js';
+import {  toSwitchUIforLiCard        } from './switch.js';
+import {
+          modalMarkup,
+          toForButtonCross 
+                                     } from './modal_markup.js';
+import {  toWatch,
+          toQueue                    } from './toFun.js';
 
 const KEY = 'mess';
 
 const forModal = document.querySelector('.for_modal');
 const galleryRef = document.querySelector('.gallery');
+const nothing = document.querySelector('.nothing');
+const tuiHidden = document.querySelector('.tui-pagination');
  
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 
 export async function getAPIdata(main, part, whatLookingFor, sense, onePage = 1){
     try{
         await axios.get( `${main}${part}`, {
-                          headers: {
+
+                        headers: {
                             'Content-Type': 'application/json',
-                            Authorization: bearer,
+                        Authorization: bearer,
                             },
-                             params: {
-                             query: whatLookingFor,
-                             include_adult: false,
-                             page: onePage,
+                            params: {
+                            query: whatLookingFor,
+                            include_adult: false,
+                            page: onePage,
                             
                             }
  })
-                  .then(response => {
+                .then(response => {
         localStorage.setItem(KEY, JSON.stringify(response.data.results));
-        
+                                ///// Loader
                                 if(response.data) hideLoader();
-                                console.log(response.data.results);
-        renderLayout(response.data.results, galleryRef);
-        // renderLayout(0, galleryRef);
-        // if(JSON.parse(localStorage.getItem('ui'))==='dark'){    }            
-
+                                ///// Genres
+                        if(part === 'genre/movie/list'){ 
+        localStorage.setItem('genres', JSON.stringify(response.data.genres));
+                        }        
+                        // if(part === 'search/movie'){                       
+                                // console.log(response.data.results);
+                                //console.log(response.data.genres);
+                                ///// Search result not successful
+                                if(!response.data.results?.length){
+                                nothing.classList.add('nothing_vis');
+                                tuiHidden.classList.add('tui_hidden');
+                                }else{
+                                nothing.classList.remove('nothing_vis');
+                                tuiHidden.classList.remove('tui_hidden');    
+                                }
+                                
+                                
+        renderLayout(response.data.results, galleryRef); 
+      
         const cards = document.querySelectorAll('li.card_js');
-        console.log(sense);
+        // console.log(sense);
         toSwitchUIforLiCard(cards, sense);
 
         galleryRef.addEventListener('click', (evt)=>{

@@ -33,11 +33,11 @@ input[type="checkbox"]:checked{
 input[type="checkbox"]:before{
     content: '';
     position: absolute;
-    width: 23px;
-    height: 23px;
+    width: 21px;
+    height: 21px;
     border-radius: 20px;
-    top: 3px;
-    left: 4px;
+    top: 4px;
+    left: 6px;
     background: #fefefe;
     transition: .5s;
     transform: scale(1.1);

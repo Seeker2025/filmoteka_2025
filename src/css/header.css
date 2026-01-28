@@ -6,16 +6,6 @@
   width: 100%;
 }
 
-/* .container_head{
-  box-sizing: border-box;
-  height: 120px;
-  padding: 35px 25px 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: rgb(0, 0, 0);
-} */
-
 .button_right ul{
   display: flex;
   flex-direction: row;
@@ -24,14 +14,11 @@
 
 
 .three_containers{
-  /* border: 3px dashed rgb(162, 255, 23); */
   min-height: 50px;
   width: 30%;
 }
 
 .logo_box{
-  /* border: 1px dashed gold; */
-
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -52,13 +39,10 @@
 }
 
 .three_containers a.home{
-  /* border-bottom: 3px solid #FF001B; */
   margin-right: 70px;
 }
 
 .three_containers a.home::after{
-  /* border-bottom: 3px solid #FF001B; */
-    /* margin-right: 27px; */
     position: relative;
     top: 2px;
     left: -2px;
@@ -71,16 +55,12 @@
 }
 
 .three_containers a.library{
-  /* border-bottom: 3px solid #FF001B; */
-    /* margin-right: 27px; */
-   
-   
     padding: 0 0 0 36px;
 }
 
 .three_containers a.library::after{
  
-   position: relative;
+    position: relative;
     top: 2px;
     left: 34px;
     display: block;
@@ -113,7 +93,19 @@
   padding-left: 20px;
  }
 
+
+
  @media only screen and (min-width: 320px) {
+   .nothing{
+  color:#fc021b;
+  position: relative;
+  width: 420px;
+  top: 83px;
+  left:-71px;
+  font-size: 0.7em;
+  visibility: hidden;
+ 
+ }
   .three_containers{
     width: 19%;
   }
@@ -121,10 +113,10 @@
   display: flex;
   justify-content: end;
   width: 144px;
- }
-    .img_padding_left{
-      visibility: hidden;
-    }
+  }
+  .img_padding_left{
+  visibility: hidden;
+  }
     .container_head{
   box-sizing: border-box;
   height: 167px;
@@ -141,9 +133,15 @@ form.form{
  top: 87px;
  left: -73px;
 }
-}
+                    /*320*/}
 
 @media only screen and (min-width: 768px) {
+   .nothing{
+  font-size: 1em;
+  top: 55px;
+  left: -124px;
+  width: 420px;
+ }
      .img_padding_left{
       visibility: visible;
     }
@@ -159,9 +157,15 @@ form.form{
  top: 66px;
  left: -11px;
 }
-}
+                    /*768*/}
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1280px) {
+    .nothing{
+ 
+  top: 35px;
+  left: -157px;
+  width: 420px;
+ }
   form.form{
 
  top: 44px;
@@ -174,4 +178,15 @@ form.form{
   justify-content: space-between;
  
 }
+                  /*1280*/} 
+
+.nothing_vis{
+  visibility: visible;
 } 
+
+.tui_hidden{
+  visibility: hidden;
+} 
+.hidden{
+  visibility: hidden;
+}   
