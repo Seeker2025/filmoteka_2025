@@ -290,6 +290,7 @@ table td{
     align-items: center;
 
     color: #000000;
+    vertical-align: top;
     /* border: 1px solid #2a2a2a; */
 }
 

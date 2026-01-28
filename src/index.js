@@ -1,23 +1,23 @@
-import { 
-            getAPIdata,
-
- }                          from './js/api';
-import { footerScaleJS }    from './js/footer';
-import { showLoader }       from './js/loader';
-import { toSwitchToDarkUI } from './js/switch';
+import {    getAPIdata       }    from './js/api';
+import {    footerScaleJS    }    from './js/footer';
+import {    showLoader       }    from './js/loader';
+import {    toSwitchToDarkUI }    from './js/switch';
 
 const bodyIndex = document.querySelector('body#index');
 const containerHead = document.querySelector('.container_head');
 const inputText = document.querySelector('input.input_text');
 const switchInp = document.querySelector('input.switch');
-    console.log(switchInp); 
-
+   
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const trending = 'trending/movie/day';
 const search   = 'search/movie';
-const fullInformation = '';
+const genre = 'genre/movie/list';
 
-getAPIdata( BASE_URL, trending);
+
+
+    getAPIdata( BASE_URL, genre);
+    getAPIdata( BASE_URL, trending);
+    
 
 
                 let movie = null;
@@ -33,7 +33,7 @@ getAPIdata( BASE_URL, trending);
 
 ////// switching UI for the Index page
 const ui = JSON.parse(localStorage.getItem('ui'));
-if(ui==='dark'){ 
+if(ui === 'dark'){ 
     switchInp.checked = true;
     toSwitchToDarkUI(bodyIndex, containerHead, inputText);
     const sense = switchInp.checked;
