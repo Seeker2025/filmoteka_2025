@@ -25,7 +25,13 @@ const tuiHidden = document.querySelector('.tui-pagination');
  
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 
-export async function getAPIdata(main, part, whatLookingFor, sense, onePage = 1){
+export async function getAPIdata(
+                                     main,
+                                     part,
+                                     whatLookingFor,
+                                     sense,
+                                     onePage = 1
+                                ){
     try{
         await axios.get( `${main}${part}`, {
 
@@ -43,7 +49,7 @@ export async function getAPIdata(main, part, whatLookingFor, sense, onePage = 1)
                 .then(response => {
         localStorage.setItem(KEY, JSON.stringify(response.data.results));
                                 ///// Loader
-                                if(response.data) hideLoader();
+                        if(response.data) hideLoader();
                                 ///// Genres
                         if(part === 'genre/movie/list'){ 
         localStorage.setItem('genres', JSON.stringify(response.data.genres));
@@ -68,7 +74,7 @@ export async function getAPIdata(main, part, whatLookingFor, sense, onePage = 1)
         toSwitchUIforLiCard(cards, sense);
 
         galleryRef.addEventListener('click', (evt)=>{
-            if(evt.target.closest('.card_js')){
+                if(evt.target.closest('.card_js')){
                
                 const oneObj = toForFind(evt.target, KEY);
                 modalMarkup(oneObj, forModal);
@@ -142,5 +148,6 @@ export async function getAPIdata(main, part, whatLookingFor, sense, onePage = 1)
  
     }catch(error){
     console.log(error);
+    renderLayout('mistake404', galleryRef); 
     }
 }

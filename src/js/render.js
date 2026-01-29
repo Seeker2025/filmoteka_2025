@@ -1,5 +1,6 @@
 import  noImg                   from '../img/no_img02.png';
 import  noth                    from '../img/noth.png';
+import  mistake404              from '../img/mistake404.png';
 import { genres } from './genres';
 
 //   console.log(genres([12]).join(', '));
@@ -9,6 +10,15 @@ import { genres } from './genres';
  const ulGallery = document.querySelector('ul.gallery');
 
  export function renderLayout(arr, ulContainer){
+    if(arr === 'mistake404'){
+          const ren =`
+                             <li class="card card_js card_dark card_light">
+                             <img class="img_of_card" src=${mistake404} alt="404">
+                             </li>    
+                                     `
+          ulContainer.innerHTML = ren;                          
+
+     }
     
     if(!arr?.length){
           const ren =`

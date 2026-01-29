@@ -12,6 +12,8 @@ const BASE_URL = 'https://api.themoviedb.org/3/';
 const trending = 'trending/movie/day';
 const search   = 'search/movie';
 const genre = 'genre/movie/list';
+// const trailer = 'https://api.themoviedb.org/3/movie/{movie_id}/videos';
+const trailer = 'movie/{movie_id}/videos';
 
 
 
@@ -43,12 +45,12 @@ if(ui === 'dark'){
     
 switchInp.addEventListener('change', (evt)=>{
     // console.log(evt.target.checked);
-    console.log(switchInp.checked);
+    // console.log(switchInp.checked);
     if(evt.target.checked) localStorage.setItem('ui', JSON.stringify('dark'));
     else localStorage.setItem('ui', JSON.stringify('light'));  
     toSwitchToDarkUI(bodyIndex, containerHead, inputText);
     let sense = evt.target.checked;
-    console.log(sense);
+    // console.log(sense);
     if(movie) getAPIdata(BASE_URL, search, movie, sense);
     else getAPIdata(BASE_URL, trending, null, sense);
 
