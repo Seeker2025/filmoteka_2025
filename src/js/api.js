@@ -15,7 +15,7 @@ import {
                                      } from './modal_markup.js';
 import {  toWatch,
           toQueue                    } from './toFun.js';
-import{   apiForTrl } from './apiForTrl';
+// import{   apiForTrl } from './apiForTrl';
 
 const KEY = 'mess';
 
@@ -49,7 +49,8 @@ export async function getAPIdata(
  })
                 .then(response => {
         localStorage.setItem(KEY, JSON.stringify(response.data.results));
-        console.log(response.data.results);
+        console.log(response.data);
+        
                                 ///// Loader
                         if(response.data) hideLoader();
                                 
@@ -77,7 +78,7 @@ export async function getAPIdata(
                 if(evt.target.closest('.card_js')){
                
                 const oneObj = toForFind(evt.target, KEY);
-                apiForTrl(main, oneObj.id);
+                // apiForTrl(main, oneObj.id);
                 modalMarkup(oneObj, forModal);
 
     //////smooth appearance of a modal window            

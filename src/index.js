@@ -3,6 +3,7 @@ import {    footerScaleJS    }    from './js/footer';
 import {    showLoader       }    from './js/loader';
 import {    toSwitchToDarkUI }    from './js/switch';
 import {    apiForTrl        } from './js/apiForTrl';
+// import {    getTrailer        } from './js/apiForTrl';
 import {    apiForGen        } from './js/apiForGen';
 
 const bodyIndex = document.querySelector('body#index');
@@ -21,7 +22,15 @@ const trailer = 'movie/{movie_id}/videos';
 
     apiForGen( BASE_URL, genre);
     getAPIdata( BASE_URL, trending);
-    // apiForTrl(BASE_URL, 495896);
+    // apiForTrl(BASE_URL, 1168190).then(({id})=>console.log(id));
+    
+    // console.log(getAPIdata( BASE_URL, trending));
+    // let a = getAPIdata( BASE_URL, trending);
+    // console.log(a.then(({results})=>results));
+    
+    // getTrailer( 495896)
+    // getTrailer(495896);
+    
     
     
     

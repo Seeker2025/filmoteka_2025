@@ -2,7 +2,7 @@
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 import { genres } from './genres';
-import { apiForTrl,
+import {apiForTrl,
          toIframe
                         } from './apiForTrl';
 const BASE_URL = 'https://api.themoviedb.org/3/';
@@ -30,8 +30,13 @@ export function modalMarkup(oneObj, forModal) {
                         id
 
               } = oneObj;
-// apiForTrl(BASE_URL, 1234731);             
-const videoKey = JSON.parse(localStorage.getItem('key'));
+         console.log(id);
+              
+             
+// const videoKey = JSON.parse(localStorage.getItem('key'));
+const videoKey = apiForTrl(BASE_URL, id);
+videoKey.then(({results})=>console.log(results));
+
                    
         console.log(videoKey);
            
@@ -52,7 +57,7 @@ const videoKey = JSON.parse(localStorage.getItem('key'));
                         
                         </div>
 
-                                ${toIframe(videoKey) || imgAnotherPath}
+                                ${ imgAnotherPath}
                 <table>
                             <caption>${title}</caption>
                                 <tr>
