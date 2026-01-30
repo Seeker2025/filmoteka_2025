@@ -15,6 +15,7 @@ import {
                                      } from './modal_markup.js';
 import {  toWatch,
           toQueue                    } from './toFun.js';
+import{   apiForTrl } from './apiForTrl';
 
 const KEY = 'mess';
 
@@ -48,14 +49,13 @@ export async function getAPIdata(
  })
                 .then(response => {
         localStorage.setItem(KEY, JSON.stringify(response.data.results));
+        console.log(response.data.results);
                                 ///// Loader
                         if(response.data) hideLoader();
-                                ///// Genres
-                        if(part === 'genre/movie/list'){ 
-        localStorage.setItem('genres', JSON.stringify(response.data.genres));
-                        }        
+                                
+                              
                         // if(part === 'search/movie'){                       
-                                // console.log(response.data.results);
+                                
                                 //console.log(response.data.genres);
                                 ///// Search result not successful
                                 if(!response.data.results?.length){
@@ -77,6 +77,7 @@ export async function getAPIdata(
                 if(evt.target.closest('.card_js')){
                
                 const oneObj = toForFind(evt.target, KEY);
+                apiForTrl(main, oneObj.id);
                 modalMarkup(oneObj, forModal);
 
     //////smooth appearance of a modal window            

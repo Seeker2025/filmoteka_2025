@@ -2,9 +2,14 @@
 import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 import { genres } from './genres';
+import { apiForTrl,
+         toIframe
+                        } from './apiForTrl';
+const BASE_URL = 'https://api.themoviedb.org/3/';
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
+        
 // console.log(oneObj);
 
         if(JSON.parse(localStorage.getItem('ui'))==='dark'){
@@ -21,9 +26,16 @@ export function modalMarkup(oneObj, forModal) {
                         vote_average,
                         vote_count,
                         overview,
-                        genre_ids
+                        genre_ids,
+                        id
 
               } = oneObj;
+// apiForTrl(BASE_URL, 1234731);             
+const videoKey = JSON.parse(localStorage.getItem('key'));
+                   
+        console.log(videoKey);
+           
+        
 
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
@@ -35,12 +47,12 @@ export function modalMarkup(oneObj, forModal) {
                         <div class="cross">
                         
                                 
-                                        <img src=${closeIcon} alt="close">
+                                <img src=${closeIcon} alt="close">
                                         
                         
                         </div>
 
-                                ${imgAnotherPath}
+                                ${toIframe(videoKey) || imgAnotherPath}
                 <table>
                             <caption>${title}</caption>
                                 <tr>
@@ -53,7 +65,6 @@ export function modalMarkup(oneObj, forModal) {
         <span class="orange">${vote_average}</span> / ${vote_count}
                                         </td>
 
-                                        
                                         
                                 </tr>
 
@@ -123,10 +134,11 @@ export function modalMarkup(oneObj, forModal) {
         </div>   
                 `
 
-                
+//      localStorage.removeItem('key');    
      return forModal.innerHTML = raw;   
-        };
 
+        };
+//      localStorage.removeItem('key');  
         const modal020 = document.querySelector('div.modal');
        
  export function toForButtonCross(modalBox, btnWatch, btnQueue){

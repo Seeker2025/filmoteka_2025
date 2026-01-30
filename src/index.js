@@ -2,6 +2,8 @@ import {    getAPIdata       }    from './js/api';
 import {    footerScaleJS    }    from './js/footer';
 import {    showLoader       }    from './js/loader';
 import {    toSwitchToDarkUI }    from './js/switch';
+import {    apiForTrl        } from './js/apiForTrl';
+import {    apiForGen        } from './js/apiForGen';
 
 const bodyIndex = document.querySelector('body#index');
 const containerHead = document.querySelector('.container_head');
@@ -17,8 +19,11 @@ const trailer = 'movie/{movie_id}/videos';
 
 
 
-    getAPIdata( BASE_URL, genre);
+    apiForGen( BASE_URL, genre);
     getAPIdata( BASE_URL, trending);
+    // apiForTrl(BASE_URL, 495896);
+    
+    
     
 
 
