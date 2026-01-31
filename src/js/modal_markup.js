@@ -33,10 +33,18 @@ export function modalMarkup(oneObj, forModal) {
          console.log(id);
               
              
-apiForTrl(BASE_URL, id)
-.then(({results})=>{
-       console.log(results[0].key);
-});
+// apiForTrl(BASE_URL, id)
+// .then(({results})=>{
+//        console.log(results);
+               
+//         if(!results?.length){
+//            let key = null;
+//             console.log(key);
+//             return;
+//         }
+//         let key = results[0].key;
+//         console.log(key)
+// });
     
         
         
@@ -58,7 +66,24 @@ apiForTrl(BASE_URL, id)
                         
                         </div>
 
-                                ${ imgAnotherPath}
+                                ${
+                                        apiForTrl(BASE_URL, id)
+.then(({results})=>{
+       console.log(results);
+               
+        if(!results?.length){
+           
+            return imgAnotherPath;
+        }
+        let key = results[0].key;
+        toIframe(key);
+       
+})                    
+                                        
+               
+                                
+                                
+                                }
                 <table>
                             <caption>${title}</caption>
                                 <tr>
