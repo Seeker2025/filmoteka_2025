@@ -15,12 +15,12 @@ export async function apiForTrl(main, id){
                 .then(response => {  
                     console.log(response.data);
                     let key = null;
-                    key = response.data.results[0].key;
-                    if(!response.data.results?.length){
-                        key = null;
-                        return key;
-                    }
-                    return key;
+                    // key = response.data.results[0].key;
+                    // if(!response.data.results?.length){
+                    //     key = null;
+                    //     return key;
+                    // }
+                    return response.data;
                     // localStorage.removeItem('key'); 
                     // localStorage.setItem('key', JSON.stringify(key));
                                      
