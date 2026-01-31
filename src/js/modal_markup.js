@@ -33,12 +33,13 @@ export function modalMarkup(oneObj, forModal) {
          console.log(id);
               
              
-// const videoKey = JSON.parse(localStorage.getItem('key'));
-const videoKey = apiForTrl(BASE_URL, id);
-videoKey.then(({results})=>console.log(results));
-
-                   
-        console.log(videoKey);
+apiForTrl(BASE_URL, id)
+.then(({results})=>{
+       console.log(results[0].key);
+});
+    
+        
+        
            
         
 

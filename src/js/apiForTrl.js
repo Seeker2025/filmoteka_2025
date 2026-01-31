@@ -4,27 +4,29 @@ const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlm
 export async function apiForTrl(main, id){
     // localStorage.removeItem('key');  
          try{
-         await axios.get( `${main}movie/${id}/videos`, {
+         const response = await axios.get( `${main}movie/${id}/videos`, {
 
                         headers: {
                             'Content-Type': 'application/json',
                         Authorization: bearer,
                             }
                            
- })
-                .then(response => {  
-                    console.log(response.data);
-                    let key = null;
+ });
+
+    return response.data;
+                // .then(response => {  
+                //     console.log(response.data);
+                //     let key = null;
                     // key = response.data.results[0].key;
                     // if(!response.data.results?.length){
                     //     key = null;
                     //     return key;
                     // }
-                    return response.data;
+                    // return response.data;
                     // localStorage.removeItem('key'); 
                     // localStorage.setItem('key', JSON.stringify(key));
                                      
-        });
+        // });
     }catch(error){
     console.log(error);
     
