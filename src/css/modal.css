@@ -1,4 +1,18 @@
+   iframe.iframe{
+    height: 100%;
+    width: 100%;
+ }
+
+
 @media only screen and (min-width: 320px) {
+
+    .picture{
+    width: 232px;
+    height: 333px;
+    overflow: hidden;
+    }  
+
+ 
 
 table div.description{
  /*   background-color: #ff8d01;
@@ -124,6 +138,12 @@ div.cross{
                          
 
 @media only screen and (min-width: 768px) {
+
+  .picture{
+    width: 264px;
+    height: 373px;
+    }  
+
     div.modal{
     width: 704px;
     height: 552px;
@@ -142,7 +162,7 @@ table{
    
     width: 264px;
     height: 370px;
-    margin-left: 55px;
+    margin-left: 29px;
   
 }
 caption{
@@ -187,11 +207,17 @@ div.cross{
 
 
 @media only screen and (min-width: 1280px) {
+    .picture{
+    width: 295px;
+    height: 420px;
+    }  
+   
+
  div.modal{
    
     width: 806px;
     height: 558px;
-    padding: 37px 10px 37px 18px;
+    padding: 37px 10px 37px 55px;
    
     position: fixed;
     top: 40px;
@@ -229,7 +255,7 @@ table{
     /* border: 1px solid; */
     width: 400px;
     height: 100px;
-    margin-left: 17px;
+    margin-left: 28px;
 }
 button.arange_button{
     width: 136px;
@@ -256,7 +282,7 @@ div.cross{
 
 table div.description{
      
-    min-height: 200px;
+    min-height: 100px;
     max-height: 200px;
     overflow-y: auto;
 
@@ -345,5 +371,10 @@ background-color: #FF6B01;
  div.light{
     background-color: #dcdbdb;
  }
+ 
+ /* .picture{
+    border: 3px dashed red;
+ } */
 
+ 
  

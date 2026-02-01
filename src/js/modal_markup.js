@@ -3,8 +3,8 @@ import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 import { genres } from './genres';
 import {apiForTrl,
-         toIframe,
-         toSum
+         toIframe
+        
                         } from './apiForTrl';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
@@ -17,6 +17,8 @@ let dark = null;
 export function modalMarkup(oneObj, forModal) {
         
 // console.log(oneObj);
+
+
 
         if(JSON.parse(localStorage.getItem('ui'))==='dark'){
                         dark = 'dark';
@@ -38,25 +40,6 @@ export function modalMarkup(oneObj, forModal) {
               } = oneObj;
          console.log(id);
               
-             
-// apiForTrl(BASE_URL, id)
-// .then(({results})=>{
-//        console.log(results);
-               
-//         if(!results?.length){
-//            let key = null;
-//             console.log(key);
-//             return;
-//         }
-//         let key = results[0].key;
-//         console.log(key)
-// });
-    
-        
-        
-           
-        
-
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
                         imgAnotherPath = `<img src=${noImg} alt="No image">`;
@@ -72,28 +55,31 @@ export function modalMarkup(oneObj, forModal) {
                         
                         </div>
 
+<div class="picture">
                                 ${
-                                        apiForTrl(BASE_URL, id)
+                
+
+                                apiForTrl(BASE_URL, id)
 .then(({results})=>{
        console.log(results);
+       const picture = document.querySelector('.picture');
                
         if(!results?.length){
            
-            return imgAnotherPath;
-        }
-        let key = results[0].key;
-        console.log(key);
         
-       
-        console.log(toIframe(key));
-
-       
-})                    
-                                        
-               
-                                
-                                
+        picture.innerHTML=  imgAnotherPath;
+        }else{
+         let key = results[0].key;
+         console.log(key);
+         
+         toIframe(picture, key);
+        }
+         
+})                
+                      
                                 }
+    </div>                       
+                            
                 <table>
                             <caption>${title}</caption>
                                 <tr>
@@ -175,11 +161,10 @@ export function modalMarkup(oneObj, forModal) {
         </div>   
                 `
 
-//      localStorage.removeItem('key');    
-     return forModal.innerHTML = raw;   
+        return forModal.innerHTML = raw;   
 
         };
-//      localStorage.removeItem('key');  
+
         const modal020 = document.querySelector('div.modal');
        
  export function toForButtonCross(modalBox, btnWatch, btnQueue){

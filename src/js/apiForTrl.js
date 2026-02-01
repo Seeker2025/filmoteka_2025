@@ -14,19 +14,7 @@ export async function apiForTrl(main, id){
  });
 
     return response.data;
-                // .then(response => {  
-                //     console.log(response.data);
-                //     let key = null;
-                    // key = response.data.results[0].key;
-                    // if(!response.data.results?.length){
-                    //     key = null;
-                    //     return key;
-                    // }
-                    // return response.data;
-                    // localStorage.removeItem('key'); 
-                    // localStorage.setItem('key', JSON.stringify(key));
-                                     
-        // });
+            
     }catch(error){
     console.log(error);
     
@@ -34,40 +22,15 @@ export async function apiForTrl(main, id){
 }
 
 
-export function toIframe(videoKey){
-    // if(videoKey === null) return null;
-
-    return `
-            <iframe
+export function toIframe(div, videoKey){
+    
+    div.innerHTML = `
+            <iframe  class="iframe"
             src="https://www.youtube.com/embed/${videoKey}"
             frameborder="0"
             allowfullscreen>
             </iframe>
+                   `;
     
-            `;
 };
 
-export function toSum(a, b){
- 
- return a + b;
- 
-}
-
-
-// export async function getTrailer(id) {
-//   try {
-//     const searchParams = new URLSearchParams({
-//       'Content-Type': 'application/json',
-//       Authorization: bearer,
-//       language: 'en',
-//     });
-//     const url = `https://api.themoviedb.org/3/movie/${id}/videos?${searchParams}`;
-//     const response = await axios.get(url);
-//     if (!response) {
-//       throw new Error('Something goes wrong');
-//     }
-//     response.then(response =>console.log(response.data));
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// }
