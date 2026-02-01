@@ -35,7 +35,7 @@ export async function apiForTrl(main, id){
 
 
 export function toIframe(videoKey){
-    if(videoKey === null) return null;
+    // if(videoKey === null) return null;
 
     return `
             <iframe
@@ -46,6 +46,12 @@ export function toIframe(videoKey){
     
             `;
 };
+
+export function toSum(a, b){
+ 
+ return a + b;
+ 
+}
 
 
 // export async function getTrailer(id) {

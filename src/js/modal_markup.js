@@ -3,9 +3,15 @@ import closeIcon        from '../img/close.png';
 import noImg            from '../img/no_img02.png';
 import { genres } from './genres';
 import {apiForTrl,
-         toIframe
+         toIframe,
+         toSum
                         } from './apiForTrl';
 const BASE_URL = 'https://api.themoviedb.org/3/';
+
+// console.log(toSum(1, 2));
+
+
+
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
@@ -76,7 +82,11 @@ export function modalMarkup(oneObj, forModal) {
             return imgAnotherPath;
         }
         let key = results[0].key;
-        toIframe(key);
+        console.log(key);
+        
+       
+        console.log(toIframe(key));
+
        
 })                    
                                         
