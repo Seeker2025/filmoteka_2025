@@ -1,24 +1,17 @@
 
-import closeIcon        from '../img/close.png';
-import noImg            from '../img/no_img02.png';
-import { genres } from './genres';
-import {apiForTrl,
-         toIframe
+import          closeIcon         from '../img/close.png';
+import          noImg             from '../img/no_img02.png';
+import {        genres          } from './genres';
+import {        apiForTrl,
+                toIframe
         
-                        } from './apiForTrl';
+                                } from './apiForTrl';
 const BASE_URL = 'https://api.themoviedb.org/3/';
-
-// console.log(toSum(1, 2));
-
-
 
 
 let dark = null;
 export function modalMarkup(oneObj, forModal) {
         
-// console.log(oneObj);
-
-
 
         if(JSON.parse(localStorage.getItem('ui'))==='dark'){
                         dark = 'dark';
@@ -55,30 +48,23 @@ export function modalMarkup(oneObj, forModal) {
                         
                         </div>
 
-<div class="picture">
+                        <picture class="picture">
                                 ${
-                
-
                                 apiForTrl(BASE_URL, id)
-.then(({results})=>{
-       console.log(results);
-       const picture = document.querySelector('.picture');
-               
-        if(!results?.length){
-           
-        
-        picture.innerHTML=  imgAnotherPath;
-        }else{
-         let key = results[0].key;
-         console.log(key);
-         
-         toIframe(picture, key);
-        }
-         
-})                
-                      
+                                .then(({results})=>{
+                                        console.log(results);
+                                        const picture = document.querySelector('.picture');
+                                        if(!results?.length){
+                                        picture.innerHTML=  imgAnotherPath;
+                                        }else{
+                                        let key = results[0].key;
+                                        console.log(key);
+                                        toIframe(picture, key);
+                                        }
+
+                                })                
                                 }
-    </div>                       
+                        </picture>                       
                             
                 <table>
                             <caption>${title}</caption>
@@ -118,22 +104,22 @@ export function modalMarkup(oneObj, forModal) {
                                 </tr>
 
                                 <tr>
-                                        <td class="table_cell">
-                                            <span>Genre</span>
-                                        </td>
+                                    <td class="table_cell">
+                                        <span>Genre</span>
+                                    </td>
 
-                                        <td class="table_two">
-                                            ${genres(genre_ids).join(', ')||'No genres yet'}
-                                        </td>
+                                    <td class="table_two">
+                                        ${genres(genre_ids).join(', ')||'No genres yet'}
+                                    </td>
 
                                 </tr>
 
                                 <tr>
-                                        <td colspan = "2"></td>
+                                    <td colspan = "2"></td>
                                 </tr>
 
                                 <tr>
-                                        <td colspan = "2">ABOUT</td>
+                                     <td colspan = "2">ABOUT</td>
                                 </tr>
 
                                 <tr>
