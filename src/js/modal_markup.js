@@ -31,7 +31,7 @@ export function modalMarkup(oneObj, forModal) {
                         id
 
               } = oneObj;
-         console.log(id);
+        //  console.log(id);
               
  let imgAnotherPath = `<img class="img_modal" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">`  
                         if(!poster_path){
@@ -58,7 +58,7 @@ export function modalMarkup(oneObj, forModal) {
                                         picture.innerHTML=  imgAnotherPath;
                                         }else{
                                         let key = results[0].key;
-                                        console.log(key);
+                                        // console.log(key);
                                         toIframe(picture, key);
                                         }
 
@@ -119,7 +119,7 @@ export function modalMarkup(oneObj, forModal) {
                                 </tr>
 
                                 <tr>
-                                     <td colspan = "2">ABOUT</td>
+                                    <td colspan = "2">ABOUT</td>
                                 </tr>
 
                                 <tr>
@@ -133,10 +133,10 @@ export function modalMarkup(oneObj, forModal) {
                       
                                         <tr class="two_buttons">
                         <td>
-                <button type="button" class="arange_button">ADD TO WATCHED</button>
+        <button type="button" class="arange_button ${dark}">ADD TO WATCHED</button>
                         </td>
                         <td>
-                <button type="button" class="white_button">ADD TO QUEUE</button>
+        <button type="button" class="white_button ${dark}">ADD TO QUEUE</button>
                         </td>
                                         </tr>
                                 
@@ -147,7 +147,7 @@ export function modalMarkup(oneObj, forModal) {
         </div>   
                 `
 
-        return forModal.innerHTML = raw;   
+        forModal.innerHTML = raw;   
 
         };
 

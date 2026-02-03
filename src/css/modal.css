@@ -326,6 +326,11 @@ td.two_buttons{
     div.light{
     background-color: #dcdbdb;
     }
+    button.dark{
+    background-color: #6d6c6c;
+    color: #bcbcbc;
+    border: 1px solid #bcbcbc;
+    }
  
  
 
