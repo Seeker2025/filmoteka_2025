@@ -1,22 +1,23 @@
 console.log('queue');
 
-import {    footerScaleJS }         from './js/footer';
-import {    renderLayout }          from './js/render';
+import {    footerScaleJS       }      from './js/footer';
+import {    renderLayout        }      from './js/render';
 import {    modalMarkup,
-            toForButtonCross }      from './js/modal_markup';
-import {    toForFind }             from './js/toForFind';
+            toForButtonCross    }      from './js/modal_markup';
+import {    toForFind           }      from './js/toForFind';
 import {    toWatch,
-            toQueue }               from './js/toFun';
-import {    toSwitchToDarkUI }      from './js/switch';
-import {    toSwitchUIforLiCard }   from './js/switch.js';
+            toQueue             }      from './js/toFun';
+import {    toSwitchToDarkUI    }      from './js/switch';
+import {    toSwitchUIforLiCard }      from './js/switch.js';
+import {    toChangeTxtOnBtn    }      from './js/toChangeText.js';
 
             const pageQueue = document.getElementById('queue');
            
             const containerHeadLib = document.querySelector('.container_head_lib');
 
             if(pageQueue){
-               const btnQueued = document.querySelector('a.button_queue_js');
-               btnQueued.classList.add('other_color');
+            const btnQueued = document.querySelector('a.button_queue_js');
+            btnQueued.classList.add('other_color');
             }
 
 
@@ -42,13 +43,47 @@ renderLayout(kitQueued, ulQueue);
                 const btnAddToWatch = document.querySelector('button.arange_button');     
                 const btnAddToQueue = document.querySelector('button.white_button');
 
+                toChangeTxtOnBtn(
+                        btnAddToWatch,
+                        oneObj,
+                        'watched',
+                        'REMOVE FROM WATCHED',
+                        'ADD TO WATCHED'
+                                 ); 
+
+
+                 toChangeTxtOnBtn(
+                        btnAddToQueue,
+                        oneObj,
+                        'queued',
+                        'REMOVE FROM QUEUE',
+                        'ADD TO QUEUE'
+                                ); 
+
                 btnAddToWatch.addEventListener('click', (evt)=>{
                                                 toWatch(oneObj);
                                                 evt.stopPropagation();
+
+                        toChangeTxtOnBtn(
+                        btnAddToWatch,
+                        oneObj,
+                        'watched',
+                        'REMOVE FROM WATCHED',
+                        'ADD TO WATCHED'
+                                        );                            
                                                         });
                                         
                 btnAddToQueue.addEventListener('click', (evt)=>{
                 toQueue(oneObj);
+
+                        toChangeTxtOnBtn(
+                        btnAddToQueue,
+                        oneObj,
+                        'queued',
+                        'REMOVE FROM QUEUE',
+                        'ADD TO QUEUE'
+                                        ); 
+                                         
                 const kit = JSON.parse(localStorage.getItem('queued')) ?? [];
                 renderLayout(kit, ulQueue);    
                                                        
@@ -64,7 +99,7 @@ renderLayout(kitQueued, ulQueue);
                         });
 
     const switchInpLib = document.querySelector('input.switch');
-    console.log(switchInpLib);     
+//  console.log(switchInpLib);     
 
 ////// UI for queue page    
     const ui = JSON.parse(localStorage.getItem('ui'));
@@ -81,7 +116,7 @@ renderLayout(kitQueued, ulQueue);
 ////// switching UI for queue page
 
  switchInpLib.addEventListener('change', (evt)=>{
-       console.log(evt.target.checked);
+    // console.log(evt.target.checked);
        if(evt.target.checked) localStorage.setItem('ui', JSON.stringify('dark'));
        else localStorage.setItem('ui', JSON.stringify('light')); 
        renderLayout(kitQueued, ulQueue);
