@@ -2,7 +2,7 @@ import{a as I}from"./vendor-BNzshISR.js";(function(){const e=document.createElem
                              <li class="card card_js card_dark card_light">
                              <img class="img_of_card" src=${S} alt="404">
                              </li>    
-                                     `;e.innerHTML=s}if(t?.length){const s=t.map(({poster_path:a,id:r,title:o,release_date:i,genre_ids:l},m)=>{let g=`<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${a}" alt="${o}">`;return a||(g=`<img class="img_of_card" src=${A} alt="No image">`),`
+                                     `;e.innerHTML=s}if(t?.length){const s=t.map(({poster_path:a,id:r,title:o,release_date:i,genre_ids:l},u)=>{let g=`<img class="img_of_card" src="https://image.tmdb.org/t/p/w500${a}" alt="${o}">`;return a||(g=`<img class="img_of_card" src=${A} alt="No image">`),`
                             <li class="card card_js card_dark card_light" id=${r}>
                             ${g}
      <div class="card_box">
@@ -20,7 +20,7 @@ import{a as I}from"./vendor-BNzshISR.js";(function(){const e=document.createElem
             frameborder="0"
             allowfullscreen>
             </iframe>
-                   `}const $="https://api.themoviedb.org/3/";let d=null;function M(t,e){if(JSON.parse(localStorage.getItem("ui"))==="dark"?d="dark":d="light",!t)return;const{poster_path:s,title:a,popularity:r,vote_average:o,vote_count:i,overview:l,genre_ids:m,id:g}=t;let p=`<img class="img_modal" src="https://image.tmdb.org/t/p/w500${s}" alt="${a}">`;s||(p=`<img src=${A} alt="No image">`);const y=`<div class="backdrop">
+                   `}const $="https://api.themoviedb.org/3/";let d=null;function M(t,e){if(JSON.parse(localStorage.getItem("ui"))==="dark"?d="dark":d="light",!t)return;const{poster_path:s,title:a,popularity:r,vote_average:o,vote_count:i,overview:l,genre_ids:u,id:g}=t;let m=`<img class="img_modal" src="https://image.tmdb.org/t/p/w500${s}" alt="${a}">`;s||(m=`<img src=${A} alt="No image">`);const y=`<div class="backdrop">
                 <div class = "modal ${d}">
                         <div class="cross">
                         
@@ -31,7 +31,7 @@ import{a as I}from"./vendor-BNzshISR.js";(function(){const e=document.createElem
                         </div>
 
                         <picture class="picture">
-                                ${k($,g).then(({results:u})=>{console.log(u);const f=document.querySelector(".picture");if(!u?.length)f.innerHTML=p;else{let _=u[0].key;T(f,_)}})}
+                                ${k($,g).then(({results:p})=>{const f=document.querySelector(".picture");if(!p?.length)f.innerHTML=m;else{let _=p[0].key;T(f,_)}})}
                         </picture>                       
                             
                 <table>
@@ -77,7 +77,7 @@ import{a as I}from"./vendor-BNzshISR.js";(function(){const e=document.createElem
                                     </td>
 
                                     <td class="table_two">
-                                        ${h(m).join(", ")||"No genres yet"}
+                                        ${h(u).join(", ")||"No genres yet"}
                                     </td>
 
                                 </tr>
@@ -113,5 +113,5 @@ import{a as I}from"./vendor-BNzshISR.js";(function(){const e=document.createElem
                      
                 </div>
         </div>   
-                `;e.innerHTML=y}document.querySelector("div.modal");function E(t,e,s){window.addEventListener("keyup",i=>{i.code==="Escape"&&o(t)});const a=document.querySelector("div.cross"),r=document.querySelector(".backdrop");r.addEventListener("click",i=>{console.log(i.target),i.target===r&&o(t)}),a.addEventListener("click",()=>{o(t),a.removeEventListener("click",()=>{}),window.removeEventListener("keyup",()=>{}),e.removeEventListener("click",()=>{}),s.removeEventListener("click",()=>{})});function o(i){i.innerHTML=""}}function j(t,e){const s=t.closest(".card"),a=Number(s.getAttribute("id")),r=JSON.parse(localStorage.getItem(e));return r?r.find(i=>i.id===a):void 0}let c=JSON.parse(localStorage.getItem("watched"))??[],n=JSON.parse(localStorage.getItem("queued"))??[];function B(t){c.some(e=>e.id===t.id)?(c=c.filter(e=>e.id!==t.id),localStorage.setItem("watched",JSON.stringify(c))):(c.push(t),localStorage.setItem("watched",JSON.stringify(c)))}function C(t){n.some(e=>e.id===t.id)?(n=n.filter(e=>e.id!==t.id),localStorage.setItem("queued",JSON.stringify(n))):(n.push(t),localStorage.setItem("queued",JSON.stringify(n)))}console.log("switch");function U(t,e,s){t.classList.toggle("light"),e.classList.toggle("con_light"),s&&s.classList.toggle("input_light")}function D(t,e){e&&t.forEach(s=>{s.classList.toggle("card_light")})}function Y(t,e,s,a,r){(JSON.parse(localStorage.getItem(s))??[]).some(l=>l.id===e.id)?t.textContent=a:t.textContent=r}export{Y as a,B as b,C as c,E as d,U as e,D as f,M as m,O as r,j as t};
-//# sourceMappingURL=toChangeText-DL7q-v9F.js.map
+                `;e.innerHTML=y}function E(t,e,s){window.addEventListener("keyup",i=>{i.code==="Escape"&&o(t)});const a=document.querySelector("div.cross"),r=document.querySelector(".backdrop");r.addEventListener("click",i=>{console.log(i.target),i.target===r&&o(t)}),a.addEventListener("click",()=>{o(t),a.removeEventListener("click",()=>{}),window.removeEventListener("keyup",()=>{}),e.removeEventListener("click",()=>{}),s.removeEventListener("click",()=>{})});function o(i){i.innerHTML=""}}function j(t,e){const s=t.closest(".card"),a=Number(s.getAttribute("id")),r=JSON.parse(localStorage.getItem(e));return r?r.find(i=>i.id===a):void 0}let c=JSON.parse(localStorage.getItem("watched"))??[],n=JSON.parse(localStorage.getItem("queued"))??[];function B(t){c.some(e=>e.id===t.id)?(c=c.filter(e=>e.id!==t.id),localStorage.setItem("watched",JSON.stringify(c))):(c.push(t),localStorage.setItem("watched",JSON.stringify(c)))}function C(t){n.some(e=>e.id===t.id)?(n=n.filter(e=>e.id!==t.id),localStorage.setItem("queued",JSON.stringify(n))):(n.push(t),localStorage.setItem("queued",JSON.stringify(n)))}console.log("switch");function U(t,e,s){t.classList.toggle("light"),e.classList.toggle("con_light"),s&&s.classList.toggle("input_light")}function D(t,e){e&&t.forEach(s=>{s.classList.toggle("card_light")})}function Y(t,e,s,a,r){(JSON.parse(localStorage.getItem(s))??[]).some(l=>l.id===e.id)?t.textContent=a:t.textContent=r}export{Y as a,B as b,C as c,E as d,U as e,D as f,M as m,O as r,j as t};
+//# sourceMappingURL=toChangeText-DE0MPsDE.js.map
