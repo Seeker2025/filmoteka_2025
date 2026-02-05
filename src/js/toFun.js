@@ -2,8 +2,6 @@ let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
 let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
 
 export function toWatch(oneObj){
-                        //  watchedArr.some(itm => itm.id === oneObj.id)
-                   
                    
                     if(watchedArr.some(itm => itm.id === oneObj.id)){
                        watchedArr = watchedArr.filter(itm=>itm.id!==oneObj.id);

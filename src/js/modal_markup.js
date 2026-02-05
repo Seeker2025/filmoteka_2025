@@ -52,7 +52,7 @@ export function modalMarkup(oneObj, forModal) {
                                 ${
                                 apiForTrl(BASE_URL, id)
                                 .then(({results})=>{
-                                        console.log(results);
+                                        // console.log(results);
                                         const picture = document.querySelector('.picture');
                                         if(!results?.length){
                                         picture.innerHTML=  imgAnotherPath;
@@ -151,8 +151,7 @@ export function modalMarkup(oneObj, forModal) {
 
         };
 
-        const modal020 = document.querySelector('div.modal');
-       
+               
  export function toForButtonCross(modalBox, btnWatch, btnQueue){
         
                         window.addEventListener('keyup', (evt)=>{

@@ -14,6 +14,7 @@ import {    modalMarkup,
 import {    toForFind           }       from './js/toForFind';
 import {    toWatch,
             toQueue             }       from './js/toFun';
+import { to }            from './js/toMainFun.js';
 
 const containerHeadLib = document.querySelector('.container_head_lib');
 const pageLibrary = document.getElementById('library');
@@ -89,7 +90,8 @@ if (kitWatched.length > 20) {
                             
                    
                     btnAddToWatch.addEventListener('click', (evt)=>{
-                                    toWatch(oneObj);
+                                    // toWatch(oneObj);
+                                    to()
                         toChangeTxtOnBtn(
                         btnAddToWatch,
                         oneObj,
