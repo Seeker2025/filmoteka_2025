@@ -164,7 +164,7 @@ export function modalMarkup(oneObj, forModal) {
                         const backdrop = document.querySelector('.backdrop');
 
                         backdrop.addEventListener('click', (evt)=>{
-                                console.log(evt.target);
+                                // console.log(evt.target);
                                 if(evt.target === backdrop){
                                         toCloseModal(modalBox);
                                 }

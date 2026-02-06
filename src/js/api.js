@@ -13,8 +13,7 @@ import {
           modalMarkup,
           toForButtonCross 
                                      } from './modal_markup.js';
-import {  toWatch,
-          toQueue                    } from './toFun.js';
+import {  toFun                      } from './toFun.js';
 // import{   apiForTrl } from './apiForTrl';
 
 const KEY = 'mess';
@@ -23,6 +22,8 @@ const forModal = document.querySelector('.for_modal');
 const galleryRef = document.querySelector('.gallery');
 const nothing = document.querySelector('.nothing');
 const tuiHidden = document.querySelector('.tui-pagination');
+
+let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
  
 const bearer = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWY1ZmQwYjgzOGJmMmEyNTlmZjA2Y2I3NTk2ODAzNyIsIm5iZiI6MTY3MDIyNjI2NC4xMzIsInN1YiI6IjYzOGRhMTU4MTI4M2U5MDA5NzY3Njg3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LbbNBAE2uu7qSjmBFjXYtTYw99nAa-BxDgIdgH9cD08';
 
@@ -106,7 +107,12 @@ export async function getAPIdata(
         );      
 
         btnAddToWatch.addEventListener('click', (evt)=>{
-                                toWatch(oneObj);
+        let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
+                                toFun(
+                                                                        watchedArr, 
+                                                                        oneObj,
+                                                                        'watched'
+                                                                        );
         toChangeTxtOnBtn(
             btnAddToWatch,
             oneObj,
@@ -119,7 +125,12 @@ export async function getAPIdata(
                                  });
         
         btnAddToQueue.addEventListener('click', (evt)=>{
-                                toQueue(oneObj);
+                                // toQueue(oneObj);
+                                 toFun(
+                                                                          queuedArr,
+                                                                          oneObj,
+                                                                          'queued'
+                                                                        );
         toChangeTxtOnBtn(
             btnAddToQueue,
             oneObj,
