@@ -7,7 +7,7 @@ export function to(arr, oneObj, keyLoc){
                     //    let kitWatched = JSON.parse(localStorage.getItem("watched"));
                     //    renderLayout(kitWatched, ulLibrary, forModalLib);     
                     }else{
-                       watchedArr.push(oneObj);
+                       arr.push(oneObj);
                        localStorage.setItem(keyLoc, JSON.stringify(arr));
                     //    let kitWatched = JSON.parse(localStorage.getItem('watched'));
                     //    renderLayout(kitWatched, ulLibrary, forModalLib);  

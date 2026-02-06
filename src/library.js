@@ -12,9 +12,8 @@ import {    renderLayout        }       from './js/render';
 import {    modalMarkup,
             toForButtonCross    }       from './js/modal_markup';
 import {    toForFind           }       from './js/toForFind';
-import {    toWatch,
-            toQueue             }       from './js/toFun';
-import { to }            from './js/toMainFun.js';
+import {    toFun               }       from './js/toFun';
+
 
 const containerHeadLib = document.querySelector('.container_head_lib');
 const pageLibrary = document.getElementById('library');
@@ -25,7 +24,8 @@ const pageLibrary = document.getElementById('library');
             btnWatched.classList.add('other_color');
             }
 
-
+let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
+let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
 const KEY = 'watched';
 const ulLibrary = document.querySelector('ul.ul_library');
 const forModalLib = document.querySelector('.for_modal_lib');
@@ -90,8 +90,14 @@ if (kitWatched.length > 20) {
                             
                    
                     btnAddToWatch.addEventListener('click', (evt)=>{
-                                    // toWatch(oneObj);
-                                    to()
+                                  
+                                    toFun(
+                                        watchedArr, 
+                                        oneObj,
+                                        'watched'
+                                        );
+
+
                         toChangeTxtOnBtn(
                         btnAddToWatch,
                         oneObj,
@@ -106,7 +112,13 @@ if (kitWatched.length > 20) {
 
   
                     btnAddToQueue.addEventListener('click', (evt)=>{
-                                    toQueue(oneObj);
+                                    
+                                    toFun(
+                                          queuedArr,
+                                          oneObj,
+                                          'queued'
+                                        );
+                                        
 
                         toChangeTxtOnBtn(
                         btnAddToQueue,
