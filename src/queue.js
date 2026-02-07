@@ -24,7 +24,6 @@ const key = 'queued';
 const ulQueue = document.querySelector('ul.ul_queue');
 const forModalQue = document.querySelector('.for_modal_queue');
 
-let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
 const kitQueued = JSON.parse(localStorage.getItem('queued')) ?? [];
 
 renderLayout(kitQueued, ulQueue);
@@ -62,11 +61,10 @@ renderLayout(kitQueued, ulQueue);
 
                 btnAddToWatch.addEventListener('click', (evt)=>{
 
-                                                toFun(
-                                                    watchedArr, 
-                                                    oneObj,
-                                                    'watched'
-                                                    );
+                                        toFun(
+                                              oneObj,
+                                              'watched'
+                                            );
 
                                                 evt.stopPropagation();
 
@@ -82,11 +80,10 @@ renderLayout(kitQueued, ulQueue);
                 btnAddToQueue.addEventListener('click', (evt)=>{
                 
 
-                                                toFun(
-                                                    kitQueued,
-                                                    oneObj,
-                                                    'queued'
-                                                    );
+                                            toFun(
+                                                  oneObj,
+                                                  'queued'
+                                                );
 
 
                         toChangeTxtOnBtn(
@@ -112,7 +109,6 @@ renderLayout(kitQueued, ulQueue);
                         });
 
     const switchInpLib = document.querySelector('input.switch');
-//  console.log(switchInpLib);     
 
 ////// UI for queue page    
     const ui = JSON.parse(localStorage.getItem('ui'));

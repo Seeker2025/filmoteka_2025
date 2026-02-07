@@ -24,8 +24,8 @@ const pageLibrary = document.getElementById('library');
             btnWatched.classList.add('other_color');
             }
 
-let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
-let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
+// let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
+// let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
 const KEY = 'watched';
 const ulLibrary = document.querySelector('ul.ul_library');
 const forModalLib = document.querySelector('.for_modal_lib');
@@ -92,7 +92,6 @@ if (kitWatched.length > 20) {
                     btnAddToWatch.addEventListener('click', (evt)=>{
                                   
                                     toFun(
-                                        watchedArr, 
                                         oneObj,
                                         'watched'
                                         );
@@ -114,9 +113,8 @@ if (kitWatched.length > 20) {
                     btnAddToQueue.addEventListener('click', (evt)=>{
                                     
                                     toFun(
-                                          queuedArr,
-                                          oneObj,
-                                          'queued'
+                                         oneObj,
+                                         'queued'
                                         );
                                         
 
