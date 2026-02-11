@@ -24,8 +24,6 @@ const pageLibrary = document.getElementById('library');
             btnWatched.classList.add('other_color');
             }
 
-// let watchedArr = JSON.parse(localStorage.getItem('watched')) ?? [];
-// let queuedArr = JSON.parse(localStorage.getItem('queued')) ?? [];
 const KEY = 'watched';
 const ulLibrary = document.querySelector('ul.ul_library');
 const forModalLib = document.querySelector('.for_modal_lib');
@@ -51,6 +49,7 @@ if (kitWatched.length > 20) {
     });
     }
 };
+
 //=====================================================    
 
     too();
@@ -134,7 +133,6 @@ if (kitWatched.length > 20) {
             }
         });
     const switchInpLib = document.querySelector('input.switch');
-//  console.log(switchInpLib);     
 
  ////// UI for library page      
     const ui = JSON.parse(localStorage.getItem('ui'));
@@ -150,8 +148,6 @@ if (kitWatched.length > 20) {
         
 
 ////// switching UI for library page
-   
-       
    switchInpLib.addEventListener('change', (evt)=>{
         
     // console.log(evt.target.checked);

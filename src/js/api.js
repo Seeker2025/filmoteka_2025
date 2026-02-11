@@ -52,11 +52,6 @@ export async function getAPIdata(
                                 ///// Loader
                         if(response.data) hideLoader();
                                 
-                              
-                        // if(part === 'search/movie'){                       
-                                
-                                //console.log(response.data.genres);
-                                ///// Search result not successful
                                 if(!response.data.results?.length){
                                 nothing.classList.add('nothing_vis');
                                 tuiHidden.classList.add('tui_hidden');
