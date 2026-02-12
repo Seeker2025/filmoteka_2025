@@ -20,6 +20,8 @@
     "axios": "^1.11.0",
     "tui-pagination": "^3.4.1",
     "vite-plugin-full-reload": "^1.2.0",
-    "vite-plugin-html-inject": "^1.1.2"
+    "vite-plugin-html-inject": "^1.1.2",
+    "youtube-player": "^5.5.2",
+    "yt-player": "^3.6.1"
   }
 }

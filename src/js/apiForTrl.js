@@ -11,7 +11,8 @@ export async function apiForTrl(main, id){
                             }
                            
  });
-
+    console.log(response.data);
+    
     return response.data;
             
     }catch(error){
@@ -25,7 +26,7 @@ export function toIframe(div, videoKey){
     
     div.innerHTML = `
             <iframe  class="iframe"
-            src="https://www.youtube.com/embed/${videoKey}"
+            src="https://www.youtube.com/embed/${videoKey}?autoplay=1"
             frameborder="0"
             allowfullscreen>
             </iframe>
