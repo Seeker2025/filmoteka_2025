@@ -12,6 +12,7 @@ export async function apiForTrl(main, id){
                            
  });
     console.log(response.data);
+    console.log(response.data.results[0]?.official);
     
     return response.data;
             

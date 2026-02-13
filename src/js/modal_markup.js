@@ -52,15 +52,15 @@ export function modalMarkup(oneObj, forModal) {
                                 ${
                                 apiForTrl(BASE_URL, id)
                                 .then(({results})=>{
-                                        // console.log(results);
-                                        const picture = document.querySelector('.picture');
-                                        if(!results?.length){
-                                        picture.innerHTML=  imgAnotherPath;
-                                        }else{
-                                        let key = results[0].key;
-                                        // console.log(key);
-                                        toIframe(picture, key);
-                                        }
+                                      // console.log(results);
+                                      const picture = document.querySelector('.picture');
+                                      if(!results?.length || !results[0]?.official){
+                                      picture.innerHTML=  imgAnotherPath;
+                                      }else{
+                                      let key = results[0].key;
+                                      // console.log(key);
+                                      toIframe(picture, key);
+                                      }
 
                                 })                
                                 }
