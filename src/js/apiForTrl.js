@@ -26,10 +26,11 @@ export async function apiForTrl(main, id){
 export function toIframe(div, videoKey){
     
     div.innerHTML = `
-            <iframe  class="iframe"
+            <iframe 
             src="https://www.youtube.com/embed/${videoKey}?autoplay=1"
             frameborder="0"
-            allowfullscreen>
+            allowfullscreen
+            class="iframe">
             </iframe>
                    `;
     

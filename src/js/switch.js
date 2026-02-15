@@ -1,4 +1,4 @@
-console.log('switch');
+// console.log('switch');
 
 export function toSwitchToDarkUI(body, head, input){
     
